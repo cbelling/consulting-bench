@@ -332,6 +332,194 @@ For COD-53, we specify **only** the buy-side diligence family. The immediate roa
 
 ---
 
+## 3a. Case Generation: TMax-Inspired Compositional Sampling
+
+### Overview
+
+To generate diverse, difficulty-calibrated synthetic consulting cases for the first environment (buy-side diligence), we adopt the **TMax** methodology from *A Simple Recipe for Terminal Agents* ([arXiv:2606.23321](https://arxiv.org/abs/2606.23321)).
+
+TMax provides a compositional sampling framework for generating self-contained task packages at scale. We adapt TMax's principles from terminal/coding domains to **management consulting document bundles** and deliverables.
+
+### TMax Core Principles (Adapted)
+
+#### 1. Compositional / Hierarchical Sampling
+
+Generate tasks by sampling over **structured axes** rather than ad-hoc construction:
+
+**TMax's terminal axes** (domains, skills, complexity, verifier kinds) → **Our consulting axes** for buy-side diligence:
+
+- **Industry vertical**: SaaS, fintech, healthcare-tech, e-commerce, B2B marketplaces, infrastructure software
+- **Deal type**: Growth equity, buyout, minority growth, take-private
+- **Company stage**: Early growth ($10–50M ARR), expansion ($50–200M ARR), scale ($200M+ ARR)
+- **Matter composition**: Document mix (CIM + financials + contracts vs. CIM + financials + market research vs. full bundle)
+- **Complexity level**: 
+  - **L1 (Junior analyst)**: 3–5 documents, single risk dimension, clean financials
+  - **L2 (Analyst)**: 8–12 documents, multiple risk dimensions, requires cross-referencing
+  - **L3 (Senior analyst)**: 15+ documents, conflicting information, non-standard financials
+- **Deliverable type**: Standard IC memo, red-flag memo, quick assessment (2-page), deep-dive (10-page)
+- **Rubric/verifier kind**: 
+  - Automated-heavy (80%+ criteria programmatic)
+  - Hybrid (50/50 automated + LLM-judge)
+  - Reasoning-heavy (requires substantial LLM-judge for coherence/argumentation)
+
+**Sampling process**:
+```python
+# Pseudocode
+task = {
+    "industry": sample(["saas", "fintech", "healthcare-tech", ...]),
+    "deal_type": sample(["growth_equity", "buyout", ...]),
+    "stage": sample(["early_growth", "expansion", "scale"]),
+    "matter_docs": sample_doc_bundle(complexity_level),
+    "complexity": sample(["L1", "L2", "L3"]),
+    "deliverable": sample(["standard_memo", "red_flag", "quick"]),
+    "verifier_mix": sample(["automated_heavy", "hybrid", "reasoning_heavy"])
+}
+```
+
+Each axis combination produces a distinct task specification; frontier LLM generates synthetic documents and rubric.
+
+#### 2. Soft Filtering (Skip Expensive Teacher Validation)
+
+TMax avoids expensive human validation upfront. Instead:
+- Generate large candidate pool
+- Filter trivial failures (e.g., LLM couldn't produce coherent CIM)
+- Run cheap automated checks (document count, basic structure)
+- **Discard all-zero tasks at train/eval time** (tasks where no agents pass any criteria)
+
+**Adaptation for consulting**:
+- Generate 100+ candidate diligence scenarios
+- Filter: CIM must be 20–40 pages, financials must include 3-year history, rubric must have 8+ criteria
+- Defer expensive validation (human expert review) until after agent runs
+- Remove tasks where GPT-4 and Claude both score <20% on rubric (too hard or malformed)
+
+This trades some task quality for volume and diversity. Acceptable because:
+- Consulting cases are synthetic (no ground-truth "correctness")
+- Rubric pass/fail is relative to agent capabilities
+- Iteration is cheap (regenerate bad tasks)
+
+#### 3. Explicit Difficulty Calibration
+
+TMax emphasizes **avoiding bi-modal distributions** (all trivial or all impossible). Use complexity buckets:
+
+**L1 (Junior analyst)**: 
+- 3–5 documents, <50 total pages
+- Clean financials (no add-backs, standard metrics)
+- Single primary risk (e.g., customer concentration)
+- Rubric: 6–8 criteria, mostly automated checks
+- Expected GPT-4 pass rate: 70–85%
+
+**L2 (Analyst)**:
+- 8–12 documents, 60–100 pages
+- Requires cross-document synthesis (CIM claims vs. financials)
+- 2–3 risk dimensions, some buried in contracts
+- Rubric: 8–10 criteria, 50/50 automated + LLM-judge
+- Expected GPT-4 pass rate: 40–60%
+
+**L3 (Senior analyst)**:
+- 15+ documents, 100+ pages
+- Conflicting information (CIM overstates, contracts reveal churn)
+- Non-standard financials (SaaS + hardware hybrid, complex rev rec)
+- Rubric: 10–12 criteria, reasoning-heavy
+- Expected GPT-4 pass rate: 20–40%
+
+Calibrate by iterating on axis values (doc count, conflict density) and measuring agent pass rates.
+
+#### 4. Graded / Programmatic Verifiers Paired with Rubrics
+
+TMax prefers deterministic verifiers where possible. **Tension with Harvey-style all-pass rubrics**:
+
+- **Harvey**: All criteria must pass (binary task outcome), but individual criteria are often subjective (tone, argumentation quality)
+- **TMax**: Graded scoring (partial credit) enables finer difficulty calibration and training signal
+
+**Proposed hybrid approach**:
+
+1. **Rubric for benchmark evaluation** (Harvey-style):
+   - All criteria must pass for task success
+   - Report pass/fail per criterion + overall pass/fail
+   - Use for model comparison and leaderboard
+
+2. **Graded scoring for task generation and training** (TMax-style):
+   - Each criterion contributes a score (0.0–1.0)
+   - Aggregate: `score = sum(criterion_scores) / num_criteria`
+   - Use for difficulty calibration (adjust until median agent score = 0.5–0.6)
+   - Use for training signal if adapting LLMs to consulting tasks
+
+**Implementation**:
+- Verifier outputs both: `{"overall_pass": bool, "criteria": [...], "aggregate_score": float}`
+- Benchmark mode uses `overall_pass`
+- Generation/calibration mode uses `aggregate_score`
+
+This preserves Harvey's professional standards (pass/fail) while enabling TMax's difficulty tuning.
+
+#### 5. Synthetic Generation via Frontier Models
+
+TMax uses strong models (GPT-4, Claude) to generate task content. For consulting:
+
+**Generation pipeline**:
+1. **Sample axes**: Industry, deal type, stage, complexity, doc mix
+2. **Generate task specification**: LLM produces `instruction.md` with engagement context, objectives, deliverable spec
+3. **Generate matter bundle**:
+   - **CIM**: 25–35 pages, realistic structure (exec summary, business model, financials summary, growth strategy, market, team)
+   - **Financials**: Excel with 3 years income statement, balance sheet, cash flow; inject complexity based on level (clean vs. add-backs vs. non-standard)
+   - **Contracts**: 3–5 customer contracts with standard SaaS terms + task-specific details (churn clauses, discounts, payment terms)
+   - **Market research**: 10–15 page report with TAM/SAM sizing, growth drivers, competitive landscape
+4. **Generate rubric**: 8–12 criteria based on complexity level and deliverable type
+5. **Generate verifier**: Python script implementing automated checks (structure, citations, calculations) + LLM-judge prompts for reasoning
+6. **Generate exemplar** (optional): Gold-standard deliverable demonstrating full rubric pass
+
+**Quality control**:
+- LLM self-critique: Generate, then critique for realism/coherence, regenerate if needed
+- Automated validation: Check document structure, rubric schema, verifier syntax
+- Pilot runs: Test with GPT-4 / Claude, discard if pass rate is 0% or 100%
+
+### Consulting-Specific Axes for First Environment
+
+**Primary axes** (sample independently):
+- **industry**: ["saas", "fintech", "healthcare-tech", "e-commerce", "b2b-marketplace", "infrastructure-software", "edtech", "proptech"]
+- **deal_type**: ["growth-equity", "buyout-small", "minority-growth", "take-private"]
+- **stage**: ["early-growth", "expansion", "scale"]
+- **complexity**: ["L1", "L2", "L3"]
+
+**Derived axes** (determined by complexity):
+- **doc_count**: L1 → 3–5, L2 → 8–12, L3 → 15+
+- **page_count**: L1 → <50, L2 → 60–100, L3 → 100+
+- **rubric_size**: L1 → 6–8 criteria, L2 → 8–10, L3 → 10–12
+
+**Task variation axes** (sample with constraints):
+- **financial_complexity**: ["clean", "add-backs", "non-standard", "hybrid-model"]
+- **information_conflict**: ["none", "low", "medium", "high"] (CIM vs. financials discrepancies)
+- **risk_profile**: ["customer-concentration", "churn", "competitive", "execution", "multi-dimensional"]
+- **deliverable_format**: ["standard-memo", "red-flag-memo", "quick-assessment"]
+
+**Constraints**:
+- L1 tasks: financial_complexity = "clean", information_conflict = "none"
+- L3 tasks: financial_complexity != "clean", information_conflict >= "medium"
+- Deliverable format pairs with doc count (quick-assessment → fewer docs)
+
+### Implementation Timeline
+
+**COD-53** (this document): Design specification, axis definition  
+**COD-52**: Scaffold generation pipeline structure  
+**Post-COD-52**: 
+1. Implement single-task generator (prompt engineering for each axis combination)
+2. Generate seed task (`consulting-001-saas-diligence`) manually/semi-automated
+3. Validate rubric + verifier on seed task with GPT-4 / Claude
+4. Scale to 10–20 tasks using automated pipeline
+5. Calibrate difficulty (measure pass rates, adjust axis mappings)
+6. Iterate on verifier prompts and rubric thresholds
+
+### Open Questions for COD-52+
+
+1. **Document realism**: How much detail is "enough" for synthetic CIMs? (Full customer case studies vs. high-level claims)
+2. **Verifier reliability**: What pass-rate variance is acceptable for LLM-judge criteria? (Test-retest on same deliverable)
+3. **Axis independence**: Are some axis combinations invalid? (e.g., "scale" stage + "early-growth" metrics)
+4. **Training data leakage**: How to ensure generated cases don't resemble real companies in training data?
+5. **Human validation sampling**: What % of generated tasks require expert consultant review?
+
+These will be resolved during implementation based on empirical generation results and agent benchmarking.
+
+---
+
 ## 4. Non-Goals
 
 ### What This Bench Is NOT
