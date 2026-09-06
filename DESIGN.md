@@ -8,9 +8,9 @@
 
 ## Overview
 
-The Management Consulting Bench evaluates AI agent capabilities in professional services workflows—specifically, the analytical and reasoning patterns used by management consultants, investment bankers, and private equity analysts when conducting commercial diligence, preparing investment memos, and synthesizing complex business information.
+The Management Consulting Bench evaluates AI agent capabilities in **management consulting workflows**—specifically, the analytical and reasoning patterns used when conducting commercial diligence, preparing investment memos, and synthesizing complex business information for strategic decision-making.
 
-This bench draws architectural inspiration from **Mercor Apex/Harbor** (task isolation, reproducible trials, programmatic verification) and evaluation philosophy from **Harvey LAB** (matter-centric document bundles, multi-criteria rubric scoring, all-pass thresholds, domain-realistic analyst workflows).
+This bench draws architectural inspiration from **Mercor Apex/Harbor** (task isolation, reproducible trials, programmatic verification) and evaluation methodology from **Harvey LAB** (matter-centric document bundles, multi-criteria rubric scoring, all-pass thresholds). Harvey LAB is a legal-domain benchmark; we adopt their **method** (document bundles, rubrics, analyst workflows) while applying it to **management consulting** as the domain.
 
 Unlike query-response benchmarks, this bench tests:
 - **Information synthesis** across multi-document datasets
@@ -190,12 +190,12 @@ Rubrics are stored as JSON in `reference/rubric.json`:
 
 ### Connection to Harvey LAB
 
-Harvey's evaluation framework emphasizes:
-- **Matter realism**: Complex, multi-document legal matters (we adapt to business consulting)
-- **All-pass rubrics**: Professional work requires meeting all quality standards
+Harvey's evaluation framework (legal domain) emphasizes methodological principles we adapt:
+- **Matter realism**: Complex, multi-document matters with realistic document bundles
+- **All-pass rubrics**: Professional work requires meeting all quality standards simultaneously
 - **Process fidelity**: Analysts follow multi-step workflows (inventory docs → extract facts → challenge assumptions → synthesize memo)
 
-We adopt this philosophy while adapting the domain from legal to consulting/finance.
+We adopt Harvey's **evaluation method** (document bundles, rubric structure, workflow patterns) while applying it to **management consulting** as the domain. This is not a multi-practice professional services bench—it focuses on management consulting only.
 
 ---
 
@@ -326,14 +326,9 @@ Agents should demonstrate this multi-step reasoning rather than direct-to-memo g
 - CAC payback: 14 months (good but requires verification)
 - Net retention: 115% (strong, indicates expansion revenue)
 
-### Additional Task Family Ideas (Future)
+### Scope: One Task Family First
 
-- **Post-merger integration planning** (operational consulting)
-- **Market entry strategy** (strategy consulting)
-- **Operational improvement assessment** (due diligence for operational PE)
-- **Distressed turnaround analysis** (special situations)
-
-For COD-53, we specify **only** the buy-side diligence family. Additional families are out of scope.
+For COD-53, we specify **only** the buy-side diligence family. The immediate roadmap focuses on designing, scaffolding, and implementing this **one consulting environment** with a seed task and rubric. Additional task families (if any) are deferred until the first environment is complete and validated.
 
 ---
 
@@ -357,8 +352,8 @@ For COD-53, we specify **only** the buy-side diligence family. Additional famili
 
 4. **Not Harvey's actual benchmark**
    - Harvey LAB is proprietary and legal-domain specific
-   - We adopt their scoring philosophy (all-pass rubrics) but not their tasks or content
-   - This bench is open-source and consulting/finance domain
+   - We adopt their scoring methodology (all-pass rubrics, document bundles, analyst workflows) but not their tasks or content
+   - This bench is open-source and **management consulting domain only**—not a multi-practice professional services benchmark
 
 5. **Not rapid-fire scale testing**
    - Tasks take 1–3 hours of agent time (not seconds)
@@ -404,10 +399,7 @@ management-consulting-bench/
 │   │   └── tests/
 │   │       └── verifier.py
 │   │
-│   ├── consulting-002-market-entry/
-│   │   └── ...
-│   │
-│   └── families.json            # Task family metadata and taxonomy
+│   └── families.json            # Task family metadata (initially: buy-side diligence only)
 │
 ├── harness/                     # Execution framework (Harbor-inspired)
 │   ├── runner.py                # Trial orchestration: start → run → verify → teardown
@@ -508,6 +500,14 @@ management-consulting-bench/
 **COD-53 scope**: Design specification (this document)  
 **COD-52 scope**: Repository scaffold and harness implementation
 
+### Sequence: One Environment First
+
+The immediate roadmap focuses on **one consulting environment** (buy-side diligence):
+
+1. **Design** (COD-53, this document) — Task schema, scoring, first family specification
+2. **Scaffold** (COD-52, held) — Repository structure, harness, verifier base classes
+3. **First environment** (post-COD-52) — Seed task with synthetic documents, complete rubric, automated verifier, test with GPT-4 and Claude
+
 ### Scaffold Phases (for reference, not COD-53 deliverable)
 
 1. **Phase 1: Core harness**
@@ -516,22 +516,24 @@ management-consulting-bench/
    - Rubric JSON schema and scorer
    - Basic agent interface
 
-2. **Phase 2: First task**
+2. **Phase 2: First seed task**
    - Implement `consulting-001-saas-diligence` fully
    - Synthetic CIM, financials, contracts
    - Complete rubric and automated verifier
    - Test with GPT-4 and Claude
 
-3. **Phase 3: Additional tasks**
-   - 2–3 more buy-side diligence tasks (varied difficulty, sectors)
-   - Validate rubric design across tasks
-   - Tune verifier thresholds
+3. **Phase 3: Validation and refinement**
+   - Validate rubric effectiveness on first task
+   - Tune verifier thresholds based on agent runs
+   - Document learnings for future task authoring
 
 4. **Phase 4: Documentation and CI**
-   - Task authoring guide
+   - Task authoring guide (based on first task experience)
    - Benchmark runner scripts
    - CI validation for task format
    - Example results and walkthroughs
+
+**Note**: Additional tasks within buy-side diligence or other consulting domains are deferred until the first environment is complete and validated. Priority is proving the approach works for **one environment** before expanding scope.
 
 ---
 
@@ -569,9 +571,10 @@ management-consulting-bench/
 ### Adaptations for This Bench
 
 - **From Harbor**: Task directory structure, verifier pattern, reproducible trials
-- **From Harvey**: Rubric philosophy (all-pass), multi-document bundles, analyst workflow patterns
-- **Domain shift**: Legal → Management consulting / investment diligence
-- **Static vs. dynamic**: Document bundles (static) instead of live web environments
+- **From Harvey**: Evaluation methodology (all-pass rubrics), multi-document bundles, analyst workflow patterns
+- **Method vs. domain**: Harvey LAB is legal-domain; we adopt their **method** and apply it to **management consulting** only
+- **Static vs. dynamic**: Document bundles (static) instead of live web environments (Harbor)
+- **Single domain focus**: Management consulting only, not a multi-practice professional services bench
 
 ---
 
