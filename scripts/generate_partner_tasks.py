@@ -658,6 +658,10 @@ Scenario B — Cut R&D 20% (to $24M/yr = $6.0M/q); ARR grows 10% over 4 quarters
   Q4 opex = $12.50M + $6.00M + $2.25M = **$20.75M/q**
   Q4 operating profit = $19.36M − $20.75M = **−$1.39M** ✗ (misses 4Q breakeven hurdle)
 
+Arithmetic check (must tie):
+- Scenario A: $18.48M − $18.50M = −$0.02M (within breakeven band −$0.5M to +$1.0M)
+- Scenario B: $19.36M − $20.75M = −$1.39M (below breakeven band)
+
 Recommendation: Scenario A (S&M cut) uniquely meets the 4-quarter breakeven hurdle.
 """.strip(),
         },
