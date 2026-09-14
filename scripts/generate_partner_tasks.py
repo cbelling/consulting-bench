@@ -637,29 +637,33 @@ CloudSaaS — Path to Profitability Model (synthetic)
 ===================================================
 
 Board deck (Q0):
-- ARR: $80M  |  Gross margin: 70%  |  Quarterly GP: $14.0M
+- ARR: $80M  |  Gross margin: 70% (board)  |  Quarterly revenue: $20.0M
 - S&M: $50M/yr  |  R&D: $30M/yr  |  G&A: $15M/yr  |  Opex: $95M/yr ($23.75M/q)
 
 FP&A correction (ONE adjustment):
-Duplicate HQ allocation inflated G&A. Correct run-rate G&A = **$9M/yr ($2.25M/q)**.
-Correct Q0 opex = **$22.25M/q**  |  Q0 operating loss = **−$8.25M/q**
+Duplicate HQ allocation inflated G&A, and COGS was overstated in the board deck.
+- Correct run-rate G&A: **$9M/yr ($2.25M/q)** (was $15M)
+- Correct run-rate gross margin: **88%** (was 70% pre-allocation)
+- Correct Q0 quarterly GP: **$17.60M** | Correct Q0 opex: **$22.25M/q** | Q0 op loss: **−$4.65M/q**
 
 Scenario A — Cut S&M 30% (to $35M/yr = $8.75M/q); ARR grows 5% over 4 quarters to $84M
-  Q4 quarterly GP (70% × $21.0M rev) = $14.70M
-  Q4 opex = $8.75M + $7.50M + $2.25M = $18.50M/q
-  Q4 operating profit = **+$0.08M (~breakeven)** ✓
+  Q4 quarterly revenue: $84M / 4 = **$21.0M**
+  Q4 quarterly GP (88% × $21.0M) = **$18.48M**
+  Q4 opex = $8.75M + $7.50M + $2.25M = **$18.50M/q**
+  Q4 operating profit = $18.48M − $18.50M = **−$0.02M (~breakeven)** ✓
 
 Scenario B — Cut R&D 20% (to $24M/yr = $6.0M/q); ARR grows 10% over 4 quarters to $88M
-  Q4 quarterly GP (70% × $22.0M rev) = $15.40M
-  Q4 opex = $12.50M + $6.0M + $2.25M = $20.75M/q
-  Q4 operating profit = **−$5.35M** ✗ (misses 4Q breakeven hurdle)
+  Q4 quarterly revenue: $88M / 4 = **$22.0M**
+  Q4 quarterly GP (88% × $22.0M) = **$19.36M**
+  Q4 opex = $12.50M + $6.00M + $2.25M = **$20.75M/q**
+  Q4 operating profit = $19.36M − $20.75M = **−$1.39M** ✗ (misses 4Q breakeven hurdle)
 
 Recommendation: Scenario A (S&M cut) uniquely meets the 4-quarter breakeven hurdle.
 """.strip(),
         },
         "oracle": {
             "decision": "sm_cut",
-            "q4_operating_profit_millions": 0.08,
+            "q4_operating_profit_millions": -0.02,
             "method": "four-quarter breakeven P&L",
         },
         "verify_py": '''
@@ -704,15 +708,15 @@ if __name__ == "__main__":
 set -euo pipefail
 mkdir -p /app/output
 cat > /app/output/memo.md << 'MEMO_EOF'
-We recommend cutting S&M by 30% at CloudSaaS. After the FP&A G&A correction ($15M → $9M run-rate), the S&M-cut path reaches ~$0.08M Q4 operating profit (breakeven) while the R&D-cut path remains at −$5.35M.
+We recommend cutting S&M by 30% at CloudSaaS. After the FP&A corrections (G&A $15M → $9M run-rate and gross margin true-up to 88%), the S&M-cut path reaches −$0.02M Q4 operating profit (~breakeven) while the R&D-cut path remains at −$1.39M.
 
 ## Four-quarter breakeven P&L (Q4 run-rate)
 | Scenario | Q4 ARR | Q4 GP | Q4 Opex | Q4 Op profit |
 |----------|-------:|------:|--------:|-------------:|
-| A — S&M −30%, 5% growth | $84M | $14.70M | $18.50M | **+$0.08M** |
-| B — R&D −20%, 10% growth | $88M | $15.40M | $20.75M | −$5.35M |
+| A — S&M −30%, 5% growth | $84M | $18.48M | $18.50M | **−$0.02M** |
+| B — R&D −20%, 10% growth | $88M | $19.36M | $20.75M | −$1.39M |
 
-FP&A noted one correction: duplicate HQ allocation removed from G&A.
+FP&A noted one correction bundle: duplicate HQ allocation removed from G&A and COGS reclassified (GM 70% → 88% run-rate).
 
 ## Next step
 Ask the board Tuesday to approve the S&M reduction plan and reforecast hiring to match 5% growth.
@@ -720,7 +724,7 @@ MEMO_EOF
 cat > /app/output/answer.json << 'JSON_EOF'
 {
   "decision": "sm_cut",
-  "q4_operating_profit_millions": 0.08,
+  "q4_operating_profit_millions": -0.02,
   "method": "four-quarter breakeven P&L"
 }
 JSON_EOF
