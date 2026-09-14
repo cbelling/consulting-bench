@@ -1,7 +1,16 @@
 import json, sys
 
 def first_paragraph(text: str) -> str:
-    return text.strip().split("\n\n")[0].lower()
+    chunks = [c.strip() for c in text.replace("\r\n", "\n").strip().split("\n\n") if c.strip()]
+    for c in chunks:
+        first = c.split("\n", 1)[0].strip()
+        fl = first.lstrip("*").strip().lower()
+        if first.startswith("#"):
+            continue
+        if fl.startswith(("to:", "from:", "date:", "subject:")):
+            continue
+        return c.lower()
+    return chunks[0].lower() if chunks else ""
 
 def main():
     memo_path, answer_path = sys.argv[1], sys.argv[2]

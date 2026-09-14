@@ -174,7 +174,16 @@ The +20% premium uniquely maximizes weekend contribution profit.
 import json, sys
 
 def first_paragraph(text: str) -> str:
-    return text.strip().split("\\n\\n")[0].lower()
+    chunks = [c.strip() for c in text.replace("\\r\\n", "\\n").strip().split("\\n\\n") if c.strip()]
+    for c in chunks:
+        first = c.split("\\n", 1)[0].strip()
+        fl = first.lstrip("*").strip().lower()
+        if first.startswith("#"):
+            continue
+        if fl.startswith(("to:", "from:", "date:", "subject:")):
+            continue
+        return c.lower()
+    return chunks[0].lower() if chunks else ""
 
 def main():
     memo_path, answer_path = sys.argv[1], sys.argv[2]
@@ -289,7 +298,16 @@ Sequencing: Option A dominates on incremental revenue; pursue distribution first
 import json, sys
 
 def first_paragraph(text: str) -> str:
-    return text.strip().split("\\n\\n")[0].lower()
+    chunks = [c.strip() for c in text.replace("\\r\\n", "\\n").strip().split("\\n\\n") if c.strip()]
+    for c in chunks:
+        first = c.split("\\n", 1)[0].strip()
+        fl = first.lstrip("*").strip().lower()
+        if first.startswith("#"):
+            continue
+        if fl.startswith(("to:", "from:", "date:", "subject:")):
+            continue
+        return c.lower()
+    return chunks[0].lower() if chunks else ""
 
 def main():
     memo_path, answer_path = sys.argv[1], sys.argv[2]
@@ -400,7 +418,16 @@ Incremental P&L (Year 2):
 import json, sys
 
 def first_paragraph(text: str) -> str:
-    return text.strip().split("\\n\\n")[0].lower()
+    chunks = [c.strip() for c in text.replace("\\r\\n", "\\n").strip().split("\\n\\n") if c.strip()]
+    for c in chunks:
+        first = c.split("\\n", 1)[0].strip()
+        fl = first.lstrip("*").strip().lower()
+        if first.startswith("#"):
+            continue
+        if fl.startswith(("to:", "from:", "date:", "subject:")):
+            continue
+        return c.lower()
+    return chunks[0].lower() if chunks else ""
 
 def main():
     memo_path, answer_path = sys.argv[1], sys.argv[2]
@@ -511,7 +538,16 @@ Innovate uniquely maximizes operating profit.
 import json, sys
 
 def first_paragraph(text: str) -> str:
-    return text.strip().split("\\n\\n")[0].lower()
+    chunks = [c.strip() for c in text.replace("\\r\\n", "\\n").strip().split("\\n\\n") if c.strip()]
+    for c in chunks:
+        first = c.split("\\n", 1)[0].strip()
+        fl = first.lstrip("*").strip().lower()
+        if first.startswith("#"):
+            continue
+        if fl.startswith(("to:", "from:", "date:", "subject:")):
+            continue
+        return c.lower()
+    return chunks[0].lower() if chunks else ""
 
 def main():
     memo_path, answer_path = sys.argv[1], sys.argv[2]
@@ -525,7 +561,7 @@ def main():
     profit = float(ans["operating_profit_millions"])
     band_ok = 38.0 <= profit <= 41.0 and ans.get("decision") == "innovate"
     method_ok = "p&l" in memo.lower() or "profit" in memo.lower()
-    method_ok = method_ok and "private label" in memo.lower() or "private-label" in memo.lower()
+    method_ok = method_ok and ("private label" in memo.lower() or "private-label" in memo.lower())
     next_ok = any(
         k in memo.lower()
         for k in ("approve", "fund", "launch", "pilot", "exec session", "sign off", "allocate", "workstream")
@@ -630,7 +666,16 @@ Recommendation: Scenario A (S&M cut) uniquely meets the 4-quarter breakeven hurd
 import json, sys
 
 def first_paragraph(text: str) -> str:
-    return text.strip().split("\\n\\n")[0].lower()
+    chunks = [c.strip() for c in text.replace("\\r\\n", "\\n").strip().split("\\n\\n") if c.strip()]
+    for c in chunks:
+        first = c.split("\\n", 1)[0].strip()
+        fl = first.lstrip("*").strip().lower()
+        if first.startswith("#"):
+            continue
+        if fl.startswith(("to:", "from:", "date:", "subject:")):
+            continue
+        return c.lower()
+    return chunks[0].lower() if chunks else ""
 
 def main():
     memo_path, answer_path = sys.argv[1], sys.argv[2]
