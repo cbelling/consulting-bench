@@ -1,0 +1,7 @@
+Category Assumptions — Chicago Consumer Paper Towels
+====================================================
+- Use households as the demand base (NOT population).
+- Household penetration of paper towels: 90%
+- Average annual spend per purchasing household: $40
+- Average price proxy: $1.50 per bundle equivalent
+- Expected market size band: $150M – $230M

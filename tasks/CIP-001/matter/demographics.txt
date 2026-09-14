@@ -1,0 +1,11 @@
+US Population Facts (synthetic, for this engagement)
+====================================================
+Total US population: 330 million
+Adults (18+): 260 million
+Children (under 18): 70 million
+
+Client segment assumptions (use these, do not substitute web data):
+- Manual toothbrush share among adults: 35%
+- Manual toothbrush share among children: 15%
+- Average replacement cycle, adults: 2.5 years
+- Average replacement cycle, children: 3.0 years

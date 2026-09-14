@@ -1,0 +1,5 @@
+scenario,price_usd,variable_cost_usd,segment_share_pct
+A,2.49,1.05,42
+B,2.79,1.08,36
+C,2.99,1.10,31
+D,3.19,1.12,24

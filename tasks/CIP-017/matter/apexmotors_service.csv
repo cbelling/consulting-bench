@@ -1,0 +1,7 @@
+metric,prior_year,current_year,delta
+service_visits_thousands,820,910,90
+avg_ticket_usd,420,455,35
+parts_margin_millions,180,228,48
+labor_margin_millions,95,98,3
+warranty_cost_millions,42,55,13
+operating_profit_millions,233,271,38
