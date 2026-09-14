@@ -67,10 +67,16 @@ The agent (or oracle) must write **`/app/output/answer.json`** as specified in e
 
 ## Local verification (no Harbor required)
 
-Verify all 20 oracle solutions locally:
+Verify all 20 JSON L1 oracle solutions locally:
 
 ```bash
 bash scripts/verify_oracles_local.sh
+```
+
+Verify the five partner-delegated tasks only (memo + JSON sidecar):
+
+```bash
+bash scripts/verify_partner_oracles_local.sh
 ```
 
 With Docker available, build the task environment image and run the same check:
@@ -83,18 +89,39 @@ Or verify a single task:
 
 ```bash
 bash scripts/verify_oracles_local.sh CIP-001
+bash scripts/verify_oracles_local.sh CIP-054
 ```
+
+## Partner-delegated slice vs JSON L1 holdout
+
+| Slice | Task IDs | Instruction | Deliverable | Verifier |
+|-------|----------|-------------|-------------|----------|
+| **JSON L1 holdout** (COD-52) | 20 IDs (`CIP-001` … `CIP-051`) | Short engagement brief | `/app/output/answer.json` only | Single checkable core on JSON |
+| **Partner-delegated** (COD-55) | `CIP-054`, `CIP-063`, `CIP-075`, `CIP-089`, `CIP-098` | Partner email to associate | `/app/output/memo.md` + `answer.json` | All-pass AND of 4 programmatic checks (lede recommendation, JSON band, method keywords, concrete next ask) |
+
+Partner-delegated tasks mirror the Harbor directory layout from COD-52 but use Harvey-shaped memo deliverables with no LLM judge. Frozen holdout folders are untouched.
+
+### Partner-delegated tasks (5)
+
+| ID | Topic | Recommendation |
+|----|-------|----------------|
+| CIP-054 | RestInn weekend dynamic pricing | +20% ADR premium ($6,840 contribution profit) |
+| CIP-063 | Crunchora CPG white space | Distribution first (+$48M) |
+| CIP-075 | GreenPouch compostable bag | No-go (−$6.4M Y2 incremental) |
+| CIP-089 | HeroCo private-label response | Innovate ($39.5M operating profit) |
+| CIP-098 | CloudSaaS path to profitability | Cut S&M 30% (Q4 breakeven) |
 
 ## Regenerate tasks
 
-Task files are generated from `scripts/generate_tasks.py`:
+Task files are generated from `scripts/generate_tasks.py` (JSON L1 holdout) and `scripts/generate_partner_tasks.py` (partner-delegated slice):
 
 ```bash
 python3 scripts/generate_tasks.py
+python3 scripts/generate_partner_tasks.py
 ```
 
 ## Scope
 
 - Management consulting only (synthetic cases; not Cosentino/Cheng published text)
 - Docs + tasks only in this PR
-- 20 L1 tasks — not the full 100-task bench
+- 20 JSON L1 holdout tasks + 5 partner-delegated memo tasks

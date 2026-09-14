@@ -1,0 +1,28 @@
+import json, sys
+
+def first_paragraph(text: str) -> str:
+    return text.strip().split("\n\n")[0].lower()
+
+def main():
+    memo_path, answer_path = sys.argv[1], sys.argv[2]
+    memo = open(memo_path).read()
+    ans = json.load(open(answer_path))
+    para = first_paragraph(memo)
+
+    lede_ok = ("20" in para or "twenty" in para) and any(
+        w in para for w in ("recommend", "premium", "optimal", "choose", "select")
+    )
+    profit = float(ans["weekend_contribution_profit_dollars"])
+    band_ok = 6600.0 <= profit <= 7100.0 and ans.get("decision") == "premium_20"
+    method_ok = "contribution" in memo.lower() and any(
+        k in memo.lower() for k in ("adr", "occupancy", "variable cost")
+    )
+    next_ok = any(
+        k in memo.lower()
+        for k in ("pilot", "implement", "roll out", "deploy", "a/b", "test in", "schedule", "sign off")
+    ) and "monitor risks" not in memo.lower()
+
+    return lede_ok and band_ok and method_ok and next_ok
+
+if __name__ == "__main__":
+    sys.exit(0 if main() else 1)
