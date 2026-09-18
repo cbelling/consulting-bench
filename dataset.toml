@@ -5,7 +5,7 @@
 [dataset]
 name = "consulting-bench/consulting-bench"
 description = "Partner-memo tasks for management consulting workflows: market sizing, profitability, pricing, and investment decisions. Each task is a partner email, a synthetic matter pack, a one-page memo, and a checkable JSON sidecar."
-authors = [{ name = "Consulting Bench Authors", email = "charlesaustinbellinger@gmail.com" }]
+authors = [{ name = "Consulting Bench Authors" }]
 keywords = ["consulting", "management-consulting", "partner-memo", "harbor"]
 
 [[tasks]]
