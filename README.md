@@ -149,6 +149,12 @@ export MODAL_TOKEN_SECRET="..."
 bash scripts/run_dry_run.sh
 ```
 
+Full 50-task run, one Modal sandbox at a time:
+
+```bash
+bash scripts/run_full_bench_sequential.sh
+```
+
 Oracle-only Harbor smoke test on Modal (no model key):
 
 ```bash
