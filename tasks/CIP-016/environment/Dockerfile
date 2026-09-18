@@ -1,6 +1,8 @@
 FROM python:3.11-slim
 
-RUN apt-get update && apt-get install -y --no-install-recommends bash \
+RUN apt-get update && apt-get install -y --no-install-recommends \
+        bash \
+        tmux \
     && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /app
