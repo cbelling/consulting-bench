@@ -36,7 +36,11 @@ for tid in "${TASK_IDS[@]}"; do
   sandbox="$TMP_ROOT/$tid"
   mkdir -p "$sandbox/app/output" "$sandbox/app/matter" "$sandbox/logs/verifier"
 
-  cp -r "$task_dir/matter/"* "$sandbox/app/matter/" 2>/dev/null || true
+  if [[ -d "$task_dir/environment/matter" ]]; then
+    cp -r "$task_dir/environment/matter/"* "$sandbox/app/matter/" 2>/dev/null || true
+  else
+    cp -r "$task_dir/matter/"* "$sandbox/app/matter/" 2>/dev/null || true
+  fi
   cp "$task_dir/tests/verify.py" "$sandbox/verify.py"
   cp "$task_dir/tests/test.sh" "$sandbox/test.sh"
   cp "$task_dir/solution/solve.sh" "$sandbox/solve.sh"

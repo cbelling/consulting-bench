@@ -1,0 +1,12 @@
+Lakeside Urgent Care — Strategy Deck Extract (Exhibit A)
+========================================================
+Trade area visits: 1.2M annually
+Planned clinics: 6
+Capture rate: 8% of trade-area demand
+
+Cannibalization assumption: **15%** of captured UC visits pull from ED
+ED contribution per visit lost: $400
+
+Clinic economics:
+- Net contribution per UC visit: $140 (after $60 variable cost)
+- Fixed cost per clinic: $2.5M/yr

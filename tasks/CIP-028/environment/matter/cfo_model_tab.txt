@@ -1,0 +1,9 @@
+Lakeside Urgent Care — CFO Model (Exhibit B)
+============================================
+Same volume assumptions: 1.2M trade area, 8% capture, 6 clinics
+
+Cannibalization assumption: **5%** of captured UC visits pull from ED
+(ED contrib $400/visit)
+
+⚠️ CFO summary row shows $7.68M UC profit — **forgets to subtract $15M fixed**
+   across 6 clinics. Use clinic build-up tab only.

@@ -1,0 +1,15 @@
+DataLoop — NDR Reconciliation (WORKING)
+=======================================
+Hurdles: NDR ≥ 120% | Net ARR from existing ≥ $12M
+
+CS view (8% churn, 22% expansion):
+  NDR = 0.92 × 1.22 = **112.2%** → FAIL (need 120%)
+  Net ARR = $100M × 12.2% = **+$12.2M** → PASS $12M hurdle
+  Gap to NDR hurdle: 120% − 112.2% = **7.8 pts**
+
+Finance view (12% churn, 18% expansion):
+  NDR = 0.88 × 1.18 = **103.8%** → FAIL
+  Net ARR = +$3.8M → FAIL ($12M hurdle)
+  Gap to NDR: **16.2 pts** | Gap to $: **$8.2M**
+
+Both miss NDR 120%. Recommend fail/fix retention before growth spend.

@@ -1,0 +1,14 @@
+line_item,value_m,notes
+uc_visits_thousands,96,1.2M trade area x 8% capture
+net_per_visit_usd,140,After 60 VC
+fixed_cost_per_clinic_m,2.5,6 clinics
+gross_uc_contribution_m,13.44,96000 x 140
+total_fixed_m,15.0,6 x 2.5M
+payer_steerage_uplift_m,9.24,Included in strategy but omitted in CFO summary
+uc_profit_before_cannibal_m,7.68,13.44 - 15.0 + 9.24
+ed_contrib_per_visit_usd,400,Cannibalized visit cost
+cannibal_5pct_drag_m,1.92,96000 x 5% x 400
+cannibal_15pct_drag_m,5.76,96000 x 15% x 400
+system_incremental_5pct_m,5.76,7.68 - 1.92 PASS 5M hurdle
+system_incremental_15pct_m,1.92,7.68 - 5.76 FAIL 5M hurdle
+cannibal_breakeven_pct,6.0,Solve: 7.68 - X x 38.4M/100 = 5.0

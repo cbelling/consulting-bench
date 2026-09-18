@@ -71,7 +71,7 @@ fi
 
 def write_task(task_id: str, spec: dict) -> None:
     task_dir = TASKS / task_id
-    (task_dir / "environment").mkdir(parents=True, exist_ok=True)
+    (task_dir / "environment" / "matter").mkdir(parents=True, exist_ok=True)
     (task_dir / "matter").mkdir(parents=True, exist_ok=True)
     (task_dir / "tests").mkdir(parents=True, exist_ok=True)
     (task_dir / "solution").mkdir(parents=True, exist_ok=True)
@@ -88,7 +88,9 @@ def write_task(task_id: str, spec: dict) -> None:
     )
     (task_dir / "instruction.md").write_text(spec["instruction"].strip() + "\n")
     for name, content in spec["matter"].items():
-        (task_dir / "matter" / name).write_text(content.strip() + "\n")
+        text = content.strip() + "\n"
+        (task_dir / "matter" / name).write_text(text)
+        (task_dir / "environment" / "matter" / name).write_text(text)
     (task_dir / "tests" / "verify.py").write_text(textwrap.dedent(spec["verify_py"]).strip() + "\n")
     test_sh = task_dir / "tests" / "test.sh"
     test_sh.write_text(TEST_SH)

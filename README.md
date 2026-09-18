@@ -13,8 +13,9 @@ tasks/CIP-054/
 ├── task.toml
 ├── instruction.md          # Partner email + deliverable contract
 ├── environment/
-│   └── Dockerfile          # Python sandbox; copies matter/ into /app/matter/
-├── matter/                 # Synthetic exhibits (txt/csv)
+│   ├── Dockerfile          # Python sandbox; copies matter/ into /app/matter/
+│   └── matter/             # Build-context exhibits (required for Modal/Docker)
+├── matter/                 # Same exhibits (local oracle verify convenience)
 ├── tests/
 │   ├── test.sh             # Writes /logs/verifier/reward.txt (1 on pass)
 │   └── verify.py           # Programmatic all-pass checks

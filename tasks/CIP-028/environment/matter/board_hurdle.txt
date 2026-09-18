@@ -1,0 +1,6 @@
+Board hurdle: System incremental profit ≥ **+$5.0M**
+
+At 5% cannibal: +$5.76M → passes hurdle (go).
+At 15% cannibal: +$1.92M → fails $5M hurdle (no-go).
+
+Do NOT enter unless ED cannibalization ≤ ~6%.

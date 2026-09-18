@@ -1,0 +1,20 @@
+Crunchora Growth Options — Synthetic Facts
+==========================================
+Current revenue: $400M (24-month baseline)
+
+Option A — Distribution / ACV white space
+- Expand weighted distribution +15% with same per-store velocity
+- Ramp realization: 80% of full theoretical uplift in 24 months
+- Incremental revenue: $400M × 15% × 80% = **+$48M**
+
+Option B — New SKU launch
+- Gross incremental revenue: +$30M
+- Cannibalization: 40% of gross uplift comes from existing SKUs
+- Net incremental revenue: $30M × (1 − 40%) = **+$18M**
+
+Option C — List price +3%
+- Price elasticity: −0.8
+- Volume impact: −0.8 × 3% = −2.4% volume
+- Net revenue impact: (1 + 3%) × (1 − 2.4%) − 1 ≈ +0.5% → **~+$2M**
+
+Sequencing: Option A dominates on incremental revenue; pursue distribution first.

@@ -1,0 +1,33 @@
+Analyst scratch — ViewNest profitability bridge
+================================================
+
+Three layers (L3 conflicting views):
+1. Variable contrib: +$3.00/sub/mo ✓ (product team happy)
+2. After content: $3.00 − $4.50 = −$1.50/sub/mo ❌
+3. After fixed: −$1.50 − $1.20 = −$2.70/sub/mo ❌❌
+
+Hurdle: $0.50/sub/mo
+Gap: $0.50 − (−$2.70) = need +$3.20/sub/mo improvement
+
+**Options to hit hurdle:**
+
+A. Price increase:
+- Raise ARPU from $12 to $15 (+$3/mo)
+- Still short by $0.20 → need $15.20 ≈ **$15/mo minimum**
+- Risk: churn
+
+B. Content cut:
+- Cut content spend by ~20%: $270M → $216M
+- Saves $54M/yr = $0.90/sub/mo
+- After cut: −$2.70 + $0.90 = −$1.80, still need +$2.30 from price
+- Content alone can't close full gap
+
+C. Combination:
+- Price to $14 (+$2): −$2.70 + $2 = −$0.70
+- Cut content 15% (saves $0.68): −$0.70 + $0.68 = −$0.02 ≈ breakeven
+- But hurdle is +$0.50, so need: price +$2.50 OR price +$2 + content cut 18%
+
+RECOMMEND: Price to $14.50 (+$2.50) hits hurdle solo with less content risk.
+OR price +$2 + cut content $50M (18%) = −$2.70 +2 +0.83 = +$0.13/sub → closer but safer.
+
+TRAP: Must bridge all three layers—don't just fix variable contrib.

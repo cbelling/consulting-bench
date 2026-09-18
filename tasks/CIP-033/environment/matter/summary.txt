@@ -1,0 +1,1 @@
+Case: Insurance pet adjacency\nCategory: market-entry\nDifficulty: l2

@@ -1,0 +1,13 @@
+HeroCo Private-Label Response — P&L Calculation (synthetic)
+===========================================================
+Base reference: 1.0M units @ $100, VC $55/unit → $100M revenue, $45M gross margin (45%).
+
+Operating profit = (units × price) − (units × VC) − one-time spend
+
+Recalculated options:
+- No response: 0.80M × $100 − 0.80M × $55 = **$36.0M**
+- Match price (−25%): 1.00M × $75 − 1.00M × $55 = **$20.0M** (worst response)
+- Promo (−15%, −12% vol): 0.88M × $85 − 0.88M × $55 = **$26.4M**
+- Innovate (+5% price, −5% vol, $8M spend): 0.95M × $105 − 0.95M × $55 − $8M = **$39.5M** ← unique max
+
+Innovate uniquely maximizes operating profit.

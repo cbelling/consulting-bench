@@ -1,0 +1,10 @@
+SwiftRoute Zone C — Dispatch Summary (synthetic)
+================================================
+Headline: $5.20/stop revenue looks GREEN vs $4.50 network average.
+
+⚠️ MISLEADING: Headline excludes redelivery and uses allocated driver cost
+at network-average density (28 stops/hr) not actual Zone C density (18 stops/hr).
+
+Field ops addendum:
+- Failed-first-attempt: 35% of stops require redelivery @ $4.00 each
+- Actual route density: 18 stops/hour (not 28)

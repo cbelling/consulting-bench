@@ -1,0 +1,22 @@
+Bag Fee Incremental Profit (WORKING)
+====================================
+Price change: +33.3%
+
+Optimistic (ε=−0.4, spill 0.5%):
+  Volume change: −0.4 × 33.3% = −13.3%
+  New bags: 8.0M × (1 − 0.133) = 6.93M
+  Old profit: 8.0M × ($30−$6) = $192.0M
+  New profit: 6.93M × ($40−$6) = $235.6M
+  Bag incremental: +$43.6M
+  Spill cost: 0.5% × 20M × $40 = $4.0M
+  **Net incremental: +$39.6M** → RAISE
+
+Pessimistic (ε=−1.0, spill 1.2%):
+  Volume change: −33.3%
+  New bags: 8.0M × 0.667 = 5.33M
+  New profit: 5.33M × $34 = $181.2M
+  Bag incremental: $181.2M − $192.0M = −$10.8M
+  Spill cost: 1.2% × 20M × $40 = $9.6M
+  **Net incremental: −$20.4M** → HOLD
+
+Raise only if ε closer to −0.4 and spill ≤0.5%.

@@ -1,0 +1,14 @@
+Golf Ball Loss Survey B — Independent Study (Exhibit B — CONFLICTS with A)
+===========================================================================
+Research firm: LinkData Golf Analytics
+Survey date: Fall 2024
+Sample: 800 US golfers, diary method (self-reported over 10 rounds each)
+
+**Average golf balls lost per 18-hole course round: 0.6 balls**
+
+Note from LinkData: "Our diary method may produce lower loss rates than recall surveys because golfers track balls more carefully when journaling. Survey A's 1.2 rate may reflect recall bias inflating loss perception."
+
+With 400M course rounds per year:
+→ Estimated course loss: **240 million balls per year**
+
+⚠️ **CONFLICT**: Survey A shows 1.2, Survey B shows 0.6—nearly 2× difference.
