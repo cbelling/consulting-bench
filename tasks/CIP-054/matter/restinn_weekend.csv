@@ -1,0 +1,4 @@
+scenario,premium_pct,adr_usd,occupancy_pct,variable_cost_per_occ_usd
+base,0,100,85,25
+premium_10,10,110,80,25
+premium_20,20,120,72,25

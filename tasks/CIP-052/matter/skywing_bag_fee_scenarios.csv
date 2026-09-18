@@ -1,0 +1,3 @@
+scenario,elasticity,spill_pct_of_passengers,passengers_m,bags_m,old_fee_usd,new_fee_usd,vc_per_bag_usd,pax_contribution_usd
+optimistic,-0.4,0.5,20,8,30,40,6,40
+pessimistic,-1.0,1.2,20,8,30,40,6,40

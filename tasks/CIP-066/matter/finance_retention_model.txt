@@ -1,0 +1,11 @@
+DataLoop — Finance Retention Model (Exhibit B)
+============================================
+Starting ARR: $100.0M
+
+Assumptions:
+- Gross churn: 12%
+- Expansion: 18%
+- NDR = (1 − 12%) × (1 + 18%) = 0.88 × 1.18 = **103.8%**
+- Net ARR from existing: $100M × 3.8% = **+$3.8M**
+
+Both miss NDR 120% hurdle and Finance misses $12M net ARR.

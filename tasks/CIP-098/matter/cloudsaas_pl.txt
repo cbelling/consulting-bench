@@ -1,0 +1,30 @@
+CloudSaaS — Path to Profitability Model (synthetic)
+===================================================
+
+Board deck (Q0):
+- ARR: $80M  |  Gross margin: 70% (board)  |  Quarterly revenue: $20.0M
+- S&M: $50M/yr  |  R&D: $30M/yr  |  G&A: $15M/yr  |  Opex: $95M/yr ($23.75M/q)
+
+FP&A correction (ONE adjustment):
+Duplicate HQ allocation inflated G&A, and COGS was overstated in the board deck.
+- Correct run-rate G&A: **$9M/yr ($2.25M/q)** (was $15M)
+- Correct run-rate gross margin: **88%** (was 70% pre-allocation)
+- Correct Q0 quarterly GP: **$17.60M** | Correct Q0 opex: **$22.25M/q** | Q0 op loss: **−$4.65M/q**
+
+Scenario A — Cut S&M 30% (to $35M/yr = $8.75M/q); ARR grows 5% over 4 quarters to $84M
+  Q4 quarterly revenue: $84M / 4 = **$21.0M**
+  Q4 quarterly GP (88% × $21.0M) = **$18.48M**
+  Q4 opex = $8.75M + $7.50M + $2.25M = **$18.50M/q**
+  Q4 operating profit = $18.48M − $18.50M = **−$0.02M (~breakeven)** ✓
+
+Scenario B — Cut R&D 20% (to $24M/yr = $6.0M/q); ARR grows 10% over 4 quarters to $88M
+  Q4 quarterly revenue: $88M / 4 = **$22.0M**
+  Q4 quarterly GP (88% × $22.0M) = **$19.36M**
+  Q4 opex = $12.50M + $6.00M + $2.25M = **$20.75M/q**
+  Q4 operating profit = $19.36M − $20.75M = **−$1.39M** ✗ (misses 4Q breakeven hurdle)
+
+Arithmetic check (must tie):
+- Scenario A: $18.48M − $18.50M = −$0.02M (within breakeven band −$0.5M to +$1.0M)
+- Scenario B: $19.36M − $20.75M = −$1.39M (below breakeven band)
+
+Recommendation: Scenario A (S&M cut) uniquely meets the 4-quarter breakeven hurdle.

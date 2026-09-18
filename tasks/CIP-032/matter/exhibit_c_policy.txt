@@ -1,0 +1,21 @@
+Chemora US Lithium Processing — Exhibit C: IRA Policy Incentive
+================================================================
+From: Chemora Government Affairs
+
+**IRA lithium processing incentive (if qualified): +$800 per tonne**
+
+Probability: 50% (contingent on final Treasury guidance and domestic-content thresholds)
+
+Expected value incentive: $800 × 50% = **$400/tonne EV add-on**
+
+Impact on base case:
+- Without incentive: $1,200/tonne (Exhibit B engineering margin)
+- With incentive (if qualified): $1,200 + $800 = $2,000/tonne
+- **Expected margin: $1,200 + $400 = $1,600/tonne**
+
+At 20,000 tonnes:
+- Base EBITDA: $24M
+- With full incentive (100% case): $40M
+- **Expected EBITDA (50% prob): $32M**
+
+Still far below $150M hurdle even with policy upside.

@@ -1,0 +1,13 @@
+ViewNest Streaming — Exhibit A: Variable Contribution Margin
+=============================================================
+From: Product team
+
+Per-subscriber monthly economics (variable only):
+- Subscription ARPU: $12.00/month
+- Variable streaming delivery (CDN, transcode): $9.00/month
+
+**Variable contribution margin: $3.00/sub/month**
+
+Product team view: "We're profitable on variable contribution—streaming tech is working."
+
+Note: This view EXCLUDES content amortization and platform fixed costs.

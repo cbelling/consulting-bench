@@ -1,0 +1,6 @@
+metric,zone_c,zone_a_network_benchmark
+avg_revenue_per_stop_usd,5.20,4.50
+failed_first_attempt_pct,35,8
+redelivery_cost_per_failed_stop_usd,4.00,4.00
+stops_per_hour,18,28
+driver_cost_per_hour_usd,36,36

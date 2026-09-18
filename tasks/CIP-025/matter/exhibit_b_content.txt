@@ -1,0 +1,12 @@
+ViewNest Streaming — Exhibit B: Content Amortization Allocation
+================================================================
+From: CFO finance team
+
+Content library amortization allocated per subscriber:
+- Total content amortization: $270M annually
+- Current subscribers: 5.0M average
+- **Allocated content cost: $4.50/sub/month**
+
+CFO view: "After content, we lose $1.50/sub/month before even covering platform fixed costs. This is unsustainable."
+
+Calculation: $270M / 5M subs / 12 months = $4.50/sub/mo

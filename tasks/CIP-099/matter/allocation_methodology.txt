@@ -1,0 +1,5 @@
+Summit — Overhead Allocation Methodology (why the trap exists)
+==============================================================
+Step-down allocates $50M fixed evenly by revenue share.
+Cardio generates 45% of revenue but only 25% of direct costs → looks negative.
+Use true contribution for portfolio decisions, not allocated P&L.

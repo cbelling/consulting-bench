@@ -1,0 +1,13 @@
+DataLoop — Customer Success Retention Model (Exhibit A)
+=======================================================
+Starting ARR: $100.0M
+
+Assumptions:
+- Gross churn: 8%
+- Expansion: 22%
+- NDR = (1 − 8%) × (1 + 22%) = 0.92 × 1.22 = **112.2%**
+- Net ARR from existing: $100M × 12.2% = **+$12.2M** ... 
+
+⚠️ CS deck shows NDR 118% — **uses 25% expansion** not 22%. Use 22%.
+
+At 22% expansion: NDR 112.2%, net +$12.2M — WAIT, 12.2% > $12M hurdle on NDR $ but NDR% fails 120%.
