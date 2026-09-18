@@ -105,7 +105,7 @@ harbor run -p tasks/CIP-054 -a "<agent>" -m "<model>"
 Oracle smoke test (verifier only):
 
 ```bash
-harbor run -p tasks/CIP-054 --solution solution/solve.sh
+harbor run -p tasks/CIP-054 -a oracle
 ```
 
 ## Local verification (no Harbor required)
@@ -135,4 +135,21 @@ python3 scripts/generate_l3_partner_tasks.py
 
 - Management consulting only; all matter is synthetic
 - Partner-memo Harbor tasks only (memo + JSON sidecar)
-- No OpenRouter / eval runs in this repo slice
+
+## Cheap-model dry run (Modal)
+
+The cheapest current OpenRouter model that matches the planned DeepSeek 4.1 slot is **DeepSeek V4.1 Flash** (`openrouter/deepseek/deepseek-v4.1-flash`, about $0.15 / $0.60 per 1M tokens). Trials run on **Modal sandboxes** (`-e modal`). A 3-task slice (L1 pricing, L1 P&L, L3 cash EBITDA) lives in `evals/dry-run-deepseek-v4.1-flash.json`:
+
+```bash
+uv tool install "harbor[modal]"
+export OPENROUTER_API_KEY="..."
+export MODAL_TOKEN_ID="..."
+export MODAL_TOKEN_SECRET="..."
+bash scripts/run_dry_run.sh
+```
+
+Oracle-only Harbor smoke test on Modal (no model key):
+
+```bash
+harbor run -p tasks/CIP-054 -a oracle -e modal -y
+```

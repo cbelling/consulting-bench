@@ -1,0 +1,26 @@
+{
+  "job_name": "dry-run-deepseek-v4.1-flash",
+  "n_attempts": 1,
+  "n_concurrent_trials": 3,
+  "environment": {
+    "type": "modal"
+  },
+  "agents": [
+    {
+      "name": "terminus-2",
+      "model_name": "openrouter/deepseek/deepseek-v4.1-flash",
+      "kwargs": {
+        "max_turns": 30,
+        "model_info": {
+          "max_input_tokens": 200000,
+          "max_output_tokens": 8192
+        }
+      }
+    }
+  ],
+  "tasks": [
+    { "path": "tasks/CIP-054" },
+    { "path": "tasks/CIP-098" },
+    { "path": "tasks/CIP-015" }
+  ]
+}
