@@ -1,0 +1,50 @@
+{
+  "job_name": "dry-run-deepseek-v4.1-flash-2",
+  "finished_at": "2026-09-18T18:38:08Z",
+  "environment": "modal",
+  "agent": "terminus-2",
+  "model": "openrouter/deepseek/deepseek-v4.1-flash",
+  "n_trials": 3,
+  "n_errors": 0,
+  "mean_reward": 1.0,
+  "total_runtime_sec": 107,
+  "n_input_tokens": 47574,
+  "n_cache_tokens": 27136,
+  "n_output_tokens": 35607,
+  "cost_usd": 0.0396,
+  "trials": [
+    {
+      "task": "CIP-054",
+      "level": "L1",
+      "reward": 1.0,
+      "episodes": 5,
+      "cost_usd": 0.0113,
+      "observed": {
+        "decision": "premium_20",
+        "weekend_contribution_profit_dollars": 6840.0
+      }
+    },
+    {
+      "task": "CIP-098",
+      "level": "L1",
+      "reward": 1.0,
+      "episodes": 5,
+      "cost_usd": 0.0116,
+      "observed": {
+        "decision": "sm_cut",
+        "q4_operating_profit_millions": -0.02
+      }
+    },
+    {
+      "task": "CIP-015",
+      "level": "L3",
+      "reward": 1.0,
+      "episodes": 5,
+      "cost_usd": 0.0167,
+      "observed": {
+        "decision": "no-go",
+        "cash_ebitda_margin_pct": "7.5 / 7.8"
+      }
+    }
+  ]
+}
