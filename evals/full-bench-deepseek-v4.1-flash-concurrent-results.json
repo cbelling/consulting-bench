@@ -1,0 +1,526 @@
+{
+  "job_name": "full-bench-deepseek-v4.1-flash-concurrent",
+  "finished_at": "2026-09-18T19:06:02.775190",
+  "environment": "modal",
+  "agent": "terminus-2",
+  "model": "openrouter/deepseek/deepseek-v4.1-flash",
+  "n_concurrent_trials": 20,
+  "n_trials": 50,
+  "n_pass": 45,
+  "n_fail": 5,
+  "n_errors": 0,
+  "mean_reward": 0.9,
+  "total_runtime_sec": 345,
+  "cost_usd": 0.9293456383999998,
+  "n_input_tokens": 1595173,
+  "n_output_tokens": 689815,
+  "failed_tasks": [
+    "CIP-032",
+    "CIP-052",
+    "CIP-054",
+    "CIP-075",
+    "CIP-091"
+  ],
+  "trials": [
+    {
+      "task": "CIP-003",
+      "level": "L2",
+      "reward": 1.0,
+      "episodes": 7,
+      "cost_usd": 0.021525046200000002,
+      "n_input_tokens": 23037,
+      "n_output_tokens": 17201,
+      "exception": null
+    },
+    {
+      "task": "CIP-005",
+      "level": "L2",
+      "reward": 1.0,
+      "episodes": 9,
+      "cost_usd": 0.024309207,
+      "n_input_tokens": 29101,
+      "n_output_tokens": 17788,
+      "exception": null
+    },
+    {
+      "task": "CIP-006",
+      "level": "L2",
+      "reward": 1.0,
+      "episodes": 5,
+      "cost_usd": 0.024535688400000002,
+      "n_input_tokens": 10088,
+      "n_output_tokens": 19887,
+      "exception": null
+    },
+    {
+      "task": "CIP-010",
+      "level": "L3",
+      "reward": 1.0,
+      "episodes": 5,
+      "cost_usd": 0.0175693266,
+      "n_input_tokens": 13165,
+      "n_output_tokens": 13563,
+      "exception": null
+    },
+    {
+      "task": "CIP-012",
+      "level": "L3",
+      "reward": 1.0,
+      "episodes": 5,
+      "cost_usd": 0.0078769668,
+      "n_input_tokens": 15398,
+      "n_output_tokens": 5663,
+      "exception": null
+    },
+    {
+      "task": "CIP-015",
+      "level": "L3",
+      "reward": 1.0,
+      "episodes": 5,
+      "cost_usd": 0.0186447684,
+      "n_input_tokens": 15814,
+      "n_output_tokens": 14095,
+      "exception": null
+    },
+    {
+      "task": "CIP-016",
+      "level": "L2",
+      "reward": 1.0,
+      "episodes": 8,
+      "cost_usd": 0.022024754400000002,
+      "n_input_tokens": 27640,
+      "n_output_tokens": 15985,
+      "exception": null
+    },
+    {
+      "task": "CIP-018",
+      "level": "L2",
+      "reward": 1.0,
+      "episodes": 9,
+      "cost_usd": 0.0197588904,
+      "n_input_tokens": 39920,
+      "n_output_tokens": 13593,
+      "exception": null
+    },
+    {
+      "task": "CIP-019",
+      "level": "L2",
+      "reward": 1.0,
+      "episodes": 12,
+      "cost_usd": 0.024286081200000004,
+      "n_input_tokens": 44394,
+      "n_output_tokens": 17167,
+      "exception": null
+    },
+    {
+      "task": "CIP-021",
+      "level": "L3",
+      "reward": 1.0,
+      "episodes": 5,
+      "cost_usd": 0.0072533868,
+      "n_input_tokens": 11722,
+      "n_output_tokens": 5251,
+      "exception": null
+    },
+    {
+      "task": "CIP-025",
+      "level": "L3",
+      "reward": 1.0,
+      "episodes": 5,
+      "cost_usd": 0.0098394426,
+      "n_input_tokens": 15313,
+      "n_output_tokens": 7343,
+      "exception": null
+    },
+    {
+      "task": "CIP-028",
+      "level": "L3",
+      "reward": 1.0,
+      "episodes": 5,
+      "cost_usd": 0.036564702000000004,
+      "n_input_tokens": 14286,
+      "n_output_tokens": 29914,
+      "exception": null
+    },
+    {
+      "task": "CIP-030",
+      "level": "L2",
+      "reward": 1.0,
+      "episodes": 8,
+      "cost_usd": 0.008486643200000001,
+      "n_input_tokens": 21841,
+      "n_output_tokens": 5808,
+      "exception": null
+    },
+    {
+      "task": "CIP-032",
+      "level": "L3",
+      "reward": 0.0,
+      "episodes": 5,
+      "cost_usd": 0.0192665586,
+      "n_input_tokens": 15417,
+      "n_output_tokens": 15116,
+      "exception": null
+    },
+    {
+      "task": "CIP-033",
+      "level": "L2",
+      "reward": 1.0,
+      "episodes": 5,
+      "cost_usd": 0.015387663,
+      "n_input_tokens": 11991,
+      "n_output_tokens": 12225,
+      "exception": null
+    },
+    {
+      "task": "CIP-034",
+      "level": "L2",
+      "reward": 1.0,
+      "episodes": 11,
+      "cost_usd": 0.0193212216,
+      "n_input_tokens": 58564,
+      "n_output_tokens": 11590,
+      "exception": null
+    },
+    {
+      "task": "CIP-038",
+      "level": "L3",
+      "reward": 1.0,
+      "episodes": 7,
+      "cost_usd": 0.0350111328,
+      "n_input_tokens": 20736,
+      "n_output_tokens": 28444,
+      "exception": null
+    },
+    {
+      "task": "CIP-040",
+      "level": "L2",
+      "reward": 1.0,
+      "episodes": 7,
+      "cost_usd": 0.01306668,
+      "n_input_tokens": 20240,
+      "n_output_tokens": 9538,
+      "exception": null
+    },
+    {
+      "task": "CIP-041",
+      "level": "L2",
+      "reward": 1.0,
+      "episodes": 6,
+      "cost_usd": 0.0106482612,
+      "n_input_tokens": 13286,
+      "n_output_tokens": 8277,
+      "exception": null
+    },
+    {
+      "task": "CIP-043",
+      "level": "L2",
+      "reward": 1.0,
+      "episodes": 5,
+      "cost_usd": 0.019394056200000002,
+      "n_input_tokens": 14557,
+      "n_output_tokens": 15631,
+      "exception": null
+    },
+    {
+      "task": "CIP-044",
+      "level": "L3",
+      "reward": 1.0,
+      "episodes": 5,
+      "cost_usd": 0.017021226,
+      "n_input_tokens": 12378,
+      "n_output_tokens": 13718,
+      "exception": null
+    },
+    {
+      "task": "CIP-050",
+      "level": "L3",
+      "reward": 1.0,
+      "episodes": 5,
+      "cost_usd": 0.009146037599999999,
+      "n_input_tokens": 12188,
+      "n_output_tokens": 6732,
+      "exception": null
+    },
+    {
+      "task": "CIP-052",
+      "level": "L3",
+      "reward": 0.0,
+      "episodes": 5,
+      "cost_usd": 0.0214011402,
+      "n_input_tokens": 14289,
+      "n_output_tokens": 17145,
+      "exception": null
+    },
+    {
+      "task": "CIP-053",
+      "level": "L2",
+      "reward": 1.0,
+      "episodes": 8,
+      "cost_usd": 0.020463307799999997,
+      "n_input_tokens": 25331,
+      "n_output_tokens": 16102,
+      "exception": null
+    },
+    {
+      "task": "CIP-054",
+      "level": "L1",
+      "reward": 0.0,
+      "episodes": 5,
+      "cost_usd": 0.0160103082,
+      "n_input_tokens": 11185,
+      "n_output_tokens": 12565,
+      "exception": null
+    },
+    {
+      "task": "CIP-055",
+      "level": "L3",
+      "reward": 1.0,
+      "episodes": 4,
+      "cost_usd": 0.0032826528,
+      "n_input_tokens": 8116,
+      "n_output_tokens": 2199,
+      "exception": null
+    },
+    {
+      "task": "CIP-057",
+      "level": "L2",
+      "reward": 1.0,
+      "episodes": 7,
+      "cost_usd": 0.014724570599999999,
+      "n_input_tokens": 16029,
+      "n_output_tokens": 11606,
+      "exception": null
+    },
+    {
+      "task": "CIP-059",
+      "level": "L2",
+      "reward": 1.0,
+      "episodes": 13,
+      "cost_usd": 0.0364495848,
+      "n_input_tokens": 125512,
+      "n_output_tokens": 23739,
+      "exception": null
+    },
+    {
+      "task": "CIP-062",
+      "level": "L3",
+      "reward": 1.0,
+      "episodes": 11,
+      "cost_usd": 0.0208108482,
+      "n_input_tokens": 52889,
+      "n_output_tokens": 14974,
+      "exception": null
+    },
+    {
+      "task": "CIP-063",
+      "level": "L1",
+      "reward": 1.0,
+      "episodes": 4,
+      "cost_usd": 0.0080256342,
+      "n_input_tokens": 10127,
+      "n_output_tokens": 6139,
+      "exception": null
+    },
+    {
+      "task": "CIP-064",
+      "level": "L2",
+      "reward": 1.0,
+      "episodes": 16,
+      "cost_usd": 0.029949578399999992,
+      "n_input_tokens": 166952,
+      "n_output_tokens": 16803,
+      "exception": null
+    },
+    {
+      "task": "CIP-066",
+      "level": "L3",
+      "reward": 1.0,
+      "episodes": 5,
+      "cost_usd": 0.0128365596,
+      "n_input_tokens": 16094,
+      "n_output_tokens": 9620,
+      "exception": null
+    },
+    {
+      "task": "CIP-067",
+      "level": "L2",
+      "reward": 1.0,
+      "episodes": 6,
+      "cost_usd": 0.0171707028,
+      "n_input_tokens": 14654,
+      "n_output_tokens": 13531,
+      "exception": null
+    },
+    {
+      "task": "CIP-070",
+      "level": "L3",
+      "reward": 1.0,
+      "episodes": 6,
+      "cost_usd": 0.021997861799999997,
+      "n_input_tokens": 19429,
+      "n_output_tokens": 16258,
+      "exception": null
+    },
+    {
+      "task": "CIP-075",
+      "level": "L1",
+      "reward": 0.0,
+      "episodes": 4,
+      "cost_usd": 0.0067557312,
+      "n_input_tokens": 9772,
+      "n_output_tokens": 4957,
+      "exception": null
+    },
+    {
+      "task": "CIP-076",
+      "level": "L2",
+      "reward": 1.0,
+      "episodes": 15,
+      "cost_usd": 0.0315995688,
+      "n_input_tokens": 113740,
+      "n_output_tokens": 21330,
+      "exception": null
+    },
+    {
+      "task": "CIP-077",
+      "level": "L2",
+      "reward": 1.0,
+      "episodes": 5,
+      "cost_usd": 0.0109592304,
+      "n_input_tokens": 10540,
+      "n_output_tokens": 8515,
+      "exception": null
+    },
+    {
+      "task": "CIP-079",
+      "level": "L3",
+      "reward": 1.0,
+      "episodes": 13,
+      "cost_usd": 0.027593985,
+      "n_input_tokens": 86901,
+      "n_output_tokens": 17376,
+      "exception": null
+    },
+    {
+      "task": "CIP-084",
+      "level": "L2",
+      "reward": 1.0,
+      "episodes": 11,
+      "cost_usd": 0.0292343244,
+      "n_input_tokens": 45881,
+      "n_output_tokens": 19973,
+      "exception": null
+    },
+    {
+      "task": "CIP-085",
+      "level": "L2",
+      "reward": 1.0,
+      "episodes": 14,
+      "cost_usd": 0.029275314,
+      "n_input_tokens": 106266,
+      "n_output_tokens": 18400,
+      "exception": null
+    },
+    {
+      "task": "CIP-087",
+      "level": "L3",
+      "reward": 1.0,
+      "episodes": 5,
+      "cost_usd": 0.016849906799999998,
+      "n_input_tokens": 12914,
+      "n_output_tokens": 12587,
+      "exception": null
+    },
+    {
+      "task": "CIP-089",
+      "level": "L1",
+      "reward": 1.0,
+      "episodes": 5,
+      "cost_usd": 0.006802208999999999,
+      "n_input_tokens": 12685,
+      "n_output_tokens": 4050,
+      "exception": null
+    },
+    {
+      "task": "CIP-090",
+      "level": "L2",
+      "reward": 1.0,
+      "episodes": 12,
+      "cost_usd": 0.027163042199999998,
+      "n_input_tokens": 56839,
+      "n_output_tokens": 19245,
+      "exception": null
+    },
+    {
+      "task": "CIP-091",
+      "level": "L2",
+      "reward": 0.0,
+      "episodes": 13,
+      "cost_usd": 0.0194441136,
+      "n_input_tokens": 72420,
+      "n_output_tokens": 12781,
+      "exception": null
+    },
+    {
+      "task": "CIP-093",
+      "level": "L3",
+      "reward": 1.0,
+      "episodes": 5,
+      "cost_usd": 0.004838114399999999,
+      "n_input_tokens": 11152,
+      "n_output_tokens": 2679,
+      "exception": null
+    },
+    {
+      "task": "CIP-096",
+      "level": "L3",
+      "reward": 1.0,
+      "episodes": 9,
+      "cost_usd": 0.0360220488,
+      "n_input_tokens": 28519,
+      "n_output_tokens": 33708,
+      "exception": null
+    },
+    {
+      "task": "CIP-097",
+      "level": "L2",
+      "reward": 1.0,
+      "episodes": 6,
+      "cost_usd": 0.008803251000000002,
+      "n_input_tokens": 15103,
+      "n_output_tokens": 5828,
+      "exception": null
+    },
+    {
+      "task": "CIP-098",
+      "level": "L1",
+      "reward": 1.0,
+      "episodes": 4,
+      "cost_usd": 0.0146663394,
+      "n_input_tokens": 12901,
+      "n_output_tokens": 11647,
+      "exception": null
+    },
+    {
+      "task": "CIP-099",
+      "level": "L3",
+      "reward": 1.0,
+      "episodes": 6,
+      "cost_usd": 0.008630199,
+      "n_input_tokens": 15955,
+      "n_output_tokens": 6404,
+      "exception": null
+    },
+    {
+      "task": "CIP-100",
+      "level": "L2",
+      "reward": 1.0,
+      "episodes": 10,
+      "cost_usd": 0.026647769999999998,
+      "n_input_tokens": 41902,
+      "n_output_tokens": 25125,
+      "exception": null
+    }
+  ]
+}
