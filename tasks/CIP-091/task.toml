@@ -1,10 +1,10 @@
 schema_version = "1.4"
 
 [task]
-name = "management-consulting-bench/cip-091"
+name = "consulting-bench/cip-091"
 version = "1.0.0"
 description = "SaaS freemium response"
-authors = [{ name = "Management Consulting Bench", email = "bench@example.com" }]
+authors = [{ name = "Consulting Bench", email = "bench@example.com" }]
 keywords = ["consulting", "management-consulting", "l2", "partner-delegated", "frontier-probe"]
 
 [metadata]

@@ -26,10 +26,10 @@ TASK_TOML = """\
 schema_version = "1.4"
 
 [task]
-name = "management-consulting-bench/{task_id_lower}"
+name = "consulting-bench/{task_id_lower}"
 version = "1.0.0"
 description = "{description}"
-authors = [{{ name = "Management Consulting Bench", email = "bench@example.com" }}]
+authors = [{{ name = "Consulting Bench", email = "bench@example.com" }}]
 keywords = ["consulting", "management-consulting", "l3", "partner-delegated", "frontier-probe"]
 
 [metadata]

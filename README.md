@@ -1,4 +1,4 @@
-# Management Consulting Bench
+# Consulting Bench
 
 Harbor-runnable **partner-memo** tasks for management consulting workflows (market sizing, profitability, pricing, investment decisions). Each task is a partner email to an associate: read a synthetic matter pack, write a one-page memo, and emit a checkable JSON sidecar.
 
