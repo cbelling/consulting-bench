@@ -1,7 +1,7 @@
 {
   "job_name": "hardened-v1-grok-4.6-concurrent",
   "n_attempts": 1,
-  "n_concurrent_trials": 20,
+  "n_concurrent_trials": 8,
   "environment": {
     "type": "modal"
   },

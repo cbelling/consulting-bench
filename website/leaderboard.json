@@ -10,7 +10,7 @@
   "environment": "modal",
   "agent": "terminus-2",
   "n_concurrent_trials": 20,
-  "updated_at": "2026-09-18T22:54:44.964102+00:00",
+  "updated_at": "2026-09-18T23:02:09.002273+00:00",
   "cost_estimate": {
     "method": "Scale DeepSeek V4.1 Flash hardened-v1 token volume to OpenRouter list prices, plus ~$1 Modal per 50-task pass.",
     "baseline_job": "hardened-v1-deepseek-v4.1-flash-concurrent",
@@ -19,8 +19,8 @@
       "output": 562730
     },
     "modal_usd_per_pass": 1.0,
-    "four_flagships_expected_usd": 37.0,
-    "four_flagships_upper_usd": 62.0,
+    "four_flagships_expected_usd": 33.0,
+    "four_flagships_upper_usd": 55.0,
     "notes": "Expected band is about $35\u201345 if token volume stays near the DeepSeek baseline. Upper band is about $70 if thinking models emit ~2\u00d7 output tokens."
   },
   "models": [
@@ -821,18 +821,18 @@
       ]
     },
     {
-      "id": "claude-sonnet-5",
-      "display": "Claude Sonnet 5",
+      "id": "claude-haiku-4.5",
+      "display": "Claude Haiku 4.5",
       "lab": "Anthropic",
-      "openrouter": "openrouter/anthropic/claude-sonnet-5",
+      "openrouter": "openrouter/anthropic/claude-haiku-4.5",
       "role": "flagship",
-      "job_name": "hardened-v1-claude-sonnet-5-concurrent",
+      "job_name": "hardened-v1-claude-haiku-4.5-concurrent",
       "list_price_usd_per_m": {
-        "input": 2.0,
-        "output": 10.0
+        "input": 1.0,
+        "output": 5.0
       },
-      "estimated_llm_usd": 7.78,
-      "estimated_llm_usd_2x_output": 13.41,
+      "estimated_llm_usd": 3.89,
+      "estimated_llm_usd_2x_output": 6.7,
       "status": "pending"
     },
     {
@@ -874,7 +874,7 @@
       "results": {
         "deepseek-v4.1-flash": 1,
         "gpt-5.4": 1,
-        "claude-sonnet-5": null,
+        "claude-haiku-4.5": null,
         "gemini-3.1-pro": null,
         "grok-4.6": null
       }
@@ -886,7 +886,7 @@
       "results": {
         "deepseek-v4.1-flash": 1,
         "gpt-5.4": 1,
-        "claude-sonnet-5": null,
+        "claude-haiku-4.5": null,
         "gemini-3.1-pro": null,
         "grok-4.6": null
       }
@@ -898,7 +898,7 @@
       "results": {
         "deepseek-v4.1-flash": 1,
         "gpt-5.4": 1,
-        "claude-sonnet-5": null,
+        "claude-haiku-4.5": null,
         "gemini-3.1-pro": null,
         "grok-4.6": null
       }
@@ -910,7 +910,7 @@
       "results": {
         "deepseek-v4.1-flash": 0,
         "gpt-5.4": 1,
-        "claude-sonnet-5": null,
+        "claude-haiku-4.5": null,
         "gemini-3.1-pro": null,
         "grok-4.6": null
       }
@@ -922,7 +922,7 @@
       "results": {
         "deepseek-v4.1-flash": 1,
         "gpt-5.4": 1,
-        "claude-sonnet-5": null,
+        "claude-haiku-4.5": null,
         "gemini-3.1-pro": null,
         "grok-4.6": null
       }
@@ -934,7 +934,7 @@
       "results": {
         "deepseek-v4.1-flash": 1,
         "gpt-5.4": 0,
-        "claude-sonnet-5": null,
+        "claude-haiku-4.5": null,
         "gemini-3.1-pro": null,
         "grok-4.6": null
       }
@@ -946,7 +946,7 @@
       "results": {
         "deepseek-v4.1-flash": 1,
         "gpt-5.4": 0,
-        "claude-sonnet-5": null,
+        "claude-haiku-4.5": null,
         "gemini-3.1-pro": null,
         "grok-4.6": null
       }
@@ -958,7 +958,7 @@
       "results": {
         "deepseek-v4.1-flash": 0,
         "gpt-5.4": 0,
-        "claude-sonnet-5": null,
+        "claude-haiku-4.5": null,
         "gemini-3.1-pro": null,
         "grok-4.6": null
       }
@@ -970,7 +970,7 @@
       "results": {
         "deepseek-v4.1-flash": 0,
         "gpt-5.4": 0,
-        "claude-sonnet-5": null,
+        "claude-haiku-4.5": null,
         "gemini-3.1-pro": null,
         "grok-4.6": null
       }
@@ -982,7 +982,7 @@
       "results": {
         "deepseek-v4.1-flash": 1,
         "gpt-5.4": 1,
-        "claude-sonnet-5": null,
+        "claude-haiku-4.5": null,
         "gemini-3.1-pro": null,
         "grok-4.6": null
       }
@@ -994,7 +994,7 @@
       "results": {
         "deepseek-v4.1-flash": 1,
         "gpt-5.4": 1,
-        "claude-sonnet-5": null,
+        "claude-haiku-4.5": null,
         "gemini-3.1-pro": null,
         "grok-4.6": null
       }
@@ -1006,7 +1006,7 @@
       "results": {
         "deepseek-v4.1-flash": 0,
         "gpt-5.4": 0,
-        "claude-sonnet-5": null,
+        "claude-haiku-4.5": null,
         "gemini-3.1-pro": null,
         "grok-4.6": null
       }
@@ -1018,7 +1018,7 @@
       "results": {
         "deepseek-v4.1-flash": 1,
         "gpt-5.4": 1,
-        "claude-sonnet-5": null,
+        "claude-haiku-4.5": null,
         "gemini-3.1-pro": null,
         "grok-4.6": null
       }
@@ -1030,7 +1030,7 @@
       "results": {
         "deepseek-v4.1-flash": 0,
         "gpt-5.4": 0,
-        "claude-sonnet-5": null,
+        "claude-haiku-4.5": null,
         "gemini-3.1-pro": null,
         "grok-4.6": null
       }
@@ -1042,7 +1042,7 @@
       "results": {
         "deepseek-v4.1-flash": 1,
         "gpt-5.4": 0,
-        "claude-sonnet-5": null,
+        "claude-haiku-4.5": null,
         "gemini-3.1-pro": null,
         "grok-4.6": null
       }
@@ -1054,7 +1054,7 @@
       "results": {
         "deepseek-v4.1-flash": 0,
         "gpt-5.4": 0,
-        "claude-sonnet-5": null,
+        "claude-haiku-4.5": null,
         "gemini-3.1-pro": null,
         "grok-4.6": null
       }
@@ -1066,7 +1066,7 @@
       "results": {
         "deepseek-v4.1-flash": 0,
         "gpt-5.4": 1,
-        "claude-sonnet-5": null,
+        "claude-haiku-4.5": null,
         "gemini-3.1-pro": null,
         "grok-4.6": null
       }
@@ -1078,7 +1078,7 @@
       "results": {
         "deepseek-v4.1-flash": 0,
         "gpt-5.4": 0,
-        "claude-sonnet-5": null,
+        "claude-haiku-4.5": null,
         "gemini-3.1-pro": null,
         "grok-4.6": null
       }
@@ -1090,7 +1090,7 @@
       "results": {
         "deepseek-v4.1-flash": 1,
         "gpt-5.4": 1,
-        "claude-sonnet-5": null,
+        "claude-haiku-4.5": null,
         "gemini-3.1-pro": null,
         "grok-4.6": null
       }
@@ -1102,7 +1102,7 @@
       "results": {
         "deepseek-v4.1-flash": 0,
         "gpt-5.4": 0,
-        "claude-sonnet-5": null,
+        "claude-haiku-4.5": null,
         "gemini-3.1-pro": null,
         "grok-4.6": null
       }
@@ -1114,7 +1114,7 @@
       "results": {
         "deepseek-v4.1-flash": 0,
         "gpt-5.4": 0,
-        "claude-sonnet-5": null,
+        "claude-haiku-4.5": null,
         "gemini-3.1-pro": null,
         "grok-4.6": null
       }
@@ -1126,7 +1126,7 @@
       "results": {
         "deepseek-v4.1-flash": 0,
         "gpt-5.4": 0,
-        "claude-sonnet-5": null,
+        "claude-haiku-4.5": null,
         "gemini-3.1-pro": null,
         "grok-4.6": null
       }
@@ -1138,7 +1138,7 @@
       "results": {
         "deepseek-v4.1-flash": 0,
         "gpt-5.4": 0,
-        "claude-sonnet-5": null,
+        "claude-haiku-4.5": null,
         "gemini-3.1-pro": null,
         "grok-4.6": null
       }
@@ -1150,7 +1150,7 @@
       "results": {
         "deepseek-v4.1-flash": 1,
         "gpt-5.4": 1,
-        "claude-sonnet-5": null,
+        "claude-haiku-4.5": null,
         "gemini-3.1-pro": null,
         "grok-4.6": null
       }
@@ -1162,7 +1162,7 @@
       "results": {
         "deepseek-v4.1-flash": 0,
         "gpt-5.4": 1,
-        "claude-sonnet-5": null,
+        "claude-haiku-4.5": null,
         "gemini-3.1-pro": null,
         "grok-4.6": null
       }
@@ -1174,7 +1174,7 @@
       "results": {
         "deepseek-v4.1-flash": 1,
         "gpt-5.4": 1,
-        "claude-sonnet-5": null,
+        "claude-haiku-4.5": null,
         "gemini-3.1-pro": null,
         "grok-4.6": null
       }
@@ -1186,7 +1186,7 @@
       "results": {
         "deepseek-v4.1-flash": 0,
         "gpt-5.4": 0,
-        "claude-sonnet-5": null,
+        "claude-haiku-4.5": null,
         "gemini-3.1-pro": null,
         "grok-4.6": null
       }
@@ -1198,7 +1198,7 @@
       "results": {
         "deepseek-v4.1-flash": 0,
         "gpt-5.4": 1,
-        "claude-sonnet-5": null,
+        "claude-haiku-4.5": null,
         "gemini-3.1-pro": null,
         "grok-4.6": null
       }
@@ -1210,7 +1210,7 @@
       "results": {
         "deepseek-v4.1-flash": 0,
         "gpt-5.4": 0,
-        "claude-sonnet-5": null,
+        "claude-haiku-4.5": null,
         "gemini-3.1-pro": null,
         "grok-4.6": null
       }
@@ -1222,7 +1222,7 @@
       "results": {
         "deepseek-v4.1-flash": 1,
         "gpt-5.4": 1,
-        "claude-sonnet-5": null,
+        "claude-haiku-4.5": null,
         "gemini-3.1-pro": null,
         "grok-4.6": null
       }
@@ -1234,7 +1234,7 @@
       "results": {
         "deepseek-v4.1-flash": 0,
         "gpt-5.4": 0,
-        "claude-sonnet-5": null,
+        "claude-haiku-4.5": null,
         "gemini-3.1-pro": null,
         "grok-4.6": null
       }
@@ -1246,7 +1246,7 @@
       "results": {
         "deepseek-v4.1-flash": 0,
         "gpt-5.4": 1,
-        "claude-sonnet-5": null,
+        "claude-haiku-4.5": null,
         "gemini-3.1-pro": null,
         "grok-4.6": null
       }
@@ -1258,7 +1258,7 @@
       "results": {
         "deepseek-v4.1-flash": 1,
         "gpt-5.4": 1,
-        "claude-sonnet-5": null,
+        "claude-haiku-4.5": null,
         "gemini-3.1-pro": null,
         "grok-4.6": null
       }
@@ -1270,7 +1270,7 @@
       "results": {
         "deepseek-v4.1-flash": 1,
         "gpt-5.4": 1,
-        "claude-sonnet-5": null,
+        "claude-haiku-4.5": null,
         "gemini-3.1-pro": null,
         "grok-4.6": null
       }
@@ -1282,7 +1282,7 @@
       "results": {
         "deepseek-v4.1-flash": 0,
         "gpt-5.4": 0,
-        "claude-sonnet-5": null,
+        "claude-haiku-4.5": null,
         "gemini-3.1-pro": null,
         "grok-4.6": null
       }
@@ -1294,7 +1294,7 @@
       "results": {
         "deepseek-v4.1-flash": 1,
         "gpt-5.4": 0,
-        "claude-sonnet-5": null,
+        "claude-haiku-4.5": null,
         "gemini-3.1-pro": null,
         "grok-4.6": null
       }
@@ -1306,7 +1306,7 @@
       "results": {
         "deepseek-v4.1-flash": 1,
         "gpt-5.4": 1,
-        "claude-sonnet-5": null,
+        "claude-haiku-4.5": null,
         "gemini-3.1-pro": null,
         "grok-4.6": null
       }
@@ -1318,7 +1318,7 @@
       "results": {
         "deepseek-v4.1-flash": 1,
         "gpt-5.4": 1,
-        "claude-sonnet-5": null,
+        "claude-haiku-4.5": null,
         "gemini-3.1-pro": null,
         "grok-4.6": null
       }
@@ -1330,7 +1330,7 @@
       "results": {
         "deepseek-v4.1-flash": 1,
         "gpt-5.4": 0,
-        "claude-sonnet-5": null,
+        "claude-haiku-4.5": null,
         "gemini-3.1-pro": null,
         "grok-4.6": null
       }
@@ -1342,7 +1342,7 @@
       "results": {
         "deepseek-v4.1-flash": 0,
         "gpt-5.4": 1,
-        "claude-sonnet-5": null,
+        "claude-haiku-4.5": null,
         "gemini-3.1-pro": null,
         "grok-4.6": null
       }
@@ -1354,7 +1354,7 @@
       "results": {
         "deepseek-v4.1-flash": 1,
         "gpt-5.4": 1,
-        "claude-sonnet-5": null,
+        "claude-haiku-4.5": null,
         "gemini-3.1-pro": null,
         "grok-4.6": null
       }
@@ -1366,7 +1366,7 @@
       "results": {
         "deepseek-v4.1-flash": 1,
         "gpt-5.4": 1,
-        "claude-sonnet-5": null,
+        "claude-haiku-4.5": null,
         "gemini-3.1-pro": null,
         "grok-4.6": null
       }
@@ -1378,7 +1378,7 @@
       "results": {
         "deepseek-v4.1-flash": 0,
         "gpt-5.4": 1,
-        "claude-sonnet-5": null,
+        "claude-haiku-4.5": null,
         "gemini-3.1-pro": null,
         "grok-4.6": null
       }
@@ -1390,7 +1390,7 @@
       "results": {
         "deepseek-v4.1-flash": 1,
         "gpt-5.4": 0,
-        "claude-sonnet-5": null,
+        "claude-haiku-4.5": null,
         "gemini-3.1-pro": null,
         "grok-4.6": null
       }
@@ -1402,7 +1402,7 @@
       "results": {
         "deepseek-v4.1-flash": 1,
         "gpt-5.4": 1,
-        "claude-sonnet-5": null,
+        "claude-haiku-4.5": null,
         "gemini-3.1-pro": null,
         "grok-4.6": null
       }
@@ -1414,7 +1414,7 @@
       "results": {
         "deepseek-v4.1-flash": 0,
         "gpt-5.4": 0,
-        "claude-sonnet-5": null,
+        "claude-haiku-4.5": null,
         "gemini-3.1-pro": null,
         "grok-4.6": null
       }
@@ -1426,7 +1426,7 @@
       "results": {
         "deepseek-v4.1-flash": 0,
         "gpt-5.4": 0,
-        "claude-sonnet-5": null,
+        "claude-haiku-4.5": null,
         "gemini-3.1-pro": null,
         "grok-4.6": null
       }
@@ -1438,7 +1438,7 @@
       "results": {
         "deepseek-v4.1-flash": 1,
         "gpt-5.4": 1,
-        "claude-sonnet-5": null,
+        "claude-haiku-4.5": null,
         "gemini-3.1-pro": null,
         "grok-4.6": null
       }
@@ -1450,7 +1450,7 @@
       "results": {
         "deepseek-v4.1-flash": 1,
         "gpt-5.4": 1,
-        "claude-sonnet-5": null,
+        "claude-haiku-4.5": null,
         "gemini-3.1-pro": null,
         "grok-4.6": null
       }
@@ -1462,7 +1462,7 @@
       "results": {
         "deepseek-v4.1-flash": 0,
         "gpt-5.4": 0,
-        "claude-sonnet-5": null,
+        "claude-haiku-4.5": null,
         "gemini-3.1-pro": null,
         "grok-4.6": null
       }

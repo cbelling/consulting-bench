@@ -50,21 +50,21 @@ Hardened-v1: 0 errors; all 24 fails still have a passing local oracle. Pre-harde
 
 ## Multi-model leaderboard
 
-Website-ready scores live in `website/leaderboard.json` (static page: `website/index.html`). The cheap-model baseline is DeepSeek V4.1 Flash at **26/50**. One concurrent Modal pass each for four lab flagships:
+Website-ready scores live in `website/leaderboard.json` (static page: `website/index.html`). The cheap-model baseline is DeepSeek V4.1 Flash at **26/50**. One concurrent Modal pass each for the other four comparison models (Anthropic slot is **Haiku**, not Sonnet):
 
 | Model | OpenRouter slug | List $/1M in/out | Est. LLM | Est. 2× out |
 |-------|-----------------|------------------|----------|-------------|
 | GPT-5.4 | `openai/gpt-5.4` | $2.50 / $15 | ~$11 | ~$20 |
-| Claude Sonnet 5 | `anthropic/claude-sonnet-5` | $2 / $10 | ~$8 | ~$13 |
+| Claude Haiku 4.5 | `anthropic/claude-haiku-4.5` | $1 / $5 | ~$4 | ~$7 |
 | Gemini 3.1 Pro | `google/gemini-3.1-pro-preview` | $2 / $12 | ~$9 | ~$16 |
 | Grok 4.6 | `x-ai/grok-4.6` | $2 / $6 | ~$6 | ~$9 |
 
-Cost method: scale the DeepSeek hardened-v1 token volume (1.077M in / 0.563M out, $0.73 actual) to OpenRouter list prices, plus ~$1 Modal per pass. **Four flagship passes: about $35–45 expected, about $70 if thinking models emit ~2× output tokens.** Run one model at a time (`n=20`), not four jobs in parallel:
+Cost method: scale the DeepSeek hardened-v1 token volume (1.077M in / 0.563M out, $0.73 actual) to OpenRouter list prices, plus ~$1 Modal per pass. **Four comparison passes: about $30–40 expected on the DeepSeek token baseline; GPT-5.4 actually used far fewer tokens ($2.14), so the remaining three may land closer to a few dollars each.** Run one model at a time (default `n=8`):
 
 ```bash
-bash scripts/run_four_model_pass.sh              # all four, sequential
-bash scripts/run_four_model_pass.sh gpt-5.4      # one model
-python3 scripts/build_leaderboard.py             # refresh website/leaderboard.json
+bash scripts/run_four_model_pass.sh                    # all four, sequential
+bash scripts/run_four_model_pass.sh claude-haiku-4.5   # one model
+python3 scripts/build_leaderboard.py                   # refresh website/leaderboard.json
 ```
 
 ## Catalog

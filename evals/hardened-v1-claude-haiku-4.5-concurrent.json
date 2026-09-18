@@ -1,14 +1,14 @@
 {
-  "job_name": "hardened-v1-claude-sonnet-5-concurrent",
+  "job_name": "hardened-v1-claude-haiku-4.5-concurrent",
   "n_attempts": 1,
-  "n_concurrent_trials": 20,
+  "n_concurrent_trials": 8,
   "environment": {
     "type": "modal"
   },
   "agents": [
     {
       "name": "terminus-2",
-      "model_name": "openrouter/anthropic/claude-sonnet-5",
+      "model_name": "openrouter/anthropic/claude-haiku-4.5",
       "kwargs": {
         "max_turns": 30,
         "record_terminal_session": false,

@@ -1,7 +1,7 @@
 {
   "job_name": "hardened-v1-gemini-3.1-pro-concurrent",
   "n_attempts": 1,
-  "n_concurrent_trials": 20,
+  "n_concurrent_trials": 8,
   "environment": {
     "type": "modal"
   },

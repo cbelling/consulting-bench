@@ -1,8 +1,10 @@
 #!/usr/bin/env bash
-# One hardened Partner-50 pass per flagship model. Sequential jobs, 20 Modal sandboxes each.
+# One hardened Partner-50 pass per comparison model. Sequential jobs.
+# Default n=8 to stay under OpenRouter in-flight credit caps.
 # Usage:
-#   bash scripts/run_four_model_pass.sh              # all four
-#   bash scripts/run_four_model_pass.sh gpt-5.4      # one model
+#   bash scripts/run_four_model_pass.sh                 # all four
+#   bash scripts/run_four_model_pass.sh claude-haiku-4.5
+#   N_CONCURRENT=8 bash scripts/run_four_model_pass.sh gemini-3.1-pro
 set -euo pipefail
 
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
@@ -29,19 +31,21 @@ JOBS_DIR="${JOBS_DIR:-$ROOT/jobs}"
 
 declare -A CONFIGS=(
   [gpt-5.4]="$ROOT/evals/hardened-v1-gpt-5.4-concurrent.json"
-  [claude-sonnet-5]="$ROOT/evals/hardened-v1-claude-sonnet-5-concurrent.json"
+  [claude-haiku-4.5]="$ROOT/evals/hardened-v1-claude-haiku-4.5-concurrent.json"
   [gemini-3.1-pro]="$ROOT/evals/hardened-v1-gemini-3.1-pro-concurrent.json"
   [grok-4.6]="$ROOT/evals/hardened-v1-grok-4.6-concurrent.json"
 )
 
 declare -A JOB_NAMES=(
   [gpt-5.4]="hardened-v1-gpt-5.4-concurrent"
-  [claude-sonnet-5]="hardened-v1-claude-sonnet-5-concurrent"
+  [claude-haiku-4.5]="hardened-v1-claude-haiku-4.5-concurrent"
   [gemini-3.1-pro]="hardened-v1-gemini-3.1-pro-concurrent"
   [grok-4.6]="hardened-v1-grok-4.6-concurrent"
 )
 
-MODELS=("gpt-5.4" "claude-sonnet-5" "gemini-3.1-pro" "grok-4.6")
+N_CONCURRENT="${N_CONCURRENT:-8}"
+
+MODELS=("gpt-5.4" "claude-haiku-4.5" "gemini-3.1-pro" "grok-4.6")
 if [[ $# -gt 0 ]]; then
   MODELS=("$@")
 fi
@@ -51,17 +55,17 @@ for key in "${MODELS[@]}"; do
   job="${JOB_NAMES[$key]:-}"
   if [[ -z "$config" || -z "$job" ]]; then
     echo "Unknown model key: $key"
-    echo "Expected one of: gpt-5.4 claude-sonnet-5 gemini-3.1-pro grok-4.6"
+    echo "Expected one of: gpt-5.4 claude-haiku-4.5 gemini-3.1-pro grok-4.6"
     exit 2
   fi
 
-  echo "=== $job ==="
+  echo "=== $job (n=${N_CONCURRENT}) ==="
   harbor run \
     --config "$config" \
     -e modal \
     -o "$JOBS_DIR" \
     --job-name "$job" \
-    -n 20 \
+    -n "$N_CONCURRENT" \
     -y
 
   python3 "$ROOT/scripts/summarize_harbor_job.py" "$JOBS_DIR/$job"
