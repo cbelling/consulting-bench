@@ -1,0 +1,16 @@
+# Harbor config: run every Partner-50 oracle locally (Docker).
+#
+#   harbor run -c configs/oracle.yaml
+#
+job_name: consulting-bench-oracle
+n_attempts: 1
+n_concurrent_trials: 4
+
+environment:
+  type: docker
+
+agents:
+  - name: oracle
+
+datasets:
+  - path: tasks

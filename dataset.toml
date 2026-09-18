@@ -1,0 +1,159 @@
+# Dataset manifest for consulting-bench/consulting-bench
+# Local runs: harbor run -p tasks
+# Pin task digests before publishing: harbor add tasks/ --to dataset.toml
+
+[dataset]
+name = "consulting-bench/consulting-bench"
+description = "Partner-memo tasks for management consulting workflows: market sizing, profitability, pricing, and investment decisions. Each task is a partner email, a synthetic matter pack, a one-page memo, and a checkable JSON sidecar."
+authors = [{ name = "Consulting Bench Authors" }]
+keywords = ["consulting", "management-consulting", "partner-memo", "harbor"]
+
+[[tasks]]
+name = "management-consulting-bench/cip-003"
+
+[[tasks]]
+name = "management-consulting-bench/cip-005"
+
+[[tasks]]
+name = "management-consulting-bench/cip-006"
+
+[[tasks]]
+name = "management-consulting-bench/cip-010"
+
+[[tasks]]
+name = "management-consulting-bench/cip-012"
+
+[[tasks]]
+name = "management-consulting-bench/cip-015"
+
+[[tasks]]
+name = "management-consulting-bench/cip-016"
+
+[[tasks]]
+name = "management-consulting-bench/cip-018"
+
+[[tasks]]
+name = "management-consulting-bench/cip-019"
+
+[[tasks]]
+name = "management-consulting-bench/cip-021"
+
+[[tasks]]
+name = "management-consulting-bench/cip-025"
+
+[[tasks]]
+name = "management-consulting-bench/cip-028"
+
+[[tasks]]
+name = "management-consulting-bench/cip-030"
+
+[[tasks]]
+name = "management-consulting-bench/cip-032"
+
+[[tasks]]
+name = "management-consulting-bench/cip-033"
+
+[[tasks]]
+name = "management-consulting-bench/cip-034"
+
+[[tasks]]
+name = "management-consulting-bench/cip-038"
+
+[[tasks]]
+name = "management-consulting-bench/cip-040"
+
+[[tasks]]
+name = "management-consulting-bench/cip-041"
+
+[[tasks]]
+name = "management-consulting-bench/cip-043"
+
+[[tasks]]
+name = "management-consulting-bench/cip-044"
+
+[[tasks]]
+name = "management-consulting-bench/cip-050"
+
+[[tasks]]
+name = "management-consulting-bench/cip-052"
+
+[[tasks]]
+name = "management-consulting-bench/cip-053"
+
+[[tasks]]
+name = "management-consulting-bench/cip-054"
+
+[[tasks]]
+name = "management-consulting-bench/cip-055"
+
+[[tasks]]
+name = "management-consulting-bench/cip-057"
+
+[[tasks]]
+name = "management-consulting-bench/cip-059"
+
+[[tasks]]
+name = "management-consulting-bench/cip-062"
+
+[[tasks]]
+name = "management-consulting-bench/cip-063"
+
+[[tasks]]
+name = "management-consulting-bench/cip-064"
+
+[[tasks]]
+name = "management-consulting-bench/cip-066"
+
+[[tasks]]
+name = "management-consulting-bench/cip-067"
+
+[[tasks]]
+name = "management-consulting-bench/cip-070"
+
+[[tasks]]
+name = "management-consulting-bench/cip-075"
+
+[[tasks]]
+name = "management-consulting-bench/cip-076"
+
+[[tasks]]
+name = "management-consulting-bench/cip-077"
+
+[[tasks]]
+name = "management-consulting-bench/cip-079"
+
+[[tasks]]
+name = "management-consulting-bench/cip-084"
+
+[[tasks]]
+name = "management-consulting-bench/cip-085"
+
+[[tasks]]
+name = "management-consulting-bench/cip-087"
+
+[[tasks]]
+name = "management-consulting-bench/cip-089"
+
+[[tasks]]
+name = "management-consulting-bench/cip-090"
+
+[[tasks]]
+name = "management-consulting-bench/cip-091"
+
+[[tasks]]
+name = "management-consulting-bench/cip-093"
+
+[[tasks]]
+name = "management-consulting-bench/cip-096"
+
+[[tasks]]
+name = "management-consulting-bench/cip-097"
+
+[[tasks]]
+name = "management-consulting-bench/cip-098"
+
+[[tasks]]
+name = "management-consulting-bench/cip-099"
+
+[[tasks]]
+name = "management-consulting-bench/cip-100"
