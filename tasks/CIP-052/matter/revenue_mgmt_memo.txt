@@ -1,0 +1,9 @@
+SkyWing Bag Fee — Revenue Management Memo
+=========================================
+Proposed: $30 → $40 (+33.3% price change)
+Base bags: 8.0M/yr | Passengers: 20.0M | VC/bag: $6
+
+Optimistic (marketing): ε = −0.4, spill = 0.5% of pax
+Pessimistic (RM): ε = −1.0, spill = 1.2% of pax
+
+Spill cost = spill% × passengers × $40 pax contribution

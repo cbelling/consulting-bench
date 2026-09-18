@@ -1,0 +1,7 @@
+US Fitness App Market — Synthetic Facts
+=======================================
+US population: 200 million (addressable adult base for this case)
+Smartphone ownership among adults: 90%
+Adults interested in fitness apps: 40% of smartphone owners
+Conversion to paid subscription: 12% of interested users
+Expected answer band: 6 – 12 million subscribers

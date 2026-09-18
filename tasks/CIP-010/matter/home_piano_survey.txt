@@ -1,0 +1,12 @@
+MusicBridge Home Piano Survey Results
+======================================
+Survey date: Q2 2024
+Sample: 2,400 US households with pianos
+
+Key findings:
+- Estimated US pianos in homes: **10.0 million**
+- Piano owners who tune ≥1 time per year: 40%
+- Among those who tune, average tunings per year: 1.2
+- Piano owners who never tune: 60%
+
+Note: Survey validation callback suggests 1.2 avg may be LOW — piano teachers in sample reported 2.0 tunings/year but represent only 8% of tuning households.

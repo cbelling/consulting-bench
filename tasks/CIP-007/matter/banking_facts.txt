@@ -1,0 +1,7 @@
+US Checking Account Openings — Synthetic Facts
+==============================================
+Stock of existing checking relationships (proxy population): 260 million
+Annual relationship turnover / re-open rate factor: 95% of stock evaluated
+Average accounts per adult adjusting for multi-account households: 1.3
+Share of evaluated base opening a new checking account this year: 8%
+Expected answer band: 20 – 32 million openings

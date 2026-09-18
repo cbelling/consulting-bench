@@ -1,0 +1,11 @@
+US Golf Participation Data — National Golf Foundation
+=====================================================
+Annual data (most recent full year):
+
+Total US golf rounds played: **500 million rounds per year**
+
+Breakdown by venue:
+- Golf course rounds: **400 million** (80%)
+- Driving range only (no course play): **100 million** (20%)
+
+Note: Range-only visits do NOT result in course ball loss (no water hazards, woods, etc.). Range balls are typically not taken home and are not "lost" in the traditional sense—they are consumed/destroyed on-site.

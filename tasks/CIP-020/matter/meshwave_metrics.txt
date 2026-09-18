@@ -1,0 +1,8 @@
+MeshWave — Synthetic SaaS Metrics
+=================================
+Monthly logo churn: 4.2% (up from 2.1% prior year)
+Blended CAC: $1,050 (flat YoY)
+Gross margin: 78% (stable)
+New ARR per AE: $420K (stable)
+Customer count: 2,400 (flat despite increased spend)
+Diagnosis hint: unit cost of acquisition is NOT the problem.

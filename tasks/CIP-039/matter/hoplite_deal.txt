@@ -1,0 +1,7 @@
+HopLite Acquisition — Synthetic Teaser
+======================================
+LTM EBITDA: $80 million
+Net debt: $120 million
+Equity value implied at 5.5x EBITDA multiple on EV basis: use standard EV = EBITDA * multiple
+Seller ask (equity check framing in case): $400 million equity check vs EV of $560M
+Comparable transaction multiple provided: 7.0x EBITDA

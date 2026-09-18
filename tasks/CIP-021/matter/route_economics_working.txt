@@ -1,0 +1,16 @@
+Zone C — True Contribution per Stop (WORKING)
+=============================================
+Revenue per stop: $5.20
+
+Driver cost per stop (actual density):
+  $36/hr ÷ 18 stops/hr = **$2.00/stop**
+
+Redelivery cost per stop (blended):
+  35% failed × $4.00/redelivery = **$1.40/stop**
+
+True contribution per stop:
+  $5.20 − $2.00 − $1.40 = **$1.40/stop**
+
+Hurdle: ≥$1.50/stop after redelivery → **FAIL** → exit Zone C
+
+(If you wrongly use 28 stops/hr: $36/28 = $1.29/stop → $5.20 − $1.29 − $1.40 = $2.51 — looks fine but WRONG)

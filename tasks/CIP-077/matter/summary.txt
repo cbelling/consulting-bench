@@ -1,0 +1,1 @@
+Case: Bank BNPL feature\nCategory: new-product\nDifficulty: l2

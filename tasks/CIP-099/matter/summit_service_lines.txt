@@ -1,0 +1,21 @@
+Summit Health — Service Line P&L (synthetic)
+============================================
+
+ALLOCATED P&L (misleading):
+  Cardiology: −$20M (allocated overhead heavy)
+  Orthopedics: −$35M
+
+TRUE CONTRIBUTION (after direct costs only):
+  Cardiology: **+$15M** true contribution
+  Orthopedics: **−$8M** true contribution
+
+Fixed hospital costs (stick regardless): **$50M**
+
+Portfolio actions:
+  - KEEP cardiology (true +$15M)
+  - CLOSE or fix orthopedics (true −$8M)
+  - If ortho closed: capacity for expansion worth **+$10M**
+
+⚠️ Allocated P&L shows cardio −$20M — **allocation trap**; do not close cardio.
+
+Net improvement from close ortho + expand: recover $8M + $10M expansion = +$18M vs status quo.

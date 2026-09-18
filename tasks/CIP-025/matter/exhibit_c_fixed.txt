@@ -1,0 +1,20 @@
+ViewNest Streaming — Exhibit C: Platform Fixed Costs
+====================================================
+From: CFO finance team
+
+Platform and corporate overhead:
+- Annual platform/tech fixed: $36M
+- Annual corporate overhead: $36M
+- **Total fixed: $72M annually**
+
+At 5.0M subscribers:
+→ **Fixed allocation: $1.20/sub/month**
+
+Full-loaded P&L per sub/month:
+- Variable contribution (Exhibit A): $3.00
+- Content amortization (Exhibit B): −$4.50
+- Fixed allocation (Exhibit C): −$1.20
+- **Full-loaded margin: −$2.70/sub/month** ❌
+
+Board hurdle: ≥ $0.50/sub/month within 12 months
+→ Gap to close: $3.20/sub/month

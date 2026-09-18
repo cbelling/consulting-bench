@@ -1,0 +1,13 @@
+HelixPharma Co-Pay Assistance Paths (synthetic)
+================================================
+List price and co-pay offset per patient-month; volumes from IQVIA access model.
+
+Path A — High price, narrow support:
+  (List $55 − co-pay offset $5) × 8,000 patients = **$50 × 8,000 = $400M**
+
+Path B — Lower price, broader access:
+  (List $48 − co-pay offset $5) × 11,000 patients = **$43 × 11,000 = $473M**
+
+⚠️ Path A summary slide shows $440M — **arithmetic error** (used $55 × 8k without subtracting co-pay).
+
+Prefer Path B for access volume and higher net revenue (+$73M vs Path A).

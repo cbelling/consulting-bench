@@ -1,3 +1,150 @@
 # Management Consulting Bench
 
-Design in progress (COD-53).
+Harbor-runnable evaluation tasks for **management consulting** workflows (market sizing, profitability bridges, investment decisions, pricing). This repository ships an L1 slice of 20 synthetic consulting cases.
+
+> **Design docs:** Full bench architecture lives in [`DESIGN.md`](DESIGN.md) when present on `main`. As of this scaffold, design is still in the COD-53 PR ([`cursor/cod-53-design-brief-apex-harvey-consulting-bench-0246`](https://github.com/cbelling/management-consulting-bench/tree/cursor/cod-53-design-brief-apex-harvey-consulting-bench-0246)).
+
+## Repository layout
+
+Each task under `tasks/<TASK-ID>/` follows the Harbor task format:
+
+```
+tasks/CIP-001/
+├── task.toml
+├── instruction.md          # Engagement brief + deliverable path
+├── environment/
+│   └── Dockerfile          # Python sandbox; copies matter/ into /app/matter/
+├── matter/                 # Synthetic consulting facts (txt/csv)
+├── tests/
+│   ├── test.sh             # Writes /logs/verifier/reward.txt (1 on pass)
+│   └── verify.py           # Programmatic checkable core
+├── solution/
+│   └── solve.sh            # Oracle that produces a passing answer.json
+└── oracle/
+    └── README.md           # Documented oracle answer
+```
+
+## L1 task set (20)
+
+| ID | Topic | Checkable core |
+|----|-------|----------------|
+| CIP-001 | Toothbrush units | ~35–45M units (±20%) |
+| CIP-002 | Chicago paper towels | $150–230M; HH base |
+| CIP-004 | Fitness apps | 6–12M subscribers |
+| CIP-007 | Checking opens | 20–32M openings |
+| CIP-013 | SkyNest profit bridge | Δprofit −$86M; fuel ~70% |
+| CIP-014 | LeafMart CM | CM$ 112→97; CM% 28→22% |
+| CIP-017 | ApexMotors service | Ticket+parts margin driver |
+| CIP-020 | MeshWave SaaS | Churn is the leak |
+| CIP-022 | ThreadNorth retail | Y1 10% vs Y2 5% ROI; fail hurdle |
+| CIP-026 | Chemora night shift | Incremental −$3M → cut |
+| CIP-027 | Mexico snacks | Y3 OP $3M < $20M → no-go |
+| CIP-029 | Digital youth | NPV −$9.6M → no-go |
+| CIP-031 | Corporate wellness | −$0.8M vs $10M → no-go |
+| CIP-035 | India K-12 | OP −$7.8M → no-go |
+| CIP-037 | Museum digital | Net $0.22M < $1M → no-go |
+| CIP-039 | HopLite M&A | EV $560M > $400M ask → go |
+| CIP-042 | Cell towers | ~$177.5M vs $180M bid → marginal |
+| CIP-045 | TPA deal | 7.5% IRR; max $75M → no-go at $120M |
+| CIP-049 | GreenAxle LBO | 9.5×8=$76M > $70M → go |
+| CIP-051 | Protein bar price | $2.79 max with ≥35% share |
+
+## Run one task with Harbor
+
+Install [Harbor](https://www.harborframework.com/docs), then from the repo root:
+
+```bash
+harbor run -p tasks/CIP-001 -a "<agent>" -m "<model>"
+```
+
+Example with the oracle solution (verifier-only smoke test):
+
+```bash
+harbor run -p tasks/CIP-001 --solution solution/solve.sh
+```
+
+The agent (or oracle) must write **`/app/output/answer.json`** as specified in each task's `instruction.md`. The verifier runs `tests/test.sh`, which executes `tests/verify.py` and writes `1` to `/logs/verifier/reward.txt` on pass.
+
+## Local verification (no Harbor required)
+
+Verify all 20 JSON L1 oracle solutions locally:
+
+```bash
+bash scripts/verify_oracles_local.sh
+```
+
+Verify the five partner-delegated tasks only (memo + JSON sidecar):
+
+```bash
+bash scripts/verify_partner_oracles_local.sh
+```
+
+Verify the ten hard L3 partner-delegated frontier-probe tasks (memo + JSON sidecar):
+
+```bash
+bash scripts/verify_l3_oracles_local.sh
+```
+
+With Docker available, build the task environment image and run the same check:
+
+```bash
+bash scripts/verify_oracles.sh
+```
+
+Or verify a single task:
+
+```bash
+bash scripts/verify_oracles_local.sh CIP-001
+bash scripts/verify_oracles_local.sh CIP-054
+```
+
+## Task slices: JSON L1 holdout vs partner-delegated vs hard L3 probe
+
+| Slice | Task IDs | Instruction | Deliverable | Verifier |
+|-------|----------|-------------|-------------|----------|
+| **JSON L1 holdout** (COD-52) | 20 IDs (`CIP-001` … `CIP-051`) | Short engagement brief | `/app/output/answer.json` only | Single checkable core on JSON |
+| **Partner-delegated** (COD-55) | `CIP-054`, `CIP-063`, `CIP-075`, `CIP-089`, `CIP-098` | Partner email to associate | `/app/output/memo.md` + `answer.json` | All-pass AND of 4 programmatic checks (lede recommendation, JSON band, method keywords, concrete next ask) |
+| **Hard L3 frontier probe** (COD-57) | `CIP-015`, `CIP-021`, `CIP-028`, `CIP-044`, `CIP-050`, `CIP-052`, `CIP-055`, `CIP-066`, `CIP-093`, `CIP-099` | Partner email to associate | `/app/output/memo.md` + `answer.json` | Same 4-check AND verifier; messier `matter/` packs with conflicting exhibits, arithmetic lies, and unit/timing traps |
+
+Partner-delegated and hard L3 tasks mirror the Harbor directory layout from COD-52 but use Harvey-shaped memo deliverables with no LLM judge. Frozen JSON L1 holdout folders (`CIP-001` … `CIP-051`) and the five COD-55 partner tasks are untouched.
+
+### Partner-delegated tasks (5 — COD-55)
+
+| ID | Topic | Recommendation |
+|----|-------|----------------|
+| CIP-054 | RestInn weekend dynamic pricing | +20% ADR premium ($6,840 contribution profit) |
+| CIP-063 | Crunchora CPG white space | Distribution first (+$48M) |
+| CIP-075 | GreenPouch compostable bag | No-go (−$6.4M Y2 incremental) |
+| CIP-089 | HeroCo private-label response | Innovate ($39.5M operating profit) |
+| CIP-098 | CloudSaaS path to profitability | Cut S&M 30% (Q4 breakeven) |
+
+### Hard L3 frontier-probe tasks (10 — COD-57)
+
+| ID | Topic | Checkable core |
+|----|-------|----------------|
+| CIP-015 | Hospital outpatient surgery profit gap | Both C scenarios fail 15% cash EBITDA → no-go |
+| CIP-021 | Logistics last-mile Zone C | True contrib $1.40/stop < $1.50 hurdle → exit |
+| CIP-028 | Hospital urgent-care adjacency | 5% cannibal +$5.76M go; 15% +$1.92M fail → no-go unless ≤~6% |
+| CIP-044 | Retail distressed stores | Store B four-wall −56% → reject unless lease renegotiation |
+| CIP-050 | Pharma rare-disease biotech | Bull EV $1.37B go; bear $0.31B → CVR or no-go |
+| CIP-052 | Airline bag-fee increase | Optimistic +$39.6M; pessimistic −$20.4M → raise if ε≈−0.4 |
+| CIP-055 | Pharma co-pay paths | Path B $473M > Path A $400M |
+| CIP-066 | SaaS NDR conflict | CS 112.2% / Finance 103.8% NDR both miss 120% → fix retention |
+| CIP-093 | Retail e-comm price transparency | Selective electronics match $445M GM best |
+| CIP-099 | Hospital service-line turnaround | Keep cardio (+$15M true), close ortho (−$8M), expand |
+
+## Regenerate tasks
+
+Task files are generated from `scripts/generate_tasks.py` (JSON L1 holdout), `scripts/generate_partner_tasks.py` (COD-55 partner slice), and `scripts/generate_l3_partner_tasks.py` (COD-57 hard L3 slice):
+
+```bash
+python3 scripts/generate_tasks.py
+python3 scripts/generate_partner_tasks.py
+python3 scripts/generate_l3_partner_tasks.py
+```
+
+## Scope
+
+- Management consulting only (synthetic cases; not Cosentino/Cheng published text)
+- Docs + tasks only in this PR
+- 20 JSON L1 holdout tasks + 5 partner-delegated memo tasks + 10 hard L3 frontier-probe tasks

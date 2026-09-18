@@ -1,0 +1,14 @@
+**From:** Dr. Lisa Chen, Partner — Pharma
+**To:** Associate case team
+**Subject:** Pharma plant utilization
+**Date:** Monday, 10:00 AM
+
+Team,
+
+Case on Pharma plant utilization. Matter pack in `/app/matter/`.
+
+Deliverables by **Wednesday 5 PM**:
+1. `/app/output/memo.md` — one-page memo with recommendation in paragraph one.
+2. `/app/output/answer.json`
+
+Dr.
