@@ -2,16 +2,16 @@ schema_version = "1.4"
 
 [task]
 name = "management-consulting-bench/cip-033"
-version = "1.0.0"
-description = "Insurance pet adjacency"
+version = "1.1.0"
+description = "Pet-insurance adjacency — combined ratio after adverse selection"
 authors = [{ name = "Management Consulting Bench", email = "bench@example.com" }]
-keywords = ["consulting", "management-consulting", "l2", "partner-delegated", "frontier-probe"]
+keywords = ["consulting", "management-consulting", "l2", "partner-delegated"]
 
 [metadata]
 task_id = "CIP-033"
 family = "management-consulting"
 difficulty = "l2"
-category = "market-entry"
+category = "adjacency"
 delivery = "memo-plus-json"
 
 [verifier]

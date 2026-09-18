@@ -1,1 +1,0 @@
-Case: Logistics dim-weight\nCategory: pricing\nDifficulty: l2

@@ -1,0 +1,4 @@
+Year-2 GWP: $48.0M
+Base loss ratio (booked, no selection): 81%
+LAE: 6% of GWP
+Opex (acquisition + admin): 11% of GWP

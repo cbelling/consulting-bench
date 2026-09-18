@@ -1,0 +1,6 @@
+STR snapshot FY2019 (DO NOT USE for the live TAM):
+- Economy rooms/property: 88
+- Economy occupancy: 71%
+- Economy ADR: $69
+
+A partner sticky note says "just multiply 8,200 × 92 × 365 × $78" — that skips occupancy and overstates nights.

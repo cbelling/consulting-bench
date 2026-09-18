@@ -27,7 +27,8 @@ def main():
         w in para for w in ("recommend", "first", "priorit", "lead", "sequence")
     )
     inc = float(ans["distribution_incremental_millions"])
-    band_ok = 45.0 <= inc <= 51.0 and ans.get("decision") == "distribution_first"
+    lede_ok = lede_ok and ("48" in para)
+    band_ok = 47.5 <= inc <= 48.5 and ans.get("decision") == "distribution_first"
     method_ok = "option" in memo.lower() and "cannibal" in memo.lower()
     next_ok = any(
         k in memo.lower()

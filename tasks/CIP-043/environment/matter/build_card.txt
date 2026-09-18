@@ -1,0 +1,6 @@
+Fully loaded engineer cost: $220k / year
+Headcount: 14
+Calendar: 24 months
+Ramp: first 4 months the team is hired but unproductive — you still pay them.
+So cash is 24 months of burn, not 20.
+Do not capitalize "internal labor" to make build look cheaper.

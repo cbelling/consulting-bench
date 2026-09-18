@@ -1,0 +1,4 @@
+Maintenance tagged the 3.0h changeover as a "quality event" and restated quality at 88%.
+Do not apply that 88% on top of the 6156/6480 already-saleable figure.
+
+Ops draft used weekday OEE 71% × 12h × 800 × $12.50 − $18k = $49.2k. Wrong period.

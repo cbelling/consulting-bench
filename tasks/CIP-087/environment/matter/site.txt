@@ -1,0 +1,8 @@
+DC capacity: 18 MW (= 18,000 kW)
+Temperate yield: 1,450 kWh / kW-year
+PPA price: $0.11 / kWh
+Subscription / offtake: 88%
+O&M: $0.28M
+Land lease: $0.45M
+Interconnection / schedule 9: $0.22M
+Capex: $21.6M

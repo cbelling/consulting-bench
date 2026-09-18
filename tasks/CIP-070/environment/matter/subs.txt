@@ -1,0 +1,6 @@
+Subs: 4.2 million
+Current price: $15.99 / month
+Ad-lite price: $12.99 / month
+Expected take: 35%
+Ad ARPU on ad-lite: $4.80 / month
+Ad-lite churn from ads: 4% of ad-lite subs (lose their $12.99 and $4.80)

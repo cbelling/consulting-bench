@@ -28,9 +28,9 @@ def main():
     at15 = float(ans["system_incremental_millions_at_15pct_cannibal"])
     breakeven = float(ans["cannibal_breakeven_pct"])
     band_ok = (
-        5.0 <= at5 <= 6.5
-        and 1.0 <= at15 <= 2.5
-        and 5.0 <= breakeven <= 7.0
+        5.3 <= at5 <= 5.9
+        and 1.4 <= at15 <= 2.0
+        and 5.7 <= breakeven <= 6.3
         and ans.get("decision") == "no-go"
     )
     method_ok = "cannibal" in memo.lower() and any(

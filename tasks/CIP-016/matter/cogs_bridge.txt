@@ -1,0 +1,5 @@
+Reported COGS $28.56M includes:
+- One-time cloud migration (non-recurring): $2.52M
+- Hosting rate hike vs last year (recurring): $1.68M
+- Support mix shift (recurring): $0.84M
+- Residual volume/other: remainder after the above vs last year's $23.52M

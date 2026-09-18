@@ -1,0 +1,6 @@
+Eligible checkout GMV: $1.8B
+Merchant take-rate: 3.4% of GMV
+Credit loss rate: 2.1% of GMV
+Ops/fraud opex: 0.6% of GMV
+Revolving card NII at risk: $40M
+Expected NII cannibal: 18%

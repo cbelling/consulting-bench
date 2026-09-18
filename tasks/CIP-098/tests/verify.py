@@ -27,7 +27,8 @@ def main():
         w in para for w in ("recommend", "cut", "reduce", "choose")
     )
     q4 = float(ans["q4_operating_profit_millions"])
-    band_ok = -0.5 <= q4 <= 1.0 and ans.get("decision") in ("sm_cut", "s_m_cut")
+    lede_ok = lede_ok and ("0.02" in para or "breakeven" in para or "break-even" in para)
+    band_ok = -0.08 <= q4 <= 0.08 and ans.get("decision") in ("sm_cut", "s_m_cut")
     method_ok = "breakeven" in memo.lower() or "break-even" in memo.lower()
     method_ok = method_ok and any(k in memo.lower() for k in ("quarter", "q4", "four-quarter"))
     next_ok = any(

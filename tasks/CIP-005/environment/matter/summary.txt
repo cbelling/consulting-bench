@@ -1,1 +1,0 @@
-Case: US hotel economy rooms\nCategory: market-sizing\nDifficulty: l2

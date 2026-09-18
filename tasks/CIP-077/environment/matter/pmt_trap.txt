@@ -1,0 +1,2 @@
+Payments deck: 3.4% × $1.8B = $61.2M "revenue" as if it were profit.
+Risk draft uses a 0.9% analog-card loss rate, not the 2.1% BNPL field loss.

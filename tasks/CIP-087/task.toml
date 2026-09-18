@@ -2,16 +2,16 @@ schema_version = "1.4"
 
 [task]
 name = "management-consulting-bench/cip-087"
-version = "1.0.0"
-description = "Energy community solar"
+version = "1.1.0"
+description = "Community solar — temperate yield and 88% offtake vs 9% hurdle"
 authors = [{ name = "Management Consulting Bench", email = "bench@example.com" }]
-keywords = ["consulting", "management-consulting", "l3", "partner-delegated", "frontier-probe"]
+keywords = ["consulting", "management-consulting", "l3", "partner-delegated"]
 
 [metadata]
 task_id = "CIP-087"
 family = "management-consulting"
 difficulty = "l3"
-category = "new-business"
+category = "investment-decision"
 delivery = "memo-plus-json"
 
 [verifier]

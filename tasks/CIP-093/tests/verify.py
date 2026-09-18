@@ -27,7 +27,8 @@ def main():
         w in para for w in ("recommend", "choose", "best", "maxim", "prefer")
     )
     gm = float(ans["gross_margin_millions"])
-    band_ok = 440.0 <= gm <= 450.0 and ans.get("decision") == "selective_match"
+    lede_ok = lede_ok and ("445" in para)
+    band_ok = 443.0 <= gm <= 447.0 and ans.get("decision") == "selective_match"
     method_ok = "match" in memo.lower() and any(
         k in memo.lower() for k in ("electronics", "apparel", "gm", "gross margin")
     )

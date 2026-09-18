@@ -1,4 +1,7 @@
+import json
 import re
+import sys
+
 
 def first_paragraph(text: str) -> str:
     chunks = [c.strip() for c in text.replace("\r\n", "\n").strip().split("\n\n") if c.strip()]
@@ -14,19 +17,27 @@ def first_paragraph(text: str) -> str:
         return c.lower()
     return chunks[0].lower() if chunks else ""
 
-import json, sys
-
-def main():
+def main() -> bool:
     memo_path, answer_path = sys.argv[1], sys.argv[2]
-    memo = open(memo_path).read()
-    ans = json.load(open(answer_path))
+    memo = open(memo_path, encoding="utf-8").read()
+    ans = json.load(open(answer_path, encoding="utf-8"))
     para = first_paragraph(memo)
-    
-    lede_ok = len(para) > 20
-    method_ok = True
-    next_ok = "monitor risks" not in memo.lower()
+    body = memo.lower()
+    checks = []
 
-    return lede_ok and method_ok and next_ok
+    checks.append(all(tok in para for tok in ['no-go']))
+    checks.append(any(tok in para for tok in ['107']))
+    checks.append("monitor risks" not in body)
+    checks.append(str(ans.get('decision', '')).lower() == 'no-go')
+    year2_combined_ratio_pct = float(ans['year2_combined_ratio_pct'])
+    checks.append(106.0 <= year2_combined_ratio_pct <= 108.0)
+    cannibalized_rider_profit_millions = float(ans['cannibalized_rider_profit_millions'])
+    checks.append(0.4 <= cannibalized_rider_profit_millions <= 0.47)
+    # no trap-value rejects
+    checks.append(all(tok in body for tok in ['selection', 'combined']))
+    checks.append(any(tok in body for tok in ['rider', 'cannibal']) if True else True)
+    checks.append(any(tok in body for tok in ['kill', 'reprice', 'rider', 'filing']))
+    return all(checks)
 
 if __name__ == "__main__":
     sys.exit(0 if main() else 1)

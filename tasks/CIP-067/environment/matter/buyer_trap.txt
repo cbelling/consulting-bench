@@ -1,0 +1,2 @@
+Buyer model: 80 bps × $420M = $3.36M and stops.
+A second model applies 2.0pp shrink to all $420M (= $8.4M) — wrong scope.

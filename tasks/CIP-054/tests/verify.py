@@ -23,11 +23,15 @@ def main():
     ans = json.load(open(answer_path))
     para = first_paragraph(memo)
 
-    lede_ok = ("20" in para or "twenty" in para) and any(
-        w in para for w in ("recommend", "premium", "optimal", "choose", "select")
+    lede_ok = ("6840" in para.replace(",", "") or "6,840" in para) and (
+        "20" in para or "twenty" in para
     )
     profit = float(ans["weekend_contribution_profit_dollars"])
-    band_ok = 6600.0 <= profit <= 7100.0 and ans.get("decision") == "premium_20"
+    band_ok = (
+        6820.0 <= profit <= 6860.0
+        and ans.get("decision") == "premium_20"
+        and int(ans.get("optimal_premium_pct", 0)) == 20
+    )
     method_ok = "contribution" in memo.lower() and any(
         k in memo.lower() for k in ("adr", "occupancy", "variable cost")
     )

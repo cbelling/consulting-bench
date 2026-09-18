@@ -28,9 +28,10 @@ def main():
     )
     cardio = float(ans["cardio_true_contribution_millions"])
     ortho = float(ans["ortho_true_contribution_millions"])
+    lede_ok = lede_ok and ("15" in para)
     band_ok = (
-        13.0 <= cardio <= 17.0
-        and -10.0 <= ortho <= -6.0
+        14.5 <= cardio <= 15.5
+        and -8.5 <= ortho <= -7.5
         and ans.get("decision") == "keep_cardio_close_ortho_expand"
     )
     method_ok = "allocat" in memo.lower() and "true" in memo.lower()

@@ -1,0 +1,4 @@
+India population: 1.42 billion
+Share age 15+: 68%
+Smartphone penetration among 15+: 54%
+Feature-phone only among 15+: 19%

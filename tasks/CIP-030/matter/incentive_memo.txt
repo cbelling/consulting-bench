@@ -1,0 +1,4 @@
+Airport incentive: $6.5M in year 1, $3.0M in year 2, **$0 in year 3**.
+Network planning's "steady-state" deck still credits $6.5M every year. That is wrong.
+
+A second note loads 480M ASMs (includes a phantom 4th weekly). Use 420M.

@@ -1,0 +1,8 @@
+Base members: 8.2M (context only)
+Campaign sign-ups: 0.90M
+Already members (status-match duplicates): 40%
+Year-1 trips per true-new member: 0.8
+Base-member trips (do not use for new): 1.4
+Avg miles / trip: 1,150
+Ancillary per mile: $0.018
+Campaign cost: $6.2M

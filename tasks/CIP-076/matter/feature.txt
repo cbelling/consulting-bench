@@ -1,0 +1,7 @@
+Vehicles in-scope: 120,000
+Attach rate: 22%
+Subscription: $18 / month
+Cellular COGS: $4.50 / month per attached vehicle
+Premium-trim buyers: 28,000
+Expected extra trim churn if feature is paid: 1.5 percentage points
+Gross profit per lost premium vehicle: $4,200

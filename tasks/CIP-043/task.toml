@@ -2,16 +2,16 @@ schema_version = "1.4"
 
 [task]
 name = "management-consulting-bench/cip-043"
-version = "1.0.0"
-description = "SaaS acqui-hire vs build"
+version = "1.1.0"
+description = "SaaS acqui-hire vs build — 24-month cash including dead-time"
 authors = [{ name = "Management Consulting Bench", email = "bench@example.com" }]
-keywords = ["consulting", "management-consulting", "l2", "partner-delegated", "frontier-probe"]
+keywords = ["consulting", "management-consulting", "l2", "partner-delegated"]
 
 [metadata]
 task_id = "CIP-043"
 family = "management-consulting"
 difficulty = "l2"
-category = "ma"
+category = "make-vs-buy"
 delivery = "memo-plus-json"
 
 [verifier]

@@ -1,0 +1,7 @@
+Paid customers: 82,000
+Paid ARPU: $1,140
+Starting ARR: 82,000 × $1,140
+Expected free-tier users if we match: 210,000
+Free-to-paid conversion: 4%
+Converted ARPU: $480
+Paid downgrade to free if we match: 9% of paid

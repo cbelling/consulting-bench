@@ -1,0 +1,2 @@
+Finance: 1.47M × $12.99 × 12 + 2.73M × $15.99 × 12 + 1.47M × $4.80 × 12
+= $837.6M vs $805.9M base → +$31.8M. Ignores 4% ad-lite churn.

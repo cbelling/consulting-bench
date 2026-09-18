@@ -1,0 +1,7 @@
+Year-1 tests: 220,000
+ASP: $48
+COGS: $17
+Launch opex: $3.8M
+Cannibal of existing panel: $1.2M
+Field false-positive rate: 3.2%
+Follow-up cost per FP: $210

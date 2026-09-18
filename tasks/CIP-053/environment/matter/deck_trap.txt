@@ -1,0 +1,2 @@
+Deck: 450k × $96 = $43.2M. Ignores grandfather, elasticity, leakage.
+A second model applies elasticity to the grandfathered 40% as well. Do not.

@@ -1,0 +1,1 @@
+Product: models the $3 price cut and 4% churn, **drops ad ARPU entirely**.

@@ -22,15 +22,17 @@ def main():
     ans = json.load(open(answer_path))
     para = first_paragraph(memo)
     
-    lede_ok = any(w in para for w in ("million", "ball", "800", "900", "1.0", "billion"))
+    lede_ok = any(w in para for w in ("920", "900")) and any(
+        w in para for w in ("million", "ball")
+    )
     total = float(ans["golf_balls_lost_annually_millions"])
     course = float(ans["course_loss_millions"])
     range_c = float(ans["range_consumption_millions"])
     
     band_ok = (
-        800 <= total <= 1100
-        and 200 <= course <= 550
-        and 500 <= range_c <= 600
+        900 <= total <= 940
+        and 340 <= course <= 380
+        and 540 <= range_c <= 580
     )
     
     method_ok = any(

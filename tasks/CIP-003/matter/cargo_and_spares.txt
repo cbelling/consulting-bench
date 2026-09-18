@@ -1,0 +1,10 @@
+Affiliate cargo fleet (DO NOT include unless the RFP is all-in):
+- 40 widebody freighters, 14 tires each
+- 800 cycles/year, replace every 250 landings
+- Implied cargo replacements: 40 × 14 × (800/250) = 1,792
+
+Spare-pool policy: hold 0.15 spare tires per in-service tire.
+In-service NB tires = 180 × 8 = 1,440 → spare stock 216.
+Spares are inventory, not annual replacement demand.
+
+A junior model in the pack used 220 aircraft (added regional jets). Ignore that.

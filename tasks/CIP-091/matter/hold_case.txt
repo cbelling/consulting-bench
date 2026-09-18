@@ -1,0 +1,3 @@
+If we do not match:
+- Monthly churn rises 0.7pp; treat extra lost logos as 82,000 × 0.7% × 12 × 0.5 year × $1,140
+- New logos were 12,000/year; −30% at $1,140

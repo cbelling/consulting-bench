@@ -1,0 +1,5 @@
+Adverse selection load: +9 pp on loss ratio (claims team, not pricing).
+Existing HO pet-rider profit at risk: $3.6M today.
+Cannibalization: 12% of that rider profit disappears if standalone launches.
+
+Pricing's 81% + 6% + 11% = 98% draft **forgets selection**. Another draft uses 81%+6%+11%+9% on $60M GWP (includes a cancelled vet-network deal). Use $48M.

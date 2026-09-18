@@ -1,21 +1,5 @@
-RareDx — Bull/Bear DCF Summary (synthetic)
-==========================================
-Management ask: **$1.2B**
-
-Shared assumptions:
-- Overhead PV (corp, not in ops DCF): **$80M**
-- WACC: 12%
-
-Bull case:
-- Peak sales: $800M (yr 8)
-- Probability of approval: 70%
-- rNPV ops: $1.45B
-- **EV = $1.45B − $0.08B overhead = $1.37B** → GO vs $1.2B ask
-
-Bear case:
-- Peak sales: $200M (yr 8)
-- Probability of approval: 25%
-- rNPV ops: $390M
-- **EV = $390M − $80M overhead = $310M** → NO-GO vs $1.2B ask
-
-⚠️ Bear summary slide shows EV $390M — **forgets to subtract $80M overhead**
+RareDx — valuation facts (synthetic)
+====================================
+Bull and bear DCFs are in the accompanying exhibits.
+Subtract the $80M overhead the buyer cannot avoid.
+The $1.2B ask is not a valuation. Compute bull and bear EV yourself.

@@ -1,0 +1,5 @@
+metric,value,notes
+uptime_hours,9.0,12 scheduled; 3.0h changeover + micro-stops
+ideal_cycle_kg_per_up_hour,800,
+actual_output_kg,6480,during the 9.0 uptime hours
+saleable_kg,6156,324 kg scrap (quality)

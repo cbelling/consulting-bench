@@ -26,9 +26,10 @@ def main():
     lede_ok = any(w in para for w in ("cvr", "no-go", "no go", "walk", "bear", "decline"))
     bull = float(ans["bull_ev_billions"])
     bear = float(ans["bear_ev_billions"])
+    lede_ok = lede_ok and ("1.37" in para or "0.31" in para)
     band_ok = (
-        1.2 <= bull <= 1.5
-        and 0.25 <= bear <= 0.35
+        1.32 <= bull <= 1.42
+        and 0.28 <= bear <= 0.34
         and ans.get("decision") in ("cvr_or_no-go", "no-go", "cvr")
     )
     method_ok = any(k in memo.lower() for k in ("dcf", "ev", "rnpv", "valuation"))

@@ -1,0 +1,7 @@
+AeroTread — Utilization (passenger NB)
+======================================
+Average cycles per NB aircraft per year: 1,200
+Certified landing life per tire: 180 landings
+Contract ASP (replacement): $2,400 per tire
+
+Do not annualize calendar-time wear; replacements are cycle-driven.

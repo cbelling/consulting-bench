@@ -25,7 +25,8 @@ def main():
 
     lede_ok = any(w in para for w in ("reject", "renegotiat", "lease", "unless", "no-go", "decline"))
     margin = float(ans["store_b_four_wall_margin_pct"])
-    band_ok = -60.0 <= margin <= -50.0 and ans.get("decision") in (
+    lede_ok = lede_ok and ("56" in para)
+    band_ok = -57.0 <= margin <= -55.0 and ans.get("decision") in (
         "reject", "proceed_with_lease_renegotiation"
     )
     method_ok = "four-wall" in memo.lower() or "four wall" in memo.lower()

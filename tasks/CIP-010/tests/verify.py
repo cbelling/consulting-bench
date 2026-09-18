@@ -22,15 +22,17 @@ def main():
     ans = json.load(open(answer_path))
     para = first_paragraph(memo)
     
-    lede_ok = any(w in para for w in ("9", "million", "tuning"))
+    lede_ok = ("9.3" in para or "9.30" in para) and any(
+        w in para for w in ("million", "tuning")
+    )
     total = float(ans["annual_us_piano_tunings_millions"])
     home = float(ans["home_tunings_millions"])
     inst = float(ans["institutional_tunings_millions"])
     
     band_ok = (
-        7.0 <= total <= 12.0
-        and 4.0 <= home <= 5.5
-        and 3.5 <= inst <= 5.0
+        9.1 <= total <= 9.5
+        and 4.6 <= home <= 5.0
+        and 4.3 <= inst <= 4.7
     )
     
     method_ok = any(

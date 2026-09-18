@@ -28,9 +28,10 @@ def main():
     )
     opt = float(ans["incremental_profit_millions_optimistic"])
     pess = float(ans["incremental_profit_millions_pessimistic"])
+    lede_ok = lede_ok and ("39.6" in para or "39" in para)
     band_ok = (
-        35.0 <= opt <= 45.0
-        and -25.0 <= pess <= -15.0
+        38.5 <= opt <= 40.7
+        and -21.5 <= pess <= -19.3
         and ans.get("decision") == "raise"
     )
     method_ok = "elastic" in memo.lower() and "spill" in memo.lower()

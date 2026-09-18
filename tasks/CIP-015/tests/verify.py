@@ -26,9 +26,10 @@ def main():
     lede_ok = any(w in para for w in ("no-go", "no go", "do not expand", "reject", "decline"))
     low = float(ans["scenario_c_low_cash_ebitda_margin_pct"])
     high = float(ans["scenario_c_high_cash_ebitda_margin_pct"])
+    lede_ok = lede_ok and ("7.5" in para or "7.8" in para)
     band_ok = (
-        6.5 <= low <= 8.5
-        and 7.0 <= high <= 9.0
+        7.3 <= low <= 7.7
+        and 7.6 <= high <= 8.0
         and ans.get("decision") == "no-go"
     )
     method_ok = "ebitda" in memo.lower() and any(

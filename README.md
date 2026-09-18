@@ -28,7 +28,7 @@ Deliverables are always:
 1. `/app/output/memo.md` — one-page memo with the recommendation in the first paragraph
 2. `/app/output/answer.json` — checkable core (decision, key number, method)
 
-Verifiers are programmatic (no LLM judge). Typical all-pass checks: lede recommendation, numeric band on the JSON sidecar, method language in the memo, and a concrete next step (not generic “monitor risks”). Lede parsing skips `#` / `##` headings, To/From/Date/Subject lines, and horizontal rules.
+Verifiers are programmatic (no LLM judge). Typical all-pass checks: lede recommendation **and key number**, a tight numeric band on the JSON sidecar, method language in the memo, a concrete next step (not generic “monitor risks”), and rejection of common trap values. Matter packs do **not** precompute the answer. Lede parsing skips `#` / `##` headings, To/From/Date/Subject lines, and horizontal rules.
 
 ## Difficulty mix
 
@@ -38,15 +38,15 @@ Verifiers are programmatic (no LLM judge). Typical all-pass checks: lede recomme
 | L2 | 25 | CIP-003, CIP-005, CIP-006, CIP-016, CIP-018, CIP-019, CIP-030, CIP-033, CIP-034, CIP-040, CIP-041, CIP-043, CIP-053, CIP-057, CIP-059, CIP-064, CIP-067, CIP-076, CIP-077, CIP-084, CIP-085, CIP-090, CIP-091, CIP-097, CIP-100 |
 | L3 | 20 | CIP-010, CIP-012, CIP-015, CIP-021, CIP-025, CIP-028, CIP-032, CIP-038, CIP-044, CIP-050, CIP-052, CIP-055, CIP-062, CIP-066, CIP-070, CIP-079, CIP-087, CIP-093, CIP-096, CIP-099 |
 
-L3 packs include conflicting exhibits, arithmetic traps, or unit/timing issues.
+Every task is checkable (no paragraph-length stubs). L2 packs require multi-exhibit math with one distractor number. L3 packs include conflicting exhibits, arithmetic traps, or unit/timing issues. Target cheap-model pass rate is about 40–50% (DeepSeek V4.1 Flash).
 
 ## Catalog
 
 | ID | Level | Topic |
 |----|-------|-------|
-| CIP-003 | L2 | Aircraft tire replacements |
-| CIP-005 | L2 | US hotel economy rooms |
-| CIP-006 | L2 | India smartphone sales |
+| CIP-003 | L2 | AeroTread NB tire TAM (exclude cargo/spares) |
+| CIP-005 | L2 | US economy-hotel room revenue (exclude midscale) |
+| CIP-006 | L2 | India smartphone sell-out (exclude gray sell-in) |
 | CIP-010 | L3 | Piano tunings — unusual stock × frequency |
 | CIP-012 | L3 | Golf balls lost — conflicting exhibits |
 | CIP-015 | L3 | Hospital outpatient surgery profit gap |
@@ -125,11 +125,14 @@ bash scripts/verify_oracles_local.sh CIP-054 CIP-015 CIP-003
 
 ## Regenerate original slices
 
-These generators rewrite the original 5 L1 and 10 L3 partner tasks in place. The remaining 35 tasks are checked in directly.
+These generators rewrite slices in place. After the L1/L3 generators, re-run the hardener so spoilers stay stripped and bands stay tight.
 
 ```bash
 python3 scripts/generate_partner_tasks.py
 python3 scripts/generate_l3_partner_tasks.py
+python3 scripts/generate_hardened_stubs.py   # 31 formerly stub L2/L3 cases
+python3 scripts/tighten_existing_graders.py  # strip spoilers + tighten the other 19
+bash scripts/verify_oracles_local.sh
 ```
 
 ## Scope

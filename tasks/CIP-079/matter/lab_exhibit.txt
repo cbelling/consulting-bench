@@ -1,0 +1,1 @@
+Lab analytical FP: 0.8%. Using 0.8% understates follow-up cost by 4×.

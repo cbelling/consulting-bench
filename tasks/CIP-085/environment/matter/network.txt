@@ -1,0 +1,7 @@
+Banners in the sales universe: 1,200
+Expected year-1 joiners: 400
+Ad GMV per joiner: $0.24M
+Take rate: 22%
+Incremental traffic cost: $6.0M
+Ad serving: $3.1M
+Guaranteed payments to top-10 banners: $8.0M

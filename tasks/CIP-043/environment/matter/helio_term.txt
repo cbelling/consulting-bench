@@ -1,0 +1,4 @@
+Close cash: $9.0M
+Retention (24 months, guaranteed): $4.8M
+Integration / tooling: $1.1M
+Helio unvested option rollover face: $6.0M — **not cash**, exclude from cash-out.

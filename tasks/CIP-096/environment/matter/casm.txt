@@ -1,0 +1,6 @@
+ASMs: 62 billion
+Reported cost: $8.308B (CASM 13.4¢)
+Revenue: $8.550B
+Fuel share of reported cost: 28%
+Labor share: 31%
+Other: 41%

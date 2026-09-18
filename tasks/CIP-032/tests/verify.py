@@ -22,14 +22,17 @@ def main():
     ans = json.load(open(answer_path))
     para = first_paragraph(memo)
     
-    lede_ok = any(w in para for w in ("no-go", "no go", "reject", "decline", "partner", "miss"))
+    lede_ok = any(w in para for w in ("no-go", "no go", "reject", "decline")) and (
+        "24" in para or "32" in para or "150" in para
+    )
     base = float(ans["base_case_annual_ebitda_millions"])
     incentive = float(ans["with_incentive_annual_ebitda_millions"])
     
     band_ok = (
-        20 <= base <= 30
-        and 30 <= incentive <= 45
+        23.0 <= base <= 25.0
+        and 31.0 <= incentive <= 33.0
         and ans.get("decision") == "no-go"
+        and float(ans.get("hurdle_annual_ebitda_millions", 0)) == 150.0
     )
     
     method_ok = all(

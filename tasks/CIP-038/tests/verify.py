@@ -1,4 +1,7 @@
+import json
 import re
+import sys
+
 
 def first_paragraph(text: str) -> str:
     chunks = [c.strip() for c in text.replace("\r\n", "\n").strip().split("\n\n") if c.strip()]
@@ -14,19 +17,30 @@ def first_paragraph(text: str) -> str:
         return c.lower()
     return chunks[0].lower() if chunks else ""
 
-import json, sys
-
-def main():
+def main() -> bool:
     memo_path, answer_path = sys.argv[1], sys.argv[2]
-    memo = open(memo_path).read()
-    ans = json.load(open(answer_path))
+    memo = open(memo_path, encoding="utf-8").read()
+    ans = json.load(open(answer_path, encoding="utf-8"))
     para = first_paragraph(memo)
-    
-    lede_ok = len(para) > 20
-    method_ok = True
-    next_ok = "monitor risks" not in memo.lower()
+    body = memo.lower()
+    checks = []
 
-    return lede_ok and method_ok and next_ok
+    checks.append(all(tok in para for tok in ['launch']))
+    checks.append(any(tok in para for tok in ['954,800', '954800', '5.89', '5.885']))
+    checks.append("monitor risks" not in body)
+    checks.append(str(ans.get('decision', '')).lower() == 'launch')
+    retail_lb = float(ans['retail_lb'])
+    checks.append(950000.0 <= retail_lb <= 960000.0)
+    dtc_contribution_millions = float(ans['dtc_contribution_millions'])
+    checks.append(5.75 <= dtc_contribution_millions <= 6.0)
+    wholesale_contribution_millions = float(ans['wholesale_contribution_millions'])
+    checks.append(3.85 <= wholesale_contribution_millions <= 3.98)
+    checks.append(abs(float(ans['retail_lb']) - 1540000.0) > 1e-6)
+    checks.append(abs(float(ans['retail_lb']) - 2200000.0) > 1e-6)
+    checks.append(all(tok in body for tok in ['hanging', 'retail']))
+    checks.append(any(tok in body for tok in ['live', 'exhibit']) if True else True)
+    checks.append(any(tok in body for tok in ['pilot', 'locker', 'boxes', 'list']))
+    return all(checks)
 
 if __name__ == "__main__":
     sys.exit(0 if main() else 1)

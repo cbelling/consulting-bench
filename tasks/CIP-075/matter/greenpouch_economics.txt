@@ -3,7 +3,6 @@ GreenPouch Compostable Bag — Incremental Economics (synthetic)
 Year-2 volume: 20M units
 Price premium vs. hero bag: $0.20 per unit
 Incremental variable cost: +$0.12 per unit
-Unit contribution (premium − incremental VC): $0.08
 
 Cannibalization: 40% of GreenPouch volume pulls from hero SKU
 Hero SKU unit margin: $0.50
@@ -11,8 +10,4 @@ Hero SKU unit margin: $0.50
 Launch opex (Year 2): $4.0M
 Hurdle: Year-2 incremental operating profit ≥ $2.0M
 
-Incremental P&L (Year 2):
-- Gross contribution: 20M × $0.08 = $1.6M
-- Cannibalization drag: 40% × 20M × $0.50 = $4.0M
-- Launch opex: $4.0M
-- **Incremental profit: $1.6M − $4.0M − $4.0M = −$6.4M** → **NO-GO**
+A packaging slide reports "+$1.6M contribution" and stops before cannibalization and opex.

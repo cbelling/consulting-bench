@@ -1,0 +1,2 @@
+Board slide: build = 14 × $220k × 20/12 = $5.13M (skips dead-time and treats year as 20 months of work).
+Acqui-hire slide: $9.0M only.

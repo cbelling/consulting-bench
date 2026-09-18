@@ -1,0 +1,5 @@
+Distributor sell-in last year: 220 million units.
+This includes ~40M gray-market double-counts and ~34M feature phones.
+Do not use 220M as smartphone sell-out.
+
+A channel memo quotes 521M smartphone users × 1/2.5 year cycle = 208M — that cycle is tablets, not phones.

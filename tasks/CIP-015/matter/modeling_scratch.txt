@@ -1,19 +1,7 @@
-Meridian — Cash EBITDA Bridge (WORKING — correct the errors)
-============================================================
+Meridian — Cash EBITDA Bridge (WORKING — incomplete)
+====================================================
 Starting reported EBITDA: $40.0M
 
-Step 1 — Resolve accrual conflict (use $8.0M true adjustment per audit):
-  Cash EBITDA = $40.0M − $8.0M = $32.0M
-
-Step 2 — Uncollected receivables (8% × $200M):
-  Cash EBITDA = $32.0M − $16.0M = **$16.0M** (8.0% margin on $200M base)
-
-Scenario C-Low ($220M revenue, +$2M EBITDA add vs reported base):
-  Cash EBITDA = $16.0M + $2.0M − (8% × $20M incremental rev) = $16.0M + $2.0M − $1.6M = **$16.4M**
-  Margin = $16.4M / $220M = **7.5%** → FAIL 15% hurdle
-
-Scenario C-High ($240M revenue, +$6M EBITDA add):
-  Cash EBITDA = $16.0M + $6.0M − (8% × $40M incremental rev) = $16.0M + $6.0M − $3.2M = **$18.8M**
-  Margin = $18.8M / $240M = **7.8%** → FAIL 15% hurdle
-
-Both C scenarios fail the 15% cash EBITDA margin hurdle → **NO-GO** on expansion.
+Resolve the $12M vs $4M accrual conflict using the audit-committee settlement.
+Then apply uncollected receivables (8% of revenue) on base and on incremental C-scenario
+revenue. Do not stop at the CFO-only or OR-only view.

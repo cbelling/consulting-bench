@@ -1,0 +1,5 @@
+Current year (use these):
+- Economy occupancy: 64%
+- Economy ADR: $78
+- Midscale occupancy: 68%
+- Midscale ADR: $124

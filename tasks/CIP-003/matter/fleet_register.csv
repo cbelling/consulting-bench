@@ -1,0 +1,3 @@
+segment,aircraft,tires_per_aircraft,notes
+passenger_narrowbody,180,8,Mainline US passenger NB only
+passenger_widebody,22,12,Out of scope — different RFP

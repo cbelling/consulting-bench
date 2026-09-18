@@ -25,7 +25,8 @@ def main():
 
     lede_ok = any(w in para for w in ("exit", "wind down", "shut", "leave zone", "recommend exit"))
     contrib = float(ans["true_contribution_per_stop_usd"])
-    band_ok = 1.2 <= contrib <= 1.6 and ans.get("decision") == "exit_zone_c"
+    lede_ok = lede_ok and ("1.4" in para)
+    band_ok = 1.35 <= contrib <= 1.45 and ans.get("decision") == "exit_zone_c"
     method_ok = "redeliver" in memo.lower() and any(
         k in memo.lower() for k in ("density", "stops/hour", "stops per hour", "18")
     )

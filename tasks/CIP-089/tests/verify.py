@@ -27,7 +27,8 @@ def main():
         w in para for w in ("recommend", "choose", "select", "maxim", "best", "win")
     )
     profit = float(ans["operating_profit_millions"])
-    band_ok = 38.0 <= profit <= 41.0 and ans.get("decision") == "innovate"
+    lede_ok = lede_ok and ("39.5" in para or "39.50" in para)
+    band_ok = 39.2 <= profit <= 39.8 and ans.get("decision") == "innovate"
     method_ok = "p&l" in memo.lower() or "profit" in memo.lower()
     method_ok = method_ok and ("private label" in memo.lower() or "private-label" in memo.lower())
     next_ok = any(

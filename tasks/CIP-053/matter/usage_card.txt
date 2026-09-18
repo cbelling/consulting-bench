@@ -1,0 +1,5 @@
+Usage list equivalent: $96 / seat-year on the converted book
+Price elasticity on converted seats: −0.35 on the 20% list lift
+  Volume factor = 1 + (−0.35 × 0.20) = 0.93
+Grandfather: 40% of seats remain on $80 for year 1
+Overage leakage (unbilled): $1.8M

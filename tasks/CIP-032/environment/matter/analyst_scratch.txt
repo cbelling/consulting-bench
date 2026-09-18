@@ -1,28 +1,6 @@
-Analyst scratch — Chemora lithium entry
-========================================
-
-Three conflicting exhibits (L3):
-- Exhibit A (consultant): $60M EBITDA @ $3k/tonne margin
-- Exhibit B (engineering): $24M EBITDA @ $1.2k/tonne margin ⚠️ REALISTIC
-- Exhibit C (policy): +$800/t incentive → $40M with incentive, $32M expected
-
-**Scenarios vs $150M hurdle:**
-
-| Scenario | Margin $/t | EBITDA $M | vs Hurdle |
-|----------|------------|-----------|-----------|
-| A: Consultant | 3,000 | 60 | ❌ 40% short |
-| B: Engineering base | 1,200 | 24 | ❌ 84% short |
-| C: With incentive 100% | 2,000 | 40 | ❌ 73% short |
-| C: Expected (50% prob) | 1,600 | 32 | ❌ 79% short |
-
-**Recommendation: NO-GO solo**
-
-Even bullish Exhibit A at $60M misses $150M hurdle by 2.5×.
-
-Engineering reality (Exhibit B) at $24M base, $32M expected with policy, misses by 5×.
-
-To hit $150M EBITDA:
-- Need 125k tonnes (6.25× share → 62.5% of US market) at eng margin ❌ unrealistic
-- OR find strategic partner with co-located cathode plant to split CapEx and scale
-
-TRAP: Don't average the three exhibits—B is the engineering truth; A is aspirational; C is uncertain upside.
+Chemora entry — working notes (incomplete)
+==========================================
+Reconcile consultant TAM/share/margin vs engineering margin.
+Apply the policy incentive only where the exhibit says it is incremental.
+Compare both cases to the $150M annual EBITDA hurdle on $900M CapEx.
+Do not treat the consultant's 18% margin as engineering-achievable.

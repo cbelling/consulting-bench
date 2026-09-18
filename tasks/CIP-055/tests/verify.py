@@ -27,7 +27,8 @@ def main():
         "b" in para and any(w in para for w in ("recommend", "prefer", "choose", "select"))
     )
     rev = float(ans["path_b_net_revenue_millions"])
-    band_ok = 465.0 <= rev <= 480.0 and ans.get("decision") == "path_b"
+    lede_ok = lede_ok and ("473" in para)
+    band_ok = 470.0 <= rev <= 476.0 and ans.get("decision") == "path_b"
     method_ok = "co-pay" in memo.lower() or "copay" in memo.lower()
     method_ok = method_ok and any(k in memo.lower() for k in ("473", "400", "volume", "access"))
     next_ok = any(

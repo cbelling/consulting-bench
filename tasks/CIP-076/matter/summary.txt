@@ -1,1 +1,0 @@
-Case: Auto subscription feature\nCategory: new-product\nDifficulty: l2

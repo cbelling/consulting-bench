@@ -1,0 +1,2 @@
+CFO draft treats the entire 6pp drop (72% → 66%) as hosting. That is wrong.
+Also do not "add back" the rate hike when computing recurring GM — the hike is recurring.

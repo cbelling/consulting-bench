@@ -1,0 +1,7 @@
+Shared kitchen opex $1.50M is loaded 50/50 into each department ($0.75M each) inside the dept-profit figures above.
+Kitchen exists primarily for banquet; a fair split is 85% banquet / 15% outlets.
+
+Rooms P&L hides $0.20M of banquet overtime (setup crew on rooms payroll).
+Charge that overtime to banquet.
+
+Outlet dept profit of −$0.80M already includes their $0.75M kitchen load.

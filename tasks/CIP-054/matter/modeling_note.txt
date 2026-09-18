@@ -5,9 +5,5 @@ Contribution per occupied room = ADR − variable cost ($25/occupied night).
 
 Weekend contribution profit = rooms × occupancy × (ADR − $25).
 
-Recalculated scenarios (100 rooms):
-- Base (0% premium): 100 × 85% × ($100 − $25) = $6,375
-- +10% premium:     100 × 80% × ($110 − $25) = $6,800
-- +20% premium:     100 × 72% × ($120 − $25) = $6,840  ← optimal
-
-The +20% premium uniquely maximizes weekend contribution profit.
+A junior file already computed the three scenarios and circled +10% as "basically the same
+as +20%." Recalculate all three; do not trust that circle.

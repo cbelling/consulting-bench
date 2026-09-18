@@ -25,7 +25,8 @@ def main():
 
     lede_ok = any(w in para for w in ("no-go", "no go", "do not launch", "decline", "reject"))
     profit = float(ans["incremental_profit_millions_y2"])
-    band_ok = -7.0 <= profit <= -5.8 and ans.get("decision") == "no-go"
+    lede_ok = lede_ok and ("6.4" in para or "6.40" in para)
+    band_ok = -6.50 <= profit <= -6.30 and ans.get("decision") == "no-go"
     method_ok = "contribution" in memo.lower() and "cannibal" in memo.lower()
     next_ok = any(
         k in memo.lower()

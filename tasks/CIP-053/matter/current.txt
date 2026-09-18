@@ -1,0 +1,3 @@
+Paid seats: 450,000
+Seat price: $80 / year
+Current ARR: seats × $80

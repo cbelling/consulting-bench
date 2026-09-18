@@ -26,9 +26,10 @@ def main():
     var_contrib = float(ans["variable_contribution_per_sub"])
     full_loaded = float(ans["full_loaded_margin_per_sub"])
     
+    lede_ok = lede_ok and ("2.70" in para or "2.7" in para or "$3" in para)
     band_ok = (
-        2.8 <= var_contrib <= 3.2
-        and -3.0 <= full_loaded <= -2.5
+        2.95 <= var_contrib <= 3.05
+        and -2.80 <= full_loaded <= -2.60
     )
     
     method_ok = all(

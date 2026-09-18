@@ -1,0 +1,5 @@
+Granulation line nameplate: 800 kg/hour theoretical
+Scheduled Saturday hours: 12
+Saturday crew cost: $18,000
+Contribution margin on saleable kg: $12.50/kg
+Weekday true OEE is not a proxy — recompute from Saturday-only logs.

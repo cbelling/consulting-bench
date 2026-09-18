@@ -1,0 +1,7 @@
+Accounts: 82,000
+Current use: 5,400 gallons / account / month (= 5.4 kgal)
+Current rate: $4.20 / kgal
+Proposed rate: $5.10 / kgal
+Price elasticity: −0.15 (volume vs rate)
+Treatment variable cost: $1.10 / kgal
+Plant funding need: $4.5M / year

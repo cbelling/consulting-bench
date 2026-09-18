@@ -26,9 +26,10 @@ def main():
     lede_ok = any(w in para for w in ("fail", "fix", "retention", "miss", "below", "not meet"))
     cs = float(ans["cs_ndr_pct"])
     fin = float(ans["finance_ndr_pct"])
+    lede_ok = lede_ok and ("112" in para or "103.8" in para or "104" in para)
     band_ok = (
-        110.0 <= cs <= 115.0
-        and 102.0 <= fin <= 106.0
+        111.5 <= cs <= 113.0
+        and 103.3 <= fin <= 104.3
         and ans.get("decision") == "fail_fix_retention"
     )
     method_ok = "ndr" in memo.lower() and any(

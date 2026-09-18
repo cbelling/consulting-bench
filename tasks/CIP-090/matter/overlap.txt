@@ -1,0 +1,6 @@
+Overlap ASMs: 8.5 billion
+System ASMs (do not use): 70 billion
+Overlap RASM: 12.0 cents
+Competitor fare cut: −8%
+If we match: volume +3% on overlap, yield −8%
+If we do not match: yield unchanged, passengers −18% on overlap
