@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Harbor docs
+    url: https://www.harborframework.com/docs
+    about: How to install Harbor and run a local dataset

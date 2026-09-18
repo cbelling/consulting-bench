@@ -1,0 +1,25 @@
+# Harbor config: Partner-50 on Terminus-2 + DeepSeek V4.1 Flash.
+# Default environment is local Docker. Override with `-e modal`.
+#
+#   export OPENROUTER_API_KEY=...
+#   harbor run -c configs/terminus-2.deepseek-v4.1-flash.yaml
+#
+job_name: consulting-bench-terminus-2-deepseek-v4.1-flash
+n_attempts: 1
+n_concurrent_trials: 4
+
+environment:
+  type: docker
+
+agents:
+  - name: terminus-2
+    model_name: openrouter/deepseek/deepseek-v4.1-flash
+    kwargs:
+      max_turns: 30
+      record_terminal_session: false
+      model_info:
+        max_input_tokens: 200000
+        max_output_tokens: 8192
+
+datasets:
+  - path: tasks

@@ -1,5 +1,21 @@
-jobs/
+# Environment
 .env
 .env.*
+!.env.example
+
+# Python
 __pycache__/
 *.pyc
+.venv/
+.pytest_cache/
+.mypy_cache/
+
+# OS
+.DS_Store
+
+# IDEs
+.vscode/
+.idea/
+
+# Harbor job output
+jobs/

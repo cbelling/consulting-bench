@@ -1,0 +1,28 @@
+# Three-task smoke slice: L1 pricing, L1 P&L, L3 cash EBITDA.
+#
+#   export OPENROUTER_API_KEY=...
+#   harbor run -c configs/dry-run.yaml
+#
+job_name: consulting-bench-dry-run
+n_attempts: 1
+n_concurrent_trials: 3
+
+environment:
+  type: docker
+
+agents:
+  - name: terminus-2
+    model_name: openrouter/deepseek/deepseek-v4.1-flash
+    kwargs:
+      max_turns: 30
+      record_terminal_session: false
+      model_info:
+        max_input_tokens: 200000
+        max_output_tokens: 8192
+
+datasets:
+  - path: tasks
+    task_names:
+      - "management-consulting-bench/cip-054"
+      - "management-consulting-bench/cip-098"
+      - "management-consulting-bench/cip-015"

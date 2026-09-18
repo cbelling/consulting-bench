@@ -1,0 +1,25 @@
+name: Validate tasks
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+jobs:
+  validate-task-fields:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Validate Harbor task fields
+        run: python3 scripts/validate_task_fields.py
+
+  verify-oracles:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Local oracle smoke test
+        run: bash scripts/verify_oracles_local.sh

@@ -1,0 +1,36 @@
+name: Task proposal
+description: Propose a new Consulting Bench partner-memo task
+title: "[Task] "
+labels: ["task"]
+body:
+  - type: textarea
+    id: prompt
+    attributes:
+      label: Partner ask
+      description: One-paragraph partner email. What decision is due, and by when?
+    validations:
+      required: true
+  - type: dropdown
+    id: difficulty
+    attributes:
+      label: Suggested difficulty
+      options:
+        - L1
+        - L2
+        - L3
+    validations:
+      required: true
+  - type: input
+    id: category
+    attributes:
+      label: Category
+      description: For example pricing, market-sizing, profitability, investment-decision
+    validations:
+      required: true
+  - type: textarea
+    id: check
+    attributes:
+      label: How it should be checked
+      description: Decision, key number, method language, and any trap values to reject.
+    validations:
+      required: true
