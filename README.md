@@ -149,7 +149,13 @@ export MODAL_TOKEN_SECRET="..."
 bash scripts/run_dry_run.sh
 ```
 
-Full 50-task run, one Modal sandbox at a time:
+Full 50-task run, 20 Modal sandboxes at a time:
+
+```bash
+bash scripts/run_full_bench_concurrent.sh
+```
+
+Sequential (one sandbox at a time):
 
 ```bash
 bash scripts/run_full_bench_sequential.sh
