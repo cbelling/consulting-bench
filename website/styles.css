@@ -1,0 +1,92 @@
+:root {
+  --ink: #14202b;
+  --muted: #5c6b78;
+  --paper: #f6f1e8;
+  --card: #fffdf8;
+  --line: #d7cfc0;
+  --pass: #1f6b4a;
+  --fail: #9a2f2f;
+  --pending: #8a7a55;
+  --accent: #1c4d6e;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font: 16px/1.5 "Iowan Old Style", "Palatino Linotype", Palatino, serif;
+}
+
+body {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2.5rem 1.25rem 4rem;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.75rem;
+  color: var(--accent);
+  margin: 0 0 0.5rem;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+h1, h2 {
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+h1 { font-size: 2.2rem; margin: 0 0 0.75rem; }
+h2 { font-size: 1.25rem; margin: 2rem 0 0.75rem; }
+
+.lede { max-width: 42rem; }
+.meta { color: var(--muted); font-size: 0.9rem; }
+
+.cost {
+  background: var(--card);
+  border: 1px solid var(--line);
+  padding: 1rem 1.25rem 1.25rem;
+  margin: 1.5rem 0;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 0.92rem;
+}
+
+th, td {
+  text-align: left;
+  padding: 0.45rem 0.55rem;
+  border-bottom: 1px solid var(--line);
+  vertical-align: top;
+}
+
+th { color: var(--muted); font-weight: 600; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.04em; }
+td.num { font-variant-numeric: tabular-nums; }
+
+.pass { color: var(--pass); font-weight: 600; }
+.fail { color: var(--fail); font-weight: 600; }
+.pending { color: var(--pending); }
+
+.scroll { overflow-x: auto; }
+
+.matrix td, .matrix th { text-align: center; white-space: nowrap; }
+.matrix td.task { text-align: left; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0.8rem; }
+.matrix td.topic { text-align: left; color: var(--muted); font-size: 0.8rem; }
+
+footer {
+  margin-top: 2.5rem;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.85em;
+}

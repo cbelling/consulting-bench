@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Partner-50 Leaderboard — Management Consulting Bench</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="hero">
+    <p class="eyebrow">Management Consulting Bench</p>
+    <h1>Partner-50 leaderboard</h1>
+    <p class="lede">
+      One Harbor / terminus-2 pass per model on the hardened 50-task partner-memo set
+      (5 L1 / 25 L2 / 20 L3). Graders are programmatic. Cheap-model target is about 40–50%.
+    </p>
+    <p class="meta" id="updated"></p>
+  </header>
+
+  <section class="cost" id="cost">
+    <h2>How much should four flagship passes cost?</h2>
+    <p id="cost-copy"></p>
+    <table class="plain" id="cost-table"></table>
+  </section>
+
+  <section>
+    <h2>Scores</h2>
+    <table class="plain" id="score-table"></table>
+  </section>
+
+  <section>
+    <h2>By level</h2>
+    <table class="plain" id="level-table"></table>
+  </section>
+
+  <section>
+    <h2>Task matrix</h2>
+    <div class="scroll">
+      <table class="matrix" id="matrix-table"></table>
+    </div>
+  </section>
+
+  <footer>
+    Data source: <code>website/leaderboard.json</code>. Rebuild with
+    <code>python3 scripts/build_leaderboard.py</code> after a Harbor job.
+  </footer>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
