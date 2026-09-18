@@ -79,6 +79,12 @@ Verify the five partner-delegated tasks only (memo + JSON sidecar):
 bash scripts/verify_partner_oracles_local.sh
 ```
 
+Verify the ten hard L3 partner-delegated frontier-probe tasks (memo + JSON sidecar):
+
+```bash
+bash scripts/verify_l3_oracles_local.sh
+```
+
 With Docker available, build the task environment image and run the same check:
 
 ```bash
@@ -92,16 +98,17 @@ bash scripts/verify_oracles_local.sh CIP-001
 bash scripts/verify_oracles_local.sh CIP-054
 ```
 
-## Partner-delegated slice vs JSON L1 holdout
+## Task slices: JSON L1 holdout vs partner-delegated vs hard L3 probe
 
 | Slice | Task IDs | Instruction | Deliverable | Verifier |
 |-------|----------|-------------|-------------|----------|
 | **JSON L1 holdout** (COD-52) | 20 IDs (`CIP-001` … `CIP-051`) | Short engagement brief | `/app/output/answer.json` only | Single checkable core on JSON |
 | **Partner-delegated** (COD-55) | `CIP-054`, `CIP-063`, `CIP-075`, `CIP-089`, `CIP-098` | Partner email to associate | `/app/output/memo.md` + `answer.json` | All-pass AND of 4 programmatic checks (lede recommendation, JSON band, method keywords, concrete next ask) |
+| **Hard L3 frontier probe** (COD-57) | `CIP-015`, `CIP-021`, `CIP-028`, `CIP-044`, `CIP-050`, `CIP-052`, `CIP-055`, `CIP-066`, `CIP-093`, `CIP-099` | Partner email to associate | `/app/output/memo.md` + `answer.json` | Same 4-check AND verifier; messier `matter/` packs with conflicting exhibits, arithmetic lies, and unit/timing traps |
 
-Partner-delegated tasks mirror the Harbor directory layout from COD-52 but use Harvey-shaped memo deliverables with no LLM judge. Frozen holdout folders are untouched.
+Partner-delegated and hard L3 tasks mirror the Harbor directory layout from COD-52 but use Harvey-shaped memo deliverables with no LLM judge. Frozen JSON L1 holdout folders (`CIP-001` … `CIP-051`) and the five COD-55 partner tasks are untouched.
 
-### Partner-delegated tasks (5)
+### Partner-delegated tasks (5 — COD-55)
 
 | ID | Topic | Recommendation |
 |----|-------|----------------|
@@ -111,17 +118,33 @@ Partner-delegated tasks mirror the Harbor directory layout from COD-52 but use H
 | CIP-089 | HeroCo private-label response | Innovate ($39.5M operating profit) |
 | CIP-098 | CloudSaaS path to profitability | Cut S&M 30% (Q4 breakeven) |
 
+### Hard L3 frontier-probe tasks (10 — COD-57)
+
+| ID | Topic | Checkable core |
+|----|-------|----------------|
+| CIP-015 | Hospital outpatient surgery profit gap | Both C scenarios fail 15% cash EBITDA → no-go |
+| CIP-021 | Logistics last-mile Zone C | True contrib $1.40/stop < $1.50 hurdle → exit |
+| CIP-028 | Hospital urgent-care adjacency | 5% cannibal +$5.76M go; 15% +$1.92M fail → no-go unless ≤~6% |
+| CIP-044 | Retail distressed stores | Store B four-wall −56% → reject unless lease renegotiation |
+| CIP-050 | Pharma rare-disease biotech | Bull EV $1.37B go; bear $0.31B → CVR or no-go |
+| CIP-052 | Airline bag-fee increase | Optimistic +$39.6M; pessimistic −$20.4M → raise if ε≈−0.4 |
+| CIP-055 | Pharma co-pay paths | Path B $473M > Path A $400M |
+| CIP-066 | SaaS NDR conflict | CS 112.2% / Finance 103.8% NDR both miss 120% → fix retention |
+| CIP-093 | Retail e-comm price transparency | Selective electronics match $445M GM best |
+| CIP-099 | Hospital service-line turnaround | Keep cardio (+$15M true), close ortho (−$8M), expand |
+
 ## Regenerate tasks
 
-Task files are generated from `scripts/generate_tasks.py` (JSON L1 holdout) and `scripts/generate_partner_tasks.py` (partner-delegated slice):
+Task files are generated from `scripts/generate_tasks.py` (JSON L1 holdout), `scripts/generate_partner_tasks.py` (COD-55 partner slice), and `scripts/generate_l3_partner_tasks.py` (COD-57 hard L3 slice):
 
 ```bash
 python3 scripts/generate_tasks.py
 python3 scripts/generate_partner_tasks.py
+python3 scripts/generate_l3_partner_tasks.py
 ```
 
 ## Scope
 
 - Management consulting only (synthetic cases; not Cosentino/Cheng published text)
 - Docs + tasks only in this PR
-- 20 JSON L1 holdout tasks + 5 partner-delegated memo tasks
+- 20 JSON L1 holdout tasks + 5 partner-delegated memo tasks + 10 hard L3 frontier-probe tasks

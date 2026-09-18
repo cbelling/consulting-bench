@@ -1,0 +1,4 @@
+strategy,electronics_match,apparel_match,gross_margin_millions,notes
+do_nothing,no,no,420,Baseline
+full_match,yes,yes,385,Electronics + apparel match erodes margin
+selective_match,yes,no,445,Electronics match only; apparel hold price

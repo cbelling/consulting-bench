@@ -1,0 +1,6 @@
+FP&A Collections Note
+=====================
+Outpatient revenue at risk (uncollected): **8%** of $200.0M = **$16.0M**
+Apply to cash EBITDA regardless of accrual view (cash is cash).
+
+True under-accrual (reconciled): CFO $12.0M vs OR $4.0M → audit committee settled at **$8.0M**.

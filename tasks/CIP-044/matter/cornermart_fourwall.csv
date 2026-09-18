@@ -1,0 +1,3 @@
+store,sqft,broker_price_per_sqft,internal_val_per_sqft,annual_rent_per_sqft,annual_sales,sales_to_rent_ratio,four_wall_ebitda_margin_pct,notes
+A,8000,360,280,42,4200000,100,10.2,Anchor location; rent high but manageable
+B,6000,360,280,58,2400000,69,-56.0,Inline; rent 38% above market; negative four-wall

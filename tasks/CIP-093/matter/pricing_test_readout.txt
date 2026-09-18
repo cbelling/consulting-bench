@@ -1,0 +1,10 @@
+ShopMart Price Transparency — Test Readout
+==========================================
+Categories: Electronics (high price transparency) vs Apparel (low)
+
+Results (12-week test, $M gross margin):
+- Do nothing: $420M
+- Full match (electronics + apparel): $385M
+- **Selective match (electronics only): $445M** ← best GM
+
+⚠️ Full-match slide shows $410M — **excludes apparel margin leakage**.

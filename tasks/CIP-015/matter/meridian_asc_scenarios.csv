@@ -1,0 +1,4 @@
+scenario,revenue_m,ebitda_add_m,description
+base,200,0,Reported base year
+c_low,220,2,C-Low: +10% volume; +$2M incremental EBITDA (thin staffing)
+c_high,240,6,C-High: +20% volume; +$6M incremental EBITDA (overtime premium)

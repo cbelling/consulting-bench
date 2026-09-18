@@ -18,9 +18,15 @@ PARTNER_TASK_IDS=(
   CIP-054 CIP-063 CIP-075 CIP-089 CIP-098
 )
 
+# Hard L3 partner-delegated frontier probe (COD-57)
+L3_PARTNER_TASK_IDS=(
+  CIP-015 CIP-021 CIP-028 CIP-044 CIP-050 CIP-052 CIP-055 CIP-066 CIP-093 CIP-099
+)
+
 if [[ $# -gt 0 ]]; then
   TASK_IDS=("$@")
   PARTNER_TASK_IDS=()
+  L3_PARTNER_TASK_IDS=()
 fi
 
 pass=0
@@ -56,7 +62,8 @@ for tid in "${TASK_IDS[@]}"; do
   fi
 done
 
-for tid in "${PARTNER_TASK_IDS[@]}"; do
+COMBINED_PARTNER_IDS=("${PARTNER_TASK_IDS[@]}" "${L3_PARTNER_TASK_IDS[@]}")
+for tid in "${COMBINED_PARTNER_IDS[@]}"; do
   task_dir="$TASKS_DIR/$tid"
   sandbox="$TMP_ROOT/$tid"
   mkdir -p "$sandbox/app/output" "$sandbox/app/matter" "$sandbox/logs/verifier"
