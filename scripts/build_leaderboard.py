@@ -104,25 +104,25 @@ MODELS = [
         "role": "flagship",
     },
     {
-        "id": "gemini-3.1-pro",
-        "display": "Gemini 3.1 Pro",
+        "id": "gemini-3.8-flash",
+        "display": "Gemini 3.8 Flash",
         "lab": "Google",
-        "openrouter": "openrouter/google/gemini-3.1-pro-preview",
-        "results_file": "hardened-v1-gemini-3.1-pro-concurrent-results.json",
-        "job_name": "hardened-v1-gemini-3.1-pro-concurrent",
-        "price_in_per_m": 2.00,
-        "price_out_per_m": 12.00,
+        "openrouter": "openrouter/google/gemini-3.8-flash",
+        "results_file": "hardened-v1-gemini-3.8-flash-concurrent-results.json",
+        "job_name": "hardened-v1-gemini-3.8-flash-concurrent",
+        "price_in_per_m": 0.75,
+        "price_out_per_m": 3.75,
         "role": "flagship",
     },
     {
-        "id": "grok-4.6",
-        "display": "Grok 4.6",
-        "lab": "xAI",
-        "openrouter": "openrouter/x-ai/grok-4.6",
-        "results_file": "hardened-v1-grok-4.6-concurrent-results.json",
-        "job_name": "hardened-v1-grok-4.6-concurrent",
-        "price_in_per_m": 2.00,
-        "price_out_per_m": 6.00,
+        "id": "glm-5.3",
+        "display": "GLM 5.3",
+        "lab": "Zhipu",
+        "openrouter": "openrouter/z-ai/glm-5.3",
+        "results_file": "hardened-v1-glm-5.3-concurrent-results.json",
+        "job_name": "hardened-v1-glm-5.3-concurrent",
+        "price_in_per_m": 0.91,
+        "price_out_per_m": 2.86,
         "role": "flagship",
     },
 ]
@@ -250,8 +250,9 @@ def build() -> dict:
             "four_flagships_expected_usd": round(expected, 0),
             "four_flagships_upper_usd": round(upper, 0),
             "notes": (
-                "Expected band is about $35–45 if token volume stays near the DeepSeek "
-                "baseline. Upper band is about $70 if thinking models emit ~2× output tokens."
+                "Comparison set is GPT-5.4, Claude Haiku 4.5, Gemini 3.8 Flash, and GLM 5.3. "
+                "DeepSeek-volume estimates are conservative; GPT-5.4 and Haiku 4.5 already "
+                "came in well under those LLM estimates."
             ),
         },
         "models": models,

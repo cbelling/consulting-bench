@@ -4,7 +4,7 @@
 # Usage:
 #   bash scripts/run_four_model_pass.sh                 # all four
 #   bash scripts/run_four_model_pass.sh claude-haiku-4.5
-#   N_CONCURRENT=8 bash scripts/run_four_model_pass.sh gemini-3.1-pro
+#   N_CONCURRENT=8 bash scripts/run_four_model_pass.sh gemini-3.8-flash
 set -euo pipefail
 
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
@@ -32,20 +32,20 @@ JOBS_DIR="${JOBS_DIR:-$ROOT/jobs}"
 declare -A CONFIGS=(
   [gpt-5.4]="$ROOT/evals/hardened-v1-gpt-5.4-concurrent.json"
   [claude-haiku-4.5]="$ROOT/evals/hardened-v1-claude-haiku-4.5-concurrent.json"
-  [gemini-3.1-pro]="$ROOT/evals/hardened-v1-gemini-3.1-pro-concurrent.json"
-  [grok-4.6]="$ROOT/evals/hardened-v1-grok-4.6-concurrent.json"
+  [gemini-3.8-flash]="$ROOT/evals/hardened-v1-gemini-3.8-flash-concurrent.json"
+  [glm-5.3]="$ROOT/evals/hardened-v1-glm-5.3-concurrent.json"
 )
 
 declare -A JOB_NAMES=(
   [gpt-5.4]="hardened-v1-gpt-5.4-concurrent"
   [claude-haiku-4.5]="hardened-v1-claude-haiku-4.5-concurrent"
-  [gemini-3.1-pro]="hardened-v1-gemini-3.1-pro-concurrent"
-  [grok-4.6]="hardened-v1-grok-4.6-concurrent"
+  [gemini-3.8-flash]="hardened-v1-gemini-3.8-flash-concurrent"
+  [glm-5.3]="hardened-v1-glm-5.3-concurrent"
 )
 
 N_CONCURRENT="${N_CONCURRENT:-8}"
 
-MODELS=("gpt-5.4" "claude-haiku-4.5" "gemini-3.1-pro" "grok-4.6")
+MODELS=("gpt-5.4" "claude-haiku-4.5" "gemini-3.8-flash" "glm-5.3")
 if [[ $# -gt 0 ]]; then
   MODELS=("$@")
 fi
@@ -55,7 +55,7 @@ for key in "${MODELS[@]}"; do
   job="${JOB_NAMES[$key]:-}"
   if [[ -z "$config" || -z "$job" ]]; then
     echo "Unknown model key: $key"
-    echo "Expected one of: gpt-5.4 claude-haiku-4.5 gemini-3.1-pro grok-4.6"
+    echo "Expected one of: gpt-5.4 claude-haiku-4.5 gemini-3.8-flash glm-5.3"
     exit 2
   fi
 

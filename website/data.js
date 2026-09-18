@@ -10,7 +10,7 @@ window.LEADERBOARD = {
   "environment": "modal",
   "agent": "terminus-2",
   "n_concurrent_trials": 20,
-  "updated_at": "2026-09-18T23:10:46.627551+00:00",
+  "updated_at": "2026-09-18T23:13:13.460082+00:00",
   "cost_estimate": {
     "method": "Scale DeepSeek V4.1 Flash hardened-v1 token volume to OpenRouter list prices, plus ~$1 Modal per 50-task pass.",
     "baseline_job": "hardened-v1-deepseek-v4.1-flash-concurrent",
@@ -19,9 +19,9 @@ window.LEADERBOARD = {
       "output": 562730
     },
     "modal_usd_per_pass": 1.0,
-    "four_flagships_expected_usd": 33.0,
-    "four_flagships_upper_usd": 55.0,
-    "notes": "Expected band is about $35\u201345 if token volume stays near the DeepSeek baseline. Upper band is about $70 if thinking models emit ~2\u00d7 output tokens."
+    "four_flagships_expected_usd": 25.0,
+    "four_flagships_upper_usd": 40.0,
+    "notes": "Comparison set is GPT-5.4, Claude Haiku 4.5, Gemini 3.8 Flash, and GLM 5.3. DeepSeek-volume estimates are conservative; GPT-5.4 and Haiku 4.5 already came in well under those LLM estimates."
   },
   "models": [
     {
@@ -1219,33 +1219,33 @@ window.LEADERBOARD = {
       ]
     },
     {
-      "id": "gemini-3.1-pro",
-      "display": "Gemini 3.1 Pro",
+      "id": "gemini-3.8-flash",
+      "display": "Gemini 3.8 Flash",
       "lab": "Google",
-      "openrouter": "openrouter/google/gemini-3.1-pro-preview",
+      "openrouter": "openrouter/google/gemini-3.8-flash",
       "role": "flagship",
-      "job_name": "hardened-v1-gemini-3.1-pro-concurrent",
+      "job_name": "hardened-v1-gemini-3.8-flash-concurrent",
       "list_price_usd_per_m": {
-        "input": 2.0,
-        "output": 12.0
+        "input": 0.75,
+        "output": 3.75
       },
-      "estimated_llm_usd": 8.91,
-      "estimated_llm_usd_2x_output": 15.66,
+      "estimated_llm_usd": 2.92,
+      "estimated_llm_usd_2x_output": 5.03,
       "status": "pending"
     },
     {
-      "id": "grok-4.6",
-      "display": "Grok 4.6",
-      "lab": "xAI",
-      "openrouter": "openrouter/x-ai/grok-4.6",
+      "id": "glm-5.3",
+      "display": "GLM 5.3",
+      "lab": "Zhipu",
+      "openrouter": "openrouter/z-ai/glm-5.3",
       "role": "flagship",
-      "job_name": "hardened-v1-grok-4.6-concurrent",
+      "job_name": "hardened-v1-glm-5.3-concurrent",
       "list_price_usd_per_m": {
-        "input": 2.0,
-        "output": 6.0
+        "input": 0.91,
+        "output": 2.86
       },
-      "estimated_llm_usd": 5.53,
-      "estimated_llm_usd_2x_output": 8.91,
+      "estimated_llm_usd": 2.59,
+      "estimated_llm_usd_2x_output": 4.2,
       "status": "pending"
     }
   ],
@@ -1258,8 +1258,8 @@ window.LEADERBOARD = {
         "deepseek-v4.1-flash": 1,
         "gpt-5.4": 1,
         "claude-haiku-4.5": 0,
-        "gemini-3.1-pro": null,
-        "grok-4.6": null
+        "gemini-3.8-flash": null,
+        "glm-5.3": null
       }
     },
     {
@@ -1270,8 +1270,8 @@ window.LEADERBOARD = {
         "deepseek-v4.1-flash": 1,
         "gpt-5.4": 1,
         "claude-haiku-4.5": 0,
-        "gemini-3.1-pro": null,
-        "grok-4.6": null
+        "gemini-3.8-flash": null,
+        "glm-5.3": null
       }
     },
     {
@@ -1282,8 +1282,8 @@ window.LEADERBOARD = {
         "deepseek-v4.1-flash": 1,
         "gpt-5.4": 1,
         "claude-haiku-4.5": 1,
-        "gemini-3.1-pro": null,
-        "grok-4.6": null
+        "gemini-3.8-flash": null,
+        "glm-5.3": null
       }
     },
     {
@@ -1294,8 +1294,8 @@ window.LEADERBOARD = {
         "deepseek-v4.1-flash": 0,
         "gpt-5.4": 1,
         "claude-haiku-4.5": 0,
-        "gemini-3.1-pro": null,
-        "grok-4.6": null
+        "gemini-3.8-flash": null,
+        "glm-5.3": null
       }
     },
     {
@@ -1306,8 +1306,8 @@ window.LEADERBOARD = {
         "deepseek-v4.1-flash": 1,
         "gpt-5.4": 1,
         "claude-haiku-4.5": 1,
-        "gemini-3.1-pro": null,
-        "grok-4.6": null
+        "gemini-3.8-flash": null,
+        "glm-5.3": null
       }
     },
     {
@@ -1318,8 +1318,8 @@ window.LEADERBOARD = {
         "deepseek-v4.1-flash": 1,
         "gpt-5.4": 0,
         "claude-haiku-4.5": 0,
-        "gemini-3.1-pro": null,
-        "grok-4.6": null
+        "gemini-3.8-flash": null,
+        "glm-5.3": null
       }
     },
     {
@@ -1330,8 +1330,8 @@ window.LEADERBOARD = {
         "deepseek-v4.1-flash": 1,
         "gpt-5.4": 0,
         "claude-haiku-4.5": 0,
-        "gemini-3.1-pro": null,
-        "grok-4.6": null
+        "gemini-3.8-flash": null,
+        "glm-5.3": null
       }
     },
     {
@@ -1342,8 +1342,8 @@ window.LEADERBOARD = {
         "deepseek-v4.1-flash": 0,
         "gpt-5.4": 0,
         "claude-haiku-4.5": 0,
-        "gemini-3.1-pro": null,
-        "grok-4.6": null
+        "gemini-3.8-flash": null,
+        "glm-5.3": null
       }
     },
     {
@@ -1354,8 +1354,8 @@ window.LEADERBOARD = {
         "deepseek-v4.1-flash": 0,
         "gpt-5.4": 0,
         "claude-haiku-4.5": 0,
-        "gemini-3.1-pro": null,
-        "grok-4.6": null
+        "gemini-3.8-flash": null,
+        "glm-5.3": null
       }
     },
     {
@@ -1366,8 +1366,8 @@ window.LEADERBOARD = {
         "deepseek-v4.1-flash": 1,
         "gpt-5.4": 1,
         "claude-haiku-4.5": 1,
-        "gemini-3.1-pro": null,
-        "grok-4.6": null
+        "gemini-3.8-flash": null,
+        "glm-5.3": null
       }
     },
     {
@@ -1378,8 +1378,8 @@ window.LEADERBOARD = {
         "deepseek-v4.1-flash": 1,
         "gpt-5.4": 1,
         "claude-haiku-4.5": 0,
-        "gemini-3.1-pro": null,
-        "grok-4.6": null
+        "gemini-3.8-flash": null,
+        "glm-5.3": null
       }
     },
     {
@@ -1390,8 +1390,8 @@ window.LEADERBOARD = {
         "deepseek-v4.1-flash": 0,
         "gpt-5.4": 0,
         "claude-haiku-4.5": 0,
-        "gemini-3.1-pro": null,
-        "grok-4.6": null
+        "gemini-3.8-flash": null,
+        "glm-5.3": null
       }
     },
     {
@@ -1402,8 +1402,8 @@ window.LEADERBOARD = {
         "deepseek-v4.1-flash": 1,
         "gpt-5.4": 1,
         "claude-haiku-4.5": 0,
-        "gemini-3.1-pro": null,
-        "grok-4.6": null
+        "gemini-3.8-flash": null,
+        "glm-5.3": null
       }
     },
     {
@@ -1414,8 +1414,8 @@ window.LEADERBOARD = {
         "deepseek-v4.1-flash": 0,
         "gpt-5.4": 0,
         "claude-haiku-4.5": 0,
-        "gemini-3.1-pro": null,
-        "grok-4.6": null
+        "gemini-3.8-flash": null,
+        "glm-5.3": null
       }
     },
     {
@@ -1426,8 +1426,8 @@ window.LEADERBOARD = {
         "deepseek-v4.1-flash": 1,
         "gpt-5.4": 0,
         "claude-haiku-4.5": 0,
-        "gemini-3.1-pro": null,
-        "grok-4.6": null
+        "gemini-3.8-flash": null,
+        "glm-5.3": null
       }
     },
     {
@@ -1438,8 +1438,8 @@ window.LEADERBOARD = {
         "deepseek-v4.1-flash": 0,
         "gpt-5.4": 0,
         "claude-haiku-4.5": 0,
-        "gemini-3.1-pro": null,
-        "grok-4.6": null
+        "gemini-3.8-flash": null,
+        "glm-5.3": null
       }
     },
     {
@@ -1450,8 +1450,8 @@ window.LEADERBOARD = {
         "deepseek-v4.1-flash": 0,
         "gpt-5.4": 1,
         "claude-haiku-4.5": 0,
-        "gemini-3.1-pro": null,
-        "grok-4.6": null
+        "gemini-3.8-flash": null,
+        "glm-5.3": null
       }
     },
     {
@@ -1462,8 +1462,8 @@ window.LEADERBOARD = {
         "deepseek-v4.1-flash": 0,
         "gpt-5.4": 0,
         "claude-haiku-4.5": 0,
-        "gemini-3.1-pro": null,
-        "grok-4.6": null
+        "gemini-3.8-flash": null,
+        "glm-5.3": null
       }
     },
     {
@@ -1474,8 +1474,8 @@ window.LEADERBOARD = {
         "deepseek-v4.1-flash": 1,
         "gpt-5.4": 1,
         "claude-haiku-4.5": 0,
-        "gemini-3.1-pro": null,
-        "grok-4.6": null
+        "gemini-3.8-flash": null,
+        "glm-5.3": null
       }
     },
     {
@@ -1486,8 +1486,8 @@ window.LEADERBOARD = {
         "deepseek-v4.1-flash": 0,
         "gpt-5.4": 0,
         "claude-haiku-4.5": 0,
-        "gemini-3.1-pro": null,
-        "grok-4.6": null
+        "gemini-3.8-flash": null,
+        "glm-5.3": null
       }
     },
     {
@@ -1498,8 +1498,8 @@ window.LEADERBOARD = {
         "deepseek-v4.1-flash": 0,
         "gpt-5.4": 0,
         "claude-haiku-4.5": 0,
-        "gemini-3.1-pro": null,
-        "grok-4.6": null
+        "gemini-3.8-flash": null,
+        "glm-5.3": null
       }
     },
     {
@@ -1510,8 +1510,8 @@ window.LEADERBOARD = {
         "deepseek-v4.1-flash": 0,
         "gpt-5.4": 0,
         "claude-haiku-4.5": 0,
-        "gemini-3.1-pro": null,
-        "grok-4.6": null
+        "gemini-3.8-flash": null,
+        "glm-5.3": null
       }
     },
     {
@@ -1522,8 +1522,8 @@ window.LEADERBOARD = {
         "deepseek-v4.1-flash": 0,
         "gpt-5.4": 0,
         "claude-haiku-4.5": 1,
-        "gemini-3.1-pro": null,
-        "grok-4.6": null
+        "gemini-3.8-flash": null,
+        "glm-5.3": null
       }
     },
     {
@@ -1534,8 +1534,8 @@ window.LEADERBOARD = {
         "deepseek-v4.1-flash": 1,
         "gpt-5.4": 1,
         "claude-haiku-4.5": 1,
-        "gemini-3.1-pro": null,
-        "grok-4.6": null
+        "gemini-3.8-flash": null,
+        "glm-5.3": null
       }
     },
     {
@@ -1546,8 +1546,8 @@ window.LEADERBOARD = {
         "deepseek-v4.1-flash": 0,
         "gpt-5.4": 1,
         "claude-haiku-4.5": 1,
-        "gemini-3.1-pro": null,
-        "grok-4.6": null
+        "gemini-3.8-flash": null,
+        "glm-5.3": null
       }
     },
     {
@@ -1558,8 +1558,8 @@ window.LEADERBOARD = {
         "deepseek-v4.1-flash": 1,
         "gpt-5.4": 1,
         "claude-haiku-4.5": 0,
-        "gemini-3.1-pro": null,
-        "grok-4.6": null
+        "gemini-3.8-flash": null,
+        "glm-5.3": null
       }
     },
     {
@@ -1570,8 +1570,8 @@ window.LEADERBOARD = {
         "deepseek-v4.1-flash": 0,
         "gpt-5.4": 0,
         "claude-haiku-4.5": 0,
-        "gemini-3.1-pro": null,
-        "grok-4.6": null
+        "gemini-3.8-flash": null,
+        "glm-5.3": null
       }
     },
     {
@@ -1582,8 +1582,8 @@ window.LEADERBOARD = {
         "deepseek-v4.1-flash": 0,
         "gpt-5.4": 1,
         "claude-haiku-4.5": 0,
-        "gemini-3.1-pro": null,
-        "grok-4.6": null
+        "gemini-3.8-flash": null,
+        "glm-5.3": null
       }
     },
     {
@@ -1594,8 +1594,8 @@ window.LEADERBOARD = {
         "deepseek-v4.1-flash": 0,
         "gpt-5.4": 0,
         "claude-haiku-4.5": 0,
-        "gemini-3.1-pro": null,
-        "grok-4.6": null
+        "gemini-3.8-flash": null,
+        "glm-5.3": null
       }
     },
     {
@@ -1606,8 +1606,8 @@ window.LEADERBOARD = {
         "deepseek-v4.1-flash": 1,
         "gpt-5.4": 1,
         "claude-haiku-4.5": 1,
-        "gemini-3.1-pro": null,
-        "grok-4.6": null
+        "gemini-3.8-flash": null,
+        "glm-5.3": null
       }
     },
     {
@@ -1618,8 +1618,8 @@ window.LEADERBOARD = {
         "deepseek-v4.1-flash": 0,
         "gpt-5.4": 0,
         "claude-haiku-4.5": 0,
-        "gemini-3.1-pro": null,
-        "grok-4.6": null
+        "gemini-3.8-flash": null,
+        "glm-5.3": null
       }
     },
     {
@@ -1630,8 +1630,8 @@ window.LEADERBOARD = {
         "deepseek-v4.1-flash": 0,
         "gpt-5.4": 1,
         "claude-haiku-4.5": 1,
-        "gemini-3.1-pro": null,
-        "grok-4.6": null
+        "gemini-3.8-flash": null,
+        "glm-5.3": null
       }
     },
     {
@@ -1642,8 +1642,8 @@ window.LEADERBOARD = {
         "deepseek-v4.1-flash": 1,
         "gpt-5.4": 1,
         "claude-haiku-4.5": 0,
-        "gemini-3.1-pro": null,
-        "grok-4.6": null
+        "gemini-3.8-flash": null,
+        "glm-5.3": null
       }
     },
     {
@@ -1654,8 +1654,8 @@ window.LEADERBOARD = {
         "deepseek-v4.1-flash": 1,
         "gpt-5.4": 1,
         "claude-haiku-4.5": 1,
-        "gemini-3.1-pro": null,
-        "grok-4.6": null
+        "gemini-3.8-flash": null,
+        "glm-5.3": null
       }
     },
     {
@@ -1666,8 +1666,8 @@ window.LEADERBOARD = {
         "deepseek-v4.1-flash": 0,
         "gpt-5.4": 0,
         "claude-haiku-4.5": 0,
-        "gemini-3.1-pro": null,
-        "grok-4.6": null
+        "gemini-3.8-flash": null,
+        "glm-5.3": null
       }
     },
     {
@@ -1678,8 +1678,8 @@ window.LEADERBOARD = {
         "deepseek-v4.1-flash": 1,
         "gpt-5.4": 0,
         "claude-haiku-4.5": 0,
-        "gemini-3.1-pro": null,
-        "grok-4.6": null
+        "gemini-3.8-flash": null,
+        "glm-5.3": null
       }
     },
     {
@@ -1690,8 +1690,8 @@ window.LEADERBOARD = {
         "deepseek-v4.1-flash": 1,
         "gpt-5.4": 1,
         "claude-haiku-4.5": 0,
-        "gemini-3.1-pro": null,
-        "grok-4.6": null
+        "gemini-3.8-flash": null,
+        "glm-5.3": null
       }
     },
     {
@@ -1702,8 +1702,8 @@ window.LEADERBOARD = {
         "deepseek-v4.1-flash": 1,
         "gpt-5.4": 1,
         "claude-haiku-4.5": 1,
-        "gemini-3.1-pro": null,
-        "grok-4.6": null
+        "gemini-3.8-flash": null,
+        "glm-5.3": null
       }
     },
     {
@@ -1714,8 +1714,8 @@ window.LEADERBOARD = {
         "deepseek-v4.1-flash": 1,
         "gpt-5.4": 0,
         "claude-haiku-4.5": 0,
-        "gemini-3.1-pro": null,
-        "grok-4.6": null
+        "gemini-3.8-flash": null,
+        "glm-5.3": null
       }
     },
     {
@@ -1726,8 +1726,8 @@ window.LEADERBOARD = {
         "deepseek-v4.1-flash": 0,
         "gpt-5.4": 1,
         "claude-haiku-4.5": 0,
-        "gemini-3.1-pro": null,
-        "grok-4.6": null
+        "gemini-3.8-flash": null,
+        "glm-5.3": null
       }
     },
     {
@@ -1738,8 +1738,8 @@ window.LEADERBOARD = {
         "deepseek-v4.1-flash": 1,
         "gpt-5.4": 1,
         "claude-haiku-4.5": 0,
-        "gemini-3.1-pro": null,
-        "grok-4.6": null
+        "gemini-3.8-flash": null,
+        "glm-5.3": null
       }
     },
     {
@@ -1750,8 +1750,8 @@ window.LEADERBOARD = {
         "deepseek-v4.1-flash": 1,
         "gpt-5.4": 1,
         "claude-haiku-4.5": 0,
-        "gemini-3.1-pro": null,
-        "grok-4.6": null
+        "gemini-3.8-flash": null,
+        "glm-5.3": null
       }
     },
     {
@@ -1762,8 +1762,8 @@ window.LEADERBOARD = {
         "deepseek-v4.1-flash": 0,
         "gpt-5.4": 1,
         "claude-haiku-4.5": 0,
-        "gemini-3.1-pro": null,
-        "grok-4.6": null
+        "gemini-3.8-flash": null,
+        "glm-5.3": null
       }
     },
     {
@@ -1774,8 +1774,8 @@ window.LEADERBOARD = {
         "deepseek-v4.1-flash": 1,
         "gpt-5.4": 0,
         "claude-haiku-4.5": 1,
-        "gemini-3.1-pro": null,
-        "grok-4.6": null
+        "gemini-3.8-flash": null,
+        "glm-5.3": null
       }
     },
     {
@@ -1786,8 +1786,8 @@ window.LEADERBOARD = {
         "deepseek-v4.1-flash": 1,
         "gpt-5.4": 1,
         "claude-haiku-4.5": 1,
-        "gemini-3.1-pro": null,
-        "grok-4.6": null
+        "gemini-3.8-flash": null,
+        "glm-5.3": null
       }
     },
     {
@@ -1798,8 +1798,8 @@ window.LEADERBOARD = {
         "deepseek-v4.1-flash": 0,
         "gpt-5.4": 0,
         "claude-haiku-4.5": 0,
-        "gemini-3.1-pro": null,
-        "grok-4.6": null
+        "gemini-3.8-flash": null,
+        "glm-5.3": null
       }
     },
     {
@@ -1810,8 +1810,8 @@ window.LEADERBOARD = {
         "deepseek-v4.1-flash": 0,
         "gpt-5.4": 0,
         "claude-haiku-4.5": 0,
-        "gemini-3.1-pro": null,
-        "grok-4.6": null
+        "gemini-3.8-flash": null,
+        "glm-5.3": null
       }
     },
     {
@@ -1822,8 +1822,8 @@ window.LEADERBOARD = {
         "deepseek-v4.1-flash": 1,
         "gpt-5.4": 1,
         "claude-haiku-4.5": 1,
-        "gemini-3.1-pro": null,
-        "grok-4.6": null
+        "gemini-3.8-flash": null,
+        "glm-5.3": null
       }
     },
     {
@@ -1834,8 +1834,8 @@ window.LEADERBOARD = {
         "deepseek-v4.1-flash": 1,
         "gpt-5.4": 1,
         "claude-haiku-4.5": 1,
-        "gemini-3.1-pro": null,
-        "grok-4.6": null
+        "gemini-3.8-flash": null,
+        "glm-5.3": null
       }
     },
     {
@@ -1846,8 +1846,8 @@ window.LEADERBOARD = {
         "deepseek-v4.1-flash": 0,
         "gpt-5.4": 0,
         "claude-haiku-4.5": 0,
-        "gemini-3.1-pro": null,
-        "grok-4.6": null
+        "gemini-3.8-flash": null,
+        "glm-5.3": null
       }
     }
   ]
