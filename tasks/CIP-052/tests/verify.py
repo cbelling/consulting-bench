@@ -1,3 +1,5 @@
+import re
+
 def first_paragraph(text: str) -> str:
     chunks = [c.strip() for c in text.replace("\r\n", "\n").strip().split("\n\n") if c.strip()]
     for c in chunks:
@@ -6,6 +8,9 @@ def first_paragraph(text: str) -> str:
         if first.startswith("#"):
             continue
         if fl.startswith(("to:", "from:", "date:", "subject:")):
+            continue
+        if re.fullmatch(r"[-*_ ]{3,}", first):
+            continue
             continue
         return c.lower()
     return chunks[0].lower() if chunks else ""

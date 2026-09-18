@@ -1,0 +1,17 @@
+Chemora US Lithium Processing — Exhibit B: Internal Engineering (CONFLICTS with A)
+==================================================================================
+From: Chemora Engineering team
+
+**Achievable margin at proposed CapEx: $1,200 per tonne** ❌
+
+Engineering reality check:
+- Consultant assumed 35% efficiency; our plant design achieves 28%
+- Higher reagent costs in US vs Asia baseline: +$400/tonne
+- Realistic processing margin: **$1,200/tonne** (not $3,000)
+
+At 10% market share (20,000 tonnes):
+→ Annual EBITDA: 20,000 × $1,200 = **$24 million**
+
+⚠️ **$24M << $150M IRR hurdle** → project fails without subsidy or scale-up.
+
+Engineering view: "Consultant margin is aspirational. Our actual plant economics miss hurdle by 6×."

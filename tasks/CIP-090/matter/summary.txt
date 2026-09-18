@@ -1,0 +1,1 @@
+Case: Airline competitive response\nCategory: competitive-response\nDifficulty: l2

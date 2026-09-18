@@ -1,0 +1,22 @@
+Analyst scratch calculations — piano tunings
+============================================
+
+TRAP: If you use a single blended tuning rate across home and institutional, you'll get the wrong answer. Must segment.
+
+Home piano tunings:
+- Base: 10M pianos
+- Only 40% tune at all
+- Those who tune: avg 1.2/year
+- Simple calc: 10M × 0.40 × 1.2 = 4.8M
+
+Institutional:
+- 2M pianos × 2 tunings/year = 4.0M
+
+Add-on (concert/rental):
+- Given as 0.5M
+
+Total: 4.8 + 4.0 + 0.5 = 9.3M tunings/year
+
+CHECK: 7M–12M band requested ✓
+
+Possible TRAP in home data: the 1.2 average may be understated if piano teachers (who tune 2×/year) are underweighted, but we should use the given 1.2 weighted average as stated unless we have reason to reweight.
