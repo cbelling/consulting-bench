@@ -37,7 +37,7 @@ def main():
     )
     next_ok = any(
         k in memo.lower()
-        for k in ("pilot", "implement", "roll out", "deploy", "a/b", "test in", "schedule", "sign off")
+        for k in ("pilot", "implement", "roll out", "deploy", "a/b", "test in", "schedule", "sign off", "booking", "load the", "confirm")
     ) and "monitor risks" not in memo.lower()
 
     return lede_ok and band_ok and method_ok and next_ok

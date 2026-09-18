@@ -38,7 +38,7 @@ Verifiers are programmatic (no LLM judge). Typical all-pass checks: lede recomme
 | L2 | 25 | CIP-003, CIP-005, CIP-006, CIP-016, CIP-018, CIP-019, CIP-030, CIP-033, CIP-034, CIP-040, CIP-041, CIP-043, CIP-053, CIP-057, CIP-059, CIP-064, CIP-067, CIP-076, CIP-077, CIP-084, CIP-085, CIP-090, CIP-091, CIP-097, CIP-100 |
 | L3 | 20 | CIP-010, CIP-012, CIP-015, CIP-021, CIP-025, CIP-028, CIP-032, CIP-038, CIP-044, CIP-050, CIP-052, CIP-055, CIP-062, CIP-066, CIP-070, CIP-079, CIP-087, CIP-093, CIP-096, CIP-099 |
 
-Every task is checkable (no paragraph-length stubs). L2 packs require multi-exhibit math with one distractor number. L3 packs include conflicting exhibits, arithmetic traps, or unit/timing issues. Target cheap-model pass rate is about 40–50% (DeepSeek V4.1 Flash).
+Every task is checkable (no paragraph-length stubs). L2 packs require multi-exhibit math with one distractor number. L3 packs include conflicting exhibits, arithmetic traps, or unit/timing issues. Target cheap-model pass rate is about 40–50% (DeepSeek V4.1 Flash). Hardened-v1 concurrent run: **26/50 (52%)**, $0.73, 0 errors. All 24 fails still have a passing local oracle.
 
 ## Catalog
 
