@@ -1,0 +1,25 @@
+{
+  "job_name": "hardened-v1-glm-5.3-retry-cip-050",
+  "n_attempts": 1,
+  "n_concurrent_trials": 1,
+  "environment": {
+    "type": "modal"
+  },
+  "agents": [
+    {
+      "name": "terminus-2",
+      "model_name": "openrouter/z-ai/glm-5.3",
+      "kwargs": {
+        "max_turns": 30,
+        "record_terminal_session": false,
+        "model_info": {
+          "max_input_tokens": 200000,
+          "max_output_tokens": 16384
+        }
+      }
+    }
+  ],
+  "tasks": [
+    {"path": "tasks/CIP-050"}
+  ]
+}

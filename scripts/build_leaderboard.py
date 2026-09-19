@@ -82,14 +82,14 @@ MODELS = [
         "role": "cheap-model baseline",
     },
     {
-        "id": "gpt-5.4",
-        "display": "GPT-5.4",
+        "id": "gpt-5.6-luna",
+        "display": "GPT-5.6 Luna",
         "lab": "OpenAI",
-        "openrouter": "openrouter/openai/gpt-5.4",
-        "results_file": "hardened-v1-gpt-5.4-concurrent-results.json",
-        "job_name": "hardened-v1-gpt-5.4-concurrent",
-        "price_in_per_m": 2.50,
-        "price_out_per_m": 15.00,
+        "openrouter": "openrouter/openai/gpt-5.6-luna",
+        "results_file": "hardened-v1-gpt-5.6-luna-concurrent-results.json",
+        "job_name": "hardened-v1-gpt-5.6-luna-concurrent",
+        "price_in_per_m": 0.20,
+        "price_out_per_m": 1.20,
         "role": "flagship",
     },
     {
@@ -250,9 +250,8 @@ def build() -> dict:
             "four_flagships_expected_usd": round(expected, 0),
             "four_flagships_upper_usd": round(upper, 0),
             "notes": (
-                "Comparison set is GPT-5.4, Claude Haiku 4.5, Gemini 3.8 Flash, and GLM 5.3. "
-                "DeepSeek-volume estimates are conservative; GPT-5.4 and Haiku 4.5 already "
-                "came in well under those LLM estimates."
+                "Comparison set is GPT-5.6 Luna, Claude Haiku 4.5, Gemini 3.8 Flash, and GLM 5.3. "
+                "DeepSeek-volume estimates are conservative versus several actual traces."
             ),
         },
         "models": models,

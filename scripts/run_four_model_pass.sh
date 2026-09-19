@@ -30,14 +30,14 @@ fi
 JOBS_DIR="${JOBS_DIR:-$ROOT/jobs}"
 
 declare -A CONFIGS=(
-  [gpt-5.4]="$ROOT/evals/hardened-v1-gpt-5.4-concurrent.json"
+  [gpt-5.6-luna]="$ROOT/evals/hardened-v1-gpt-5.6-luna-concurrent.json"
   [claude-haiku-4.5]="$ROOT/evals/hardened-v1-claude-haiku-4.5-concurrent.json"
   [gemini-3.8-flash]="$ROOT/evals/hardened-v1-gemini-3.8-flash-concurrent.json"
   [glm-5.3]="$ROOT/evals/hardened-v1-glm-5.3-concurrent.json"
 )
 
 declare -A JOB_NAMES=(
-  [gpt-5.4]="hardened-v1-gpt-5.4-concurrent"
+  [gpt-5.6-luna]="hardened-v1-gpt-5.6-luna-concurrent"
   [claude-haiku-4.5]="hardened-v1-claude-haiku-4.5-concurrent"
   [gemini-3.8-flash]="hardened-v1-gemini-3.8-flash-concurrent"
   [glm-5.3]="hardened-v1-glm-5.3-concurrent"
@@ -45,7 +45,7 @@ declare -A JOB_NAMES=(
 
 N_CONCURRENT="${N_CONCURRENT:-8}"
 
-MODELS=("gpt-5.4" "claude-haiku-4.5" "gemini-3.8-flash" "glm-5.3")
+MODELS=("gpt-5.6-luna" "claude-haiku-4.5" "gemini-3.8-flash" "glm-5.3")
 if [[ $# -gt 0 ]]; then
   MODELS=("$@")
 fi
@@ -55,7 +55,7 @@ for key in "${MODELS[@]}"; do
   job="${JOB_NAMES[$key]:-}"
   if [[ -z "$config" || -z "$job" ]]; then
     echo "Unknown model key: $key"
-    echo "Expected one of: gpt-5.4 claude-haiku-4.5 gemini-3.8-flash glm-5.3"
+    echo "Expected one of: gpt-5.6-luna claude-haiku-4.5 gemini-3.8-flash glm-5.3"
     exit 2
   fi
 

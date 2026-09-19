@@ -50,11 +50,11 @@ Hardened-v1: 0 errors; all 24 fails still have a passing local oracle. Pre-harde
 
 ## Multi-model leaderboard
 
-Website-ready scores live in `website/leaderboard.json` (static page: `website/index.html`). The cheap-model baseline is DeepSeek V4.1 Flash at **26/50**. The other four comparison models are GPT-5.4, Claude Haiku 4.5, Gemini 3.8 Flash, and GLM 5.3:
+Website-ready scores live in `website/leaderboard.json` (static page: `website/index.html`). The cheap-model baseline is DeepSeek V4.1 Flash at **26/50**. The other four comparison models are GPT-5.6 Luna, Claude Haiku 4.5, Gemini 3.8 Flash, and GLM 5.3:
 
 | Model | OpenRouter slug | List $/1M in/out | Est. LLM | Est. 2× out |
 |-------|-----------------|------------------|----------|-------------|
-| GPT-5.4 | `openai/gpt-5.4` | $2.50 / $15 | ~$11 | ~$20 |
+| GPT-5.6 Luna | `openai/gpt-5.6-luna` | $0.20 / $1.20 | ~$1 | ~$2 |
 | Claude Haiku 4.5 | `anthropic/claude-haiku-4.5` | $1 / $5 | ~$4 | ~$7 |
 | Gemini 3.8 Flash | `google/gemini-3.8-flash` | $0.75 / $3.75 | ~$3 | ~$5 |
 | GLM 5.3 | `z-ai/glm-5.3` | $0.91 / $2.86 | ~$3 | ~$4 |

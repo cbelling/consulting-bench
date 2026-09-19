@@ -1,14 +1,14 @@
 {
-  "job_name": "hardened-v1-gpt-5.4-concurrent",
+  "job_name": "hardened-v1-gpt-5.6-luna-concurrent",
   "n_attempts": 1,
-  "n_concurrent_trials": 20,
+  "n_concurrent_trials": 8,
   "environment": {
     "type": "modal"
   },
   "agents": [
     {
       "name": "terminus-2",
-      "model_name": "openrouter/openai/gpt-5.4",
+      "model_name": "openrouter/openai/gpt-5.6-luna",
       "kwargs": {
         "max_turns": 30,
         "record_terminal_session": false,
