@@ -11,7 +11,7 @@ authors:
   - name: Consulting Bench Authors
 url: https://github.com/cbelling/consulting-bench
 repository-code: https://github.com/cbelling/consulting-bench
-license: Apache-2.0
+license: MIT
 date-released: "2026-09-18"
 keywords:
   - consulting
