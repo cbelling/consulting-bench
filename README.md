@@ -1,7 +1,7 @@
 # Consulting Bench
 
 [![Docs](https://img.shields.io/badge/Harbor_docs-000000?style=for-the-badge&logo=mdbook&color=105864)](https://www.harborframework.com/docs)
-[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg?style=for-the-badge)](LICENSE)
+[![License](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](LICENSE)
 
 [Consulting Bench](https://austinbellinger.com/consulting-bench.html) measures how well agents handle **partner-memo** work in
 management consulting: market sizing, profitability, pricing, and investment
@@ -185,4 +185,4 @@ reads [CITATION.cff](CITATION.cff).
 
 ## License
 
-Apache-2.0. See [LICENSE](LICENSE).
+MIT. See [LICENSE](LICENSE).
