@@ -12,10 +12,10 @@ New work should land as a pull request against `main`.
 
 ## Add or change a task
 
-Each task lives under `tasks/<TASK-ID>/` and must include:
+Each task lives under `tasks/<kebab-slug>/` and must include:
 
 ```
-tasks/CIP-054/
+tasks/restinn-weekend-pricing/
 ├── task.toml
 ├── instruction.md
 ├── environment/
@@ -35,11 +35,12 @@ and verifier rules.
 Before opening a PR:
 
 1. `python3 scripts/validate_task_fields.py` — required files and `task.toml` fields
-2. `bash scripts/verify_oracles_local.sh CIP-054` — oracle produces reward `1`
-3. Prefer `harbor run -p tasks/CIP-054 -a oracle` if Docker is available
+2. `bash scripts/verify_oracles_local.sh restinn-weekend-pricing` — oracle produces reward `1`
+3. Prefer `harbor run -p tasks/restinn-weekend-pricing -a oracle` if Docker is available
 
-`task.toml` `[task].name` must be unique and stay in `management-consulting-bench/cip-XXX`
-form until a dataset rename is coordinated.
+`task.toml` `[task].name` must be unique and match the folder as
+`consulting-bench/<kebab-slug>`. Keep the original CIP id on
+`[metadata].legacy_id`.
 
 ## Pull requests
 

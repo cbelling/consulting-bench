@@ -23,6 +23,6 @@ agents:
 datasets:
   - path: tasks
     task_names:
-      - "management-consulting-bench/cip-054"
-      - "management-consulting-bench/cip-098"
-      - "management-consulting-bench/cip-015"
+      - "consulting-bench/restinn-weekend-pricing"
+      - "consulting-bench/cloudsaas-path-to-profit"
+      - "consulting-bench/hospital-outpatient-gap"

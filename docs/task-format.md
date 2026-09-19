@@ -4,7 +4,7 @@ Every Consulting Bench task is a Harbor task. The layout matches
 [Terminal-Bench](https://www.harborframework.com/docs/tasks):
 
 ```
-tasks/<TASK-ID>/
+tasks/<kebab-slug>/
 ├── task.toml               # Harbor metadata and timeouts
 ├── instruction.md          # Partner email + deliverable contract
 ├── environment/

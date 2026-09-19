@@ -4,7 +4,7 @@ Otherwise, delete the task section.**
 ## Task checklist
 
 - [ ] `python3 scripts/validate_task_fields.py` passes
-- [ ] `bash scripts/verify_oracles_local.sh <TASK-ID>` returns reward `1`
+- [ ] `bash scripts/verify_oracles_local.sh <kebab-slug>` returns reward `1`
 - [ ] All behavior checked in `tests/verify.py` is described in `instruction.md`
 - [ ] All behavior described in `instruction.md` is checked by the verifier
 - [ ] Matter files do not precompute the answer

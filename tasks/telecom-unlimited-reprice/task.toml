@@ -1,0 +1,29 @@
+schema_version = "1.4"
+
+[task]
+name = "consulting-bench/telecom-unlimited-reprice"
+version = "1.1.0"
+description = "Telecom unlimited — net after heavy-user cannibal and network opex"
+authors = [{ name = "Management Consulting Bench", email = "bench@example.com" }]
+keywords = ["consulting", "management-consulting", "l2", "partner-delegated"]
+
+[metadata]
+task_id = "telecom-unlimited-reprice"
+legacy_id = "CIP-057"
+family = "management-consulting"
+difficulty = "l2"
+category = "pricing"
+delivery = "memo-plus-json"
+
+[verifier]
+timeout_sec = 180.0
+
+[agent]
+timeout_sec = 900.0
+
+[environment]
+network_mode = "no-network"
+build_timeout_sec = 300.0
+cpus = 1
+memory_mb = 1024
+storage_mb = 5120

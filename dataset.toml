@@ -9,151 +9,151 @@ authors = [{ name = "Consulting Bench Authors" }]
 keywords = ["consulting", "management-consulting", "partner-memo", "harbor"]
 
 [[tasks]]
-name = "management-consulting-bench/cip-003"
+name = "consulting-bench/aerotread-tire-tam"
 
 [[tasks]]
-name = "management-consulting-bench/cip-005"
+name = "consulting-bench/economy-hotel-revenue"
 
 [[tasks]]
-name = "management-consulting-bench/cip-006"
+name = "consulting-bench/india-smartphone-sellout"
 
 [[tasks]]
-name = "management-consulting-bench/cip-010"
+name = "consulting-bench/piano-tunings-market"
 
 [[tasks]]
-name = "management-consulting-bench/cip-012"
+name = "consulting-bench/golf-balls-lost"
 
 [[tasks]]
-name = "management-consulting-bench/cip-015"
+name = "consulting-bench/hospital-outpatient-gap"
 
 [[tasks]]
-name = "management-consulting-bench/cip-016"
+name = "consulting-bench/saas-margin-compression"
 
 [[tasks]]
-name = "management-consulting-bench/cip-018"
+name = "consulting-bench/hotel-fb-mix"
 
 [[tasks]]
-name = "management-consulting-bench/cip-019"
+name = "consulting-bench/pharma-plant-oee"
 
 [[tasks]]
-name = "management-consulting-bench/cip-021"
+name = "consulting-bench/last-mile-zone-c"
 
 [[tasks]]
-name = "management-consulting-bench/cip-025"
+name = "consulting-bench/streaming-contribution"
 
 [[tasks]]
-name = "management-consulting-bench/cip-028"
+name = "consulting-bench/urgent-care-adjacency"
 
 [[tasks]]
-name = "management-consulting-bench/cip-030"
+name = "consulting-bench/airline-new-route"
 
 [[tasks]]
-name = "management-consulting-bench/cip-032"
+name = "consulting-bench/battery-materials-entry"
 
 [[tasks]]
-name = "management-consulting-bench/cip-033"
+name = "consulting-bench/pet-insurance-adjacency"
 
 [[tasks]]
-name = "management-consulting-bench/cip-034"
+name = "consulting-bench/marketplace-take-rate"
 
 [[tasks]]
-name = "management-consulting-bench/cip-038"
+name = "consulting-bench/coop-dtc-beef"
 
 [[tasks]]
-name = "management-consulting-bench/cip-040"
+name = "consulting-bench/organic-cpg-acquisition"
 
 [[tasks]]
-name = "management-consulting-bench/cip-041"
+name = "consulting-bench/hospital-asc-acquisition"
 
 [[tasks]]
-name = "management-consulting-bench/cip-043"
+name = "consulting-bench/saas-acqui-hire"
 
 [[tasks]]
-name = "management-consulting-bench/cip-044"
+name = "consulting-bench/distressed-store-four-wall"
 
 [[tasks]]
-name = "management-consulting-bench/cip-050"
+name = "consulting-bench/rare-disease-biotech-ev"
 
 [[tasks]]
-name = "management-consulting-bench/cip-052"
+name = "consulting-bench/airline-bag-fee"
 
 [[tasks]]
-name = "management-consulting-bench/cip-053"
+name = "consulting-bench/saas-seat-to-usage"
 
 [[tasks]]
-name = "management-consulting-bench/cip-054"
+name = "consulting-bench/restinn-weekend-pricing"
 
 [[tasks]]
-name = "management-consulting-bench/cip-055"
+name = "consulting-bench/pharma-copay-paths"
 
 [[tasks]]
-name = "management-consulting-bench/cip-057"
+name = "consulting-bench/telecom-unlimited-reprice"
 
 [[tasks]]
-name = "management-consulting-bench/cip-059"
+name = "consulting-bench/dim-weight-pricing"
 
 [[tasks]]
-name = "management-consulting-bench/cip-062"
+name = "consulting-bench/municipal-water-rates"
 
 [[tasks]]
-name = "management-consulting-bench/cip-063"
+name = "consulting-bench/crunchora-whitespace"
 
 [[tasks]]
-name = "management-consulting-bench/cip-064"
+name = "consulting-bench/airline-loyalty-match"
 
 [[tasks]]
-name = "management-consulting-bench/cip-066"
+name = "consulting-bench/saas-ndr-conflict"
 
 [[tasks]]
-name = "management-consulting-bench/cip-067"
+name = "consulting-bench/grocery-fresh-deal"
 
 [[tasks]]
-name = "management-consulting-bench/cip-070"
+name = "consulting-bench/streaming-ad-lite"
 
 [[tasks]]
-name = "management-consulting-bench/cip-075"
+name = "consulting-bench/greenpouch-go-nogo"
 
 [[tasks]]
-name = "management-consulting-bench/cip-076"
+name = "consulting-bench/auto-feature-subscription"
 
 [[tasks]]
-name = "management-consulting-bench/cip-077"
+name = "consulting-bench/bank-bnpl-feature"
 
 [[tasks]]
-name = "management-consulting-bench/cip-079"
+name = "consulting-bench/pharma-diagnostic-kit"
 
 [[tasks]]
-name = "management-consulting-bench/cip-084"
+name = "consulting-bench/industrial-iot-spin"
 
 [[tasks]]
-name = "management-consulting-bench/cip-085"
+name = "consulting-bench/retail-media-network"
 
 [[tasks]]
-name = "management-consulting-bench/cip-087"
+name = "consulting-bench/community-solar-yield"
 
 [[tasks]]
-name = "management-consulting-bench/cip-089"
+name = "consulting-bench/heroco-private-label"
 
 [[tasks]]
-name = "management-consulting-bench/cip-090"
+name = "consulting-bench/airline-fare-match"
 
 [[tasks]]
-name = "management-consulting-bench/cip-091"
+name = "consulting-bench/saas-freemium-match"
 
 [[tasks]]
-name = "management-consulting-bench/cip-093"
+name = "consulting-bench/ecomm-price-transparency"
 
 [[tasks]]
-name = "management-consulting-bench/cip-096"
+name = "consulting-bench/airline-cost-turnaround"
 
 [[tasks]]
-name = "management-consulting-bench/cip-097"
+name = "consulting-bench/retail-store-closures"
 
 [[tasks]]
-name = "management-consulting-bench/cip-098"
+name = "consulting-bench/cloudsaas-path-to-profit"
 
 [[tasks]]
-name = "management-consulting-bench/cip-099"
+name = "consulting-bench/hospital-service-line"
 
 [[tasks]]
-name = "management-consulting-bench/cip-100"
+name = "consulting-bench/nonprofit-program-cut"
