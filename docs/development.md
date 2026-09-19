@@ -12,7 +12,9 @@ python3 scripts/validate_task_fields.py
 bash scripts/verify_oracles_local.sh
 ```
 
-Recorded Harbor jobs live under `evals/`. Bundled run configs live under
+Recorded Harbor jobs live under `evals/`. Those JSON files still name the
+folders as `CIP-XXX` because that is what the runs used. Live tasks now use
+kebab-case slugs (`restinn-weekend-pricing`). Bundled run configs live under
 `configs/` (Terminal-Bench style). Helper wrappers in `scripts/` still point
 at the JSON jobs in `evals/` so existing dry-run and full-bench commands
 keep working.

@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 # Verify partner-memo oracle solutions locally (no Harbor/Docker).
-# Default: all 50 partner-delegated tasks. Pass CIP IDs to check a subset.
+# Default: all 50 partner-delegated tasks. Pass kebab slugs or CIP IDs
+# (for example restinn-weekend-pricing or CIP-054) to check a subset.
 set -euo pipefail
 
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
@@ -8,18 +9,26 @@ TASKS_DIR="$ROOT/tasks"
 TMP_ROOT=$(mktemp -d)
 trap 'rm -rf "$TMP_ROOT"' EXIT
 
-DEFAULT_TASK_IDS=(
-  CIP-003 CIP-005 CIP-006 CIP-010 CIP-012 CIP-015 CIP-016 CIP-018 CIP-019 CIP-021
-  CIP-025 CIP-028 CIP-030 CIP-032 CIP-033 CIP-034 CIP-038 CIP-040 CIP-041 CIP-043
-  CIP-044 CIP-050 CIP-052 CIP-053 CIP-054 CIP-055 CIP-057 CIP-059 CIP-062 CIP-063
-  CIP-064 CIP-066 CIP-067 CIP-070 CIP-075 CIP-076 CIP-077 CIP-079 CIP-084 CIP-085
-  CIP-087 CIP-089 CIP-090 CIP-091 CIP-093 CIP-096 CIP-097 CIP-098 CIP-099 CIP-100
-)
+resolve_task_id() {
+  python3 - "$ROOT" "$1" <<'PY'
+import sys
+from pathlib import Path
+
+root = Path(sys.argv[1])
+sys.path.insert(0, str(root / "scripts"))
+from task_slugs import folder_slug
+
+print(folder_slug(sys.argv[2]))
+PY
+}
 
 if [[ $# -gt 0 ]]; then
-  TASK_IDS=("$@")
+  TASK_IDS=()
+  for raw in "$@"; do
+    TASK_IDS+=("$(resolve_task_id "$raw")")
+  done
 else
-  TASK_IDS=("${DEFAULT_TASK_IDS[@]}")
+  mapfile -t TASK_IDS < <(find "$TASKS_DIR" -mindepth 1 -maxdepth 1 -type d -printf '%f\n' | sort)
 fi
 
 pass=0

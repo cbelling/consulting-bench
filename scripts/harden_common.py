@@ -7,6 +7,8 @@ import json
 import textwrap
 from pathlib import Path
 
+from task_slugs import folder_slug, harbor_name, legacy_cip
+
 ROOT = Path(__file__).resolve().parents[1]
 TASKS = ROOT / "tasks"
 
@@ -28,7 +30,7 @@ TASK_TOML = """\
 schema_version = "1.4"
 
 [task]
-name = "management-consulting-bench/{task_id_lower}"
+name = "{harbor_name}"
 version = "1.1.0"
 description = "{description}"
 authors = [{{ name = "Management Consulting Bench", email = "bench@example.com" }}]
@@ -36,6 +38,7 @@ keywords = ["consulting", "management-consulting", "{level}", "partner-delegated
 
 [metadata]
 task_id = "{task_id}"
+legacy_id = "{legacy_id}"
 family = "management-consulting"
 difficulty = "{level}"
 category = "{category}"
@@ -156,7 +159,8 @@ if __name__ == "__main__":
 
 
 def write_task(task_id: str, spec: dict) -> None:
-    task_dir = TASKS / task_id
+    slug = folder_slug(task_id)
+    task_dir = TASKS / slug
     (task_dir / "environment" / "matter").mkdir(parents=True, exist_ok=True)
     (task_dir / "matter").mkdir(parents=True, exist_ok=True)
     (task_dir / "tests").mkdir(parents=True, exist_ok=True)
@@ -166,8 +170,9 @@ def write_task(task_id: str, spec: dict) -> None:
     (task_dir / "environment" / "Dockerfile").write_text(DOCKERFILE)
     (task_dir / "task.toml").write_text(
         TASK_TOML.format(
-            task_id=task_id,
-            task_id_lower=task_id.lower(),
+            harbor_name=harbor_name(task_id),
+            task_id=slug,
+            legacy_id=legacy_cip(task_id),
             description=spec["description"],
             category=spec["category"],
             level=spec.get("level", "l2"),
@@ -196,7 +201,7 @@ def write_task(task_id: str, spec: dict) -> None:
     solve_sh.chmod(0o755)
 
     (task_dir / "oracle" / "README.md").write_text(
-        f"# Oracle — {task_id}\n\n"
+        f"# Oracle — {slug}\n\n"
         f"Run `bash solution/solve.sh` to produce `/app/output/memo.md` and "
         f"`/app/output/answer.json`.\n\n"
         f"## answer.json\n\n```json\n{json.dumps(spec['oracle'], indent=2)}\n```\n"

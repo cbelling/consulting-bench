@@ -2,7 +2,8 @@
 # Dry-run the Partner-50 bench on Modal sandboxes with the cheapest planned
 # model: DeepSeek V4.1 Flash via OpenRouter ($0.15 / $0.60 per 1M tokens).
 #
-# Slice: CIP-054 (L1 pricing), CIP-098 (L1 P&L), CIP-015 (L3 cash EBITDA).
+# Slice: restinn-weekend-pricing (L1), cloudsaas-path-to-profit (L1),
+# hospital-outpatient-gap (L3).
 set -euo pipefail
 
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"

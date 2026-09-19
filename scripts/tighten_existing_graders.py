@@ -5,11 +5,21 @@ from __future__ import annotations
 
 from pathlib import Path
 
+from task_slugs import folder_slug
+
 ROOT = Path(__file__).resolve().parents[1]
 TASKS = ROOT / "tasks"
 
 
+def resolve_rel(rel: str) -> str:
+    head, sep, tail = rel.partition("/")
+    if not sep:
+        return folder_slug(rel)
+    return f"{folder_slug(head)}/{tail}"
+
+
 def rewrite(rel: str, text: str) -> None:
+    rel = resolve_rel(rel)
     for base in (TASKS,):
         p = base / rel
         if p.exists():
@@ -22,7 +32,7 @@ def rewrite(rel: str, text: str) -> None:
 
 
 def patch_verify(task_id: str, old: str, new: str) -> None:
-    path = TASKS / task_id / "tests" / "verify.py"
+    path = TASKS / folder_slug(task_id) / "tests" / "verify.py"
     text = path.read_text()
     if new in text:
         return
