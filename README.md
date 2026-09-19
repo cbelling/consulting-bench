@@ -3,7 +3,7 @@
 [![Docs](https://img.shields.io/badge/Harbor_docs-000000?style=for-the-badge&logo=mdbook&color=105864)](https://www.harborframework.com/docs)
 [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg?style=for-the-badge)](LICENSE)
 
-Consulting Bench measures how well agents handle **partner-memo** work in
+[Consulting Bench](https://austinbellinger.com/consulting-bench.html) measures how well agents handle **partner-memo** work in
 management consulting: market sizing, profitability, pricing, and investment
 decisions. Each task is a partner email to an associate — read a synthetic
 matter pack, write a one-page memo, and emit a checkable JSON sidecar.
