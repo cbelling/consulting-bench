@@ -21,7 +21,7 @@ design-brief track.
 
 - Task gallery: [`tasks/`](tasks)
 - Harbor task contract: [docs/task-format.md](docs/task-format.md)
-- Recorded runs: [`evals/`](evals) and [`leaderboard/`](leaderboard)
+- Recorded runs: [`evals/`](evals)
 
 ## Getting started
 
