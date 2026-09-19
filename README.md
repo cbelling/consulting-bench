@@ -1,198 +1,194 @@
-# Management Consulting Bench
+# Consulting Bench
 
-Harbor-runnable **partner-memo** tasks for management consulting workflows (market sizing, profitability, pricing, investment decisions). Each task is a partner email to an associate: read a synthetic matter pack, write a one-page memo, and emit a checkable JSON sidecar.
+![Docs](https://img.shields.io/badge/Harbor_docs-000000?style=for-the-badge&logo=mdbook&color=105864)
+![License](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)
 
-This slice is **50 partner-delegated tasks** (5 L1 / 25 L2 / 20 L3). There is no frozen JSON-L1 holdout set and no separate design-brief track.
+[Consulting Bench](https://austinbellinger.com/consulting-bench.html) measures how well agents handle work in a management consulting environment. Each task is a partner email to an associate — read a synthetic matter pack, write a one-page memo, and emit a checkable JSON sidecar. The inital release is 50 tasks.
 
-## Task shape
+It runs on [Harbor](https://www.harborframework.com/), the same evaluation harness used by [Terminal-Bench](https://github.com/harbor-framework/terminal-bench-2-1). Any Harbor-supported agent (Terminus, Claude Code, Codex, and others) can be scored with one command.
 
-Every task under `tasks/<TASK-ID>/` follows the Harbor layout:
+## Results
 
-```
-tasks/CIP-054/
-├── task.toml
-├── instruction.md          # Partner email + deliverable contract
-├── environment/
-│   ├── Dockerfile          # Python sandbox; copies matter/ into /app/matter/
-│   └── matter/             # Build-context exhibits (required for Modal/Docker)
-├── matter/                 # Same exhibits (local oracle verify convenience)
-├── tests/
-│   ├── test.sh             # Writes /logs/verifier/reward.txt (1 on pass)
-│   └── verify.py           # Programmatic all-pass checks
-└── solution/
-    └── solve.sh            # Oracle that produces a passing memo + JSON
-```
+One Harbor / terminus-2 trial per model on the hardened 50-task set.
 
-Deliverables are always:
+| Model | Pass@1 |
+| ----- | ------ |
+| Gemini 3.8 Flash | 54.0% |
+| GLM 5.3 | 54.0% |
+| DeepSeek V4.1 Flash | 52.0% |
+| GPT-5.6 Luna | 50.0% |
+| Claude Haiku 4.5 | 28.0% |
 
-1. `/app/output/memo.md` — one-page memo with the recommendation in the first paragraph
-2. `/app/output/answer.json` — checkable core (decision, key number, method)
+## Getting started
 
-Verifiers are programmatic (no LLM judge). Typical all-pass checks: lede recommendation **and key number**, a tight numeric band on the JSON sidecar, method language in the memo, a concrete next step (not generic “monitor risks”), and rejection of common trap values. Matter packs do **not** precompute the answer. Lede parsing skips `#` / `##` headings, To/From/Date/Subject lines, and horizontal rules.
+This walkthrough gets you from a clone to a scored agent run: install Harbor, add a model key, run Terminus-2, and open the job.
 
-## Difficulty mix
+### 1. Set up your environment
 
-| Level | Count | IDs |
-|-------|-------|-----|
-| L1 | 5 | CIP-054, CIP-063, CIP-075, CIP-089, CIP-098 |
-| L2 | 25 | CIP-003, CIP-005, CIP-006, CIP-016, CIP-018, CIP-019, CIP-030, CIP-033, CIP-034, CIP-040, CIP-041, CIP-043, CIP-053, CIP-057, CIP-059, CIP-064, CIP-067, CIP-076, CIP-077, CIP-084, CIP-085, CIP-090, CIP-091, CIP-097, CIP-100 |
-| L3 | 20 | CIP-010, CIP-012, CIP-015, CIP-021, CIP-025, CIP-028, CIP-032, CIP-038, CIP-044, CIP-050, CIP-052, CIP-055, CIP-062, CIP-066, CIP-070, CIP-079, CIP-087, CIP-093, CIP-096, CIP-099 |
+Clone the repo and install [Harbor](https://github.com/harbor-framework/harbor). Local runs need [Docker](https://docs.docker.com/get-docker/).
 
-Every task is checkable (no paragraph-length stubs). L2 packs require multi-exhibit math with one distractor number. L3 packs include conflicting exhibits, arithmetic traps, or unit/timing issues. Target cheap-model pass rate is about 40–50% (DeepSeek V4.1 Flash). DeepSeek V4.1 Flash / Modal / terminus-2 scoreboard:
-
-| Set | Run | Pass | Mean | Cost |
-|-----|-----|------|------|------|
-| Pre-harden (31 stub graders) | Sequential n=1 | 43/50 | 0.86 | $1.04 |
-| Pre-harden (31 stub graders) | Concurrent n=20 | 45/50 | 0.90 | $0.93 |
-| **Hardened-v1 (all checkable)** | Concurrent n=20 | **26/50** | **0.52** | **$0.73** |
-
-Hardened-v1: 0 errors; all 24 fails still have a passing local oracle. Pre-harden sequential/concurrent JSON lives under `evals/full-bench-deepseek-v4.1-flash-*-results.json`.
-
-## Multi-model leaderboard
-
-Website-ready scores live in `website/leaderboard.json` (static page: `website/index.html`). The cheap-model baseline is DeepSeek V4.1 Flash at **26/50**. The other four comparison models are GPT-5.6 Luna, Claude Haiku 4.5, Gemini 3.8 Flash, and GLM 5.3:
-
-| Model | OpenRouter slug | List $/1M in/out | Est. LLM | Est. 2× out |
-|-------|-----------------|------------------|----------|-------------|
-| GPT-5.6 Luna | `openai/gpt-5.6-luna` | $0.20 / $1.20 | ~$1 | ~$2 |
-| Claude Haiku 4.5 | `anthropic/claude-haiku-4.5` | $1 / $5 | ~$4 | ~$7 |
-| Gemini 3.8 Flash | `google/gemini-3.8-flash` | $0.75 / $3.75 | ~$3 | ~$5 |
-| GLM 5.3 | `z-ai/glm-5.3` | $0.91 / $2.86 | ~$3 | ~$4 |
-
-Cost method: scale the DeepSeek hardened-v1 token volume (1.077M in / 0.563M out, $0.73 actual) to OpenRouter list prices, plus ~$1 Modal per pass. Actual GPT/Haiku traces used fewer output tokens than that baseline. Run one model at a time (default `n=8`):
-
-```bash
-bash scripts/run_four_model_pass.sh                    # all four, sequential
-bash scripts/run_four_model_pass.sh gemini-3.8-flash   # one model
-python3 scripts/build_leaderboard.py                   # refresh website/leaderboard.json
+```shell
+git clone https://github.com/cbelling/consulting-bench.git
+cd consulting-bench
+uv tool install harbor
 ```
 
-## Catalog
+To run on [Modal](https://modal.com/) sandboxes instead of local Docker:
 
-| ID | Level | Topic |
-|----|-------|-------|
-| CIP-003 | L2 | AeroTread NB tire TAM (exclude cargo/spares) |
-| CIP-005 | L2 | US economy-hotel room revenue (exclude midscale) |
-| CIP-006 | L2 | India smartphone sell-out (exclude gray sell-in) |
-| CIP-010 | L3 | Piano tunings — unusual stock × frequency |
-| CIP-012 | L3 | Golf balls lost — conflicting exhibits |
-| CIP-015 | L3 | Hospital outpatient surgery profit gap |
-| CIP-016 | L2 | SaaS gross margin compression |
-| CIP-018 | L2 | Hotel F&B profit mix |
-| CIP-019 | L2 | Pharma plant utilization |
-| CIP-021 | L3 | Logistics last-mile Zone C contribution |
-| CIP-025 | L3 | Media streaming contribution layers |
-| CIP-028 | L3 | Hospital urgent-care adjacency |
-| CIP-030 | L2 | Airline new route |
-| CIP-032 | L3 | Battery materials entry — conflicting margins |
-| CIP-033 | L2 | Insurance pet adjacency |
-| CIP-034 | L2 | E-commerce 3P marketplace |
-| CIP-038 | L3 | Ag co-op DTC beef |
-| CIP-040 | L2 | CPG M&A organic brand |
-| CIP-041 | L2 | Hospital ASC acquisition |
-| CIP-043 | L2 | SaaS acqui-hire vs build |
-| CIP-044 | L3 | Retail distressed-store four-wall |
-| CIP-050 | L3 | Pharma rare-disease biotech EV |
-| CIP-052 | L3 | Airline bag-fee increase |
-| CIP-053 | L2 | SaaS pricing model |
-| CIP-054 | L1 | RestInn weekend dynamic pricing |
-| CIP-055 | L3 | Pharma co-pay assistance paths |
-| CIP-057 | L2 | Telecom unlimited repricing |
-| CIP-059 | L2 | Logistics dim-weight |
-| CIP-062 | L3 | Municipal water rates |
-| CIP-063 | L1 | Crunchora CPG distribution white space |
-| CIP-064 | L2 | Airline loyalty growth |
-| CIP-066 | L3 | SaaS NDR — CS vs Finance conflict |
-| CIP-067 | L2 | Grocery fresh growth |
-| CIP-070 | L3 | Media ad-tier growth |
-| CIP-075 | L1 | GreenPouch compostable bag go/no-go |
-| CIP-076 | L2 | Auto subscription feature |
-| CIP-077 | L2 | Bank BNPL feature |
-| CIP-079 | L3 | Pharma diagnostic kit |
-| CIP-084 | L2 | Industrial IoT spin |
-| CIP-085 | L2 | Retail media network |
-| CIP-087 | L3 | Energy community solar |
-| CIP-089 | L1 | HeroCo private-label response |
-| CIP-090 | L2 | Airline competitive response |
-| CIP-091 | L2 | SaaS freemium response |
-| CIP-093 | L3 | Retail e-comm price transparency |
-| CIP-096 | L3 | Airline cost turnaround |
-| CIP-097 | L2 | Retail store closures |
-| CIP-098 | L1 | CloudSaaS path to profitability |
-| CIP-099 | L3 | Hospital service-line turnaround |
-| CIP-100 | L2 | Nonprofit turnaround |
-
-## Run one task with Harbor
-
-Install [Harbor](https://www.harborframework.com/docs), then from the repo root:
-
-```bash
-harbor run -p tasks/CIP-054 -a "<agent>" -m "<model>"
-```
-
-Oracle smoke test (verifier only):
-
-```bash
-harbor run -p tasks/CIP-054 -a oracle
-```
-
-## Local verification (no Harbor required)
-
-All 50 partner-memo oracles:
-
-```bash
-bash scripts/verify_oracles_local.sh
-```
-
-A subset or a single task:
-
-```bash
-bash scripts/verify_oracles_local.sh CIP-054 CIP-015 CIP-003
-```
-
-## Regenerate original slices
-
-These generators rewrite slices in place. After the L1/L3 generators, re-run the hardener so spoilers stay stripped and bands stay tight.
-
-```bash
-python3 scripts/generate_partner_tasks.py
-python3 scripts/generate_l3_partner_tasks.py
-python3 scripts/generate_hardened_stubs.py   # 31 formerly stub L2/L3 cases
-python3 scripts/tighten_existing_graders.py  # strip spoilers + tighten the other 19
-bash scripts/verify_oracles_local.sh
-```
-
-## Scope
-
-- Management consulting only; all matter is synthetic
-- Partner-memo Harbor tasks only (memo + JSON sidecar)
-
-## Cheap-model dry run (Modal)
-
-The cheapest current OpenRouter model that matches the planned DeepSeek 4.1 slot is **DeepSeek V4.1 Flash** (`openrouter/deepseek/deepseek-v4.1-flash`, about $0.15 / $0.60 per 1M tokens). Trials run on **Modal sandboxes** (`-e modal`). A 3-task slice (L1 pricing, L1 P&L, L3 cash EBITDA) lives in `evals/dry-run-deepseek-v4.1-flash.json`:
-
-```bash
+```shell
 uv tool install "harbor[modal]"
-export OPENROUTER_API_KEY="..."
-export MODAL_TOKEN_ID="..."
-export MODAL_TOKEN_SECRET="..."
-bash scripts/run_dry_run.sh
 ```
 
-Full 50-task run, 20 Modal sandboxes at a time:
+### 2. Connect a model provider
 
-```bash
-bash scripts/run_full_bench_concurrent.sh
+The bundled Terminus configs call models through [OpenRouter](https://openrouter.ai/). Copy `.env.example` and add a key:
+
+```shell
+cp .env.example .env
 ```
 
-Sequential (one sandbox at a time):
-
-```bash
-bash scripts/run_full_bench_sequential.sh
+```
+OPENROUTER_API_KEY=...
 ```
 
-Oracle-only Harbor smoke test on Modal (no model key):
+Export it in your shell, or let Harbor read `.env`. Anthropic, OpenAI, and other Harbor-supported providers work the same way — set the matching key and pass `-m` / `-a` on the run.
 
-```bash
-harbor run -p tasks/CIP-054 -a oracle -e modal -y
+For Modal, add `MODAL_TOKEN_ID` and `MODAL_TOKEN_SECRET`, or run `modal token new`.
+
+### 3. Run the agent
+
+Start with the three-task smoke slice:
+
+```shell
+harbor run -c configs/dry-run.yaml
 ```
+
+Or one task:
+
+```shell
+harbor run -p tasks/restinn-weekend-pricing \
+  -a terminus-2 \
+  -m openrouter/deepseek/deepseek-v4.1-flash
+```
+
+The full 50-task set:
+
+```shell
+harbor run -c configs/terminus-2.deepseek-v4.1-flash.yaml
+```
+
+The same job on Modal:
+
+```shell
+harbor run -c configs/terminus-2.deepseek-v4.1-flash.yaml -e modal
+```
+
+Any Harbor-supported agent (Terminus, Claude Code, Codex, and others) can replace Terminus-2. Swap the model with `-m`.
+
+To check that the environments and graders work without a model, run the oracles:
+
+```shell
+harbor run -c configs/oracle.yaml
+```
+
+### 4. Inspect the run
+
+Harbor writes each job under `jobs/`. Open the local viewer:
+
+```shell
+harbor view jobs
+```
+
+That serves `http://127.0.0.1:8080`. Open the job, then a trial. You will see the agent transcript, `/app/output/memo.md`, `/app/output/answer.json`, and whether the script grader passed (`reward.txt` is `1` or `0`).
+
+Recorded scoreboard jobs live in `evals/`. Modal wrappers for those runs are in `scripts/` (`run_dry_run.sh`, `run_full_bench_concurrent.sh`, `run_hardened_bench_concurrent.sh`).
+
+## Tasks
+
+| Slug                                                           | Category             | Description                                                                                        |
+| -------------------------------------------------------------- | -------------------- | -------------------------------------------------------------------------------------------------- |
+| [aerotread-tire-tam](tasks/aerotread-tire-tam)                 | market-sizing        | Should a tire maker bid a US passenger-jet replacement contract? Size that market only.            |
+| [economy-hotel-revenue](tasks/economy-hotel-revenue)           | market-sizing        | Size US economy-hotel room revenue to decide if a $400M pricing tool is worth building.            |
+| [india-smartphone-sellout](tasks/india-smartphone-sellout)     | market-sizing        | Size India's annual smartphone sales and decide whether a handset maker should enter.              |
+| [piano-tunings-market](tasks/piano-tunings-market)             | market-sizing        | Estimate yearly US piano-tuning demand so a foundation can size a technician scholarship.          |
+| [golf-balls-lost](tasks/golf-balls-lost)                       | market-sizing        | Estimate how many golf balls Americans lose each year to size replacement demand.                  |
+| [hospital-outpatient-gap](tasks/hospital-outpatient-gap)       | profitability        | Reconcile conflicting surgery-center P&Ls and decide whether to expand outpatient work.            |
+| [saas-margin-compression](tasks/saas-margin-compression)       | profitability        | Figure out why a SaaS company's gross margin fell and which recurring cost to attack.              |
+| [hotel-fb-mix](tasks/hotel-fb-mix)                             | profitability        | Decide whether a hotel should keep banquet catering, close its restaurants, or both.               |
+| [pharma-plant-oee](tasks/pharma-plant-oee)                     | operations           | Decide if a drug plant should add a Saturday shift after measuring true line utilization.          |
+| [last-mile-zone-c](tasks/last-mile-zone-c)                     | profitability        | Decide whether a last-mile carrier should exit its least-dense delivery zone.                      |
+| [streaming-contribution](tasks/streaming-contribution)         | profitability        | Reconcile why a streamer looks profitable to product and unprofitable to the board.                |
+| [urgent-care-adjacency](tasks/urgent-care-adjacency)           | investment-decision  | Decide if a hospital system should open six urgent-care clinics after ED cannibalization.          |
+| [airline-new-route](tasks/airline-new-route)                   | investment-decision  | Decide whether an airline should launch Boston–Lisbon after airport incentives expire.             |
+| [battery-materials-entry](tasks/battery-materials-entry)       | market-entry         | Decide if a chemical company should spend $900M to enter US battery-materials processing.          |
+| [pet-insurance-adjacency](tasks/pet-insurance-adjacency)       | adjacency            | Decide whether an insurer should launch a pet-insurance product.                                   |
+| [marketplace-take-rate](tasks/marketplace-take-rate)           | strategy             | Decide if an e-commerce company should flip a category from first-party sales to a 3P marketplace. |
+| [coop-dtc-beef](tasks/coop-dtc-beef)                           | go-to-market         | Decide if a farm co-op should sell beef boxes direct to consumers instead of wholesale.            |
+| [organic-cpg-acquisition](tasks/organic-cpg-acquisition)       | m-and-a              | Decide whether to bid on an organic food brand after adjusting returns for synergies.              |
+| [hospital-asc-acquisition](tasks/hospital-asc-acquisition)     | m-and-a              | Decide whether a hospital should buy an ambulatory surgery center.                                 |
+| [saas-acqui-hire](tasks/saas-acqui-hire)                       | make-vs-buy          | Compare buying a small engineering team versus building an observability module in-house.          |
+| [distressed-store-four-wall](tasks/distressed-store-four-wall) | investment-decision  | Decide whether a grocer should buy two failing stores.                                             |
+| [rare-disease-biotech-ev](tasks/rare-disease-biotech-ev)       | investment-decision  | Decide whether to pay $1.2B for a rare-disease biotech, walk, or use a contingent payout.          |
+| [airline-bag-fee](tasks/airline-bag-fee)                       | pricing              | Decide whether an airline should raise checked-bag fees from $30 to $40.                           |
+| [saas-seat-to-usage](tasks/saas-seat-to-usage)                 | pricing              | Decide whether a SaaS company should switch from per-seat to usage-based pricing.                  |
+| [restinn-weekend-pricing](tasks/restinn-weekend-pricing)       | pricing              | Pick the weekend room-rate premium that maximizes profit for a 100-room hotel.                     |
+| [pharma-copay-paths](tasks/pharma-copay-paths)                 | pricing              | Choose which patient co-pay assistance program a pharma company should launch.                     |
+| [telecom-unlimited-reprice](tasks/telecom-unlimited-reprice)   | pricing              | Decide whether a mobile carrier should launch a $75 unlimited plan.                                |
+| [dim-weight-pricing](tasks/dim-weight-pricing)                 | pricing              | Decide whether a parcel carrier should bill by package size instead of actual weight.              |
+| [municipal-water-rates](tasks/municipal-water-rates)           | pricing              | Decide whether a city should raise water rates or delay a treatment-plant project.                 |
+| [crunchora-whitespace](tasks/crunchora-whitespace)             | market-sizing        | Pick the first growth move for a snack brand: more stores, a new SKU, or a price increase.         |
+| [airline-loyalty-match](tasks/airline-loyalty-match)           | growth               | Decide whether an airline should run a loyalty status-match campaign.                              |
+| [saas-ndr-conflict](tasks/saas-ndr-conflict)                   | profitability        | Reconcile CS vs Finance churn numbers and say whether retention clears the board bar.              |
+| [grocery-fresh-deal](tasks/grocery-fresh-deal)                 | growth               | Decide whether a grocer should take a produce deal that lifts margin but raises spoilage.          |
+| [streaming-ad-lite](tasks/streaming-ad-lite)                   | growth               | Decide whether a streamer should launch a cheaper ad-supported subscription tier.                  |
+| [greenpouch-go-nogo](tasks/greenpouch-go-nogo)                 | investment-decision  | Decide whether a snack brand should launch a compostable bag.                                      |
+| [auto-feature-subscription](tasks/auto-feature-subscription)   | product              | Decide whether a carmaker should sell a connected feature as an $18/month subscription.            |
+| [bank-bnpl-feature](tasks/bank-bnpl-feature)                   | product              | Decide whether a bank should add buy-now-pay-later at checkout.                                    |
+| [pharma-diagnostic-kit](tasks/pharma-diagnostic-kit)           | investment-decision  | Decide whether a diagnostics company should launch a test kit after real-world false positives.    |
+| [industrial-iot-spin](tasks/industrial-iot-spin)               | corporate-strategy   | Decide whether a parent company should spin out its IoT unit.                                      |
+| [retail-media-network](tasks/retail-media-network)             | new-business         | Decide whether a retailer should build an in-store advertising network.                            |
+| [community-solar-yield](tasks/community-solar-yield)           | investment-decision  | Decide whether to build an 18 MW community solar farm using realistic local yield.                 |
+| [heroco-private-label](tasks/heroco-private-label)             | pricing              | Pick how a branded CPG company should respond to a store-brand attack.                             |
+| [airline-fare-match](tasks/airline-fare-match)                 | competitive-response | Decide whether an airline should match a competitor's 8% fare cut on overlapping routes.           |
+| [saas-freemium-match](tasks/saas-freemium-match)               | competitive-response | Decide whether a SaaS company should match a competitor's free tier.                               |
+| [ecomm-price-transparency](tasks/ecomm-price-transparency)     | pricing              | Pick which price-matching strategy maximizes a retailer's profit.                                  |
+| [airline-cost-turnaround](tasks/airline-cost-turnaround)       | turnaround           | Decide if an airline's run-rate profit already hits the board's $500M target.                      |
+| [retail-store-closures](tasks/retail-store-closures)           | turnaround           | Decide whether a retailer should close 40 losing stores.                                           |
+| [cloudsaas-path-to-profit](tasks/cloudsaas-path-to-profit)     | profitability        | Choose whether a cash-burning SaaS company should cut sales or R&D to reach breakeven.             |
+| [hospital-service-line](tasks/hospital-service-line)           | profitability        | Decide which hospital service lines to keep, close, or expand after stripping allocations.         |
+| [nonprofit-program-cut](tasks/nonprofit-program-cut)           | turnaround           | Decide whether a nonprofit should shut a money-losing program.                                     |
+
+## Pass@k evaluation
+
+Pass@1-from-k=4 measures the probability that at least one attempt passes when each model gets four independent trials per task. Harbor configs with `n_attempts: 4` are in `evals/hardened-v1-*-pass4.json`.
+
+### Running Pass@4
+
+```shell
+# All five models (DeepSeek + four flagships)
+bash scripts/run_pass4.sh
+
+# One model
+bash scripts/run_pass4.sh deepseek-v4.1-flash
+
+# Override concurrency
+N_CONCURRENT=16 bash scripts/run_pass4.sh gpt-5.6-luna
+```
+
+Default `n_concurrent_trials`: 20 for DeepSeek, 8 for the flagships.
+
+### Pass@1-from-k=4 results
+
+Results will be calculated after the runs complete. Each k=4 job runs 200 trials (50 tasks × 4 attempts).
+
+| Model | Pass@1-from-k=4 |
+| ----- | --------------- |
+| DeepSeek V4.1 Flash | TBD |
+| GPT-5.6 Luna | TBD |
+| Claude Haiku 4.5 | TBD |
+| Gemini 3.8 Flash | TBD |
+| GLM 5.3 | TBD |
+
+## License
+
+MIT. See [LICENSE](LICENSE).

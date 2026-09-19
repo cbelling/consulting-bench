@@ -1,0 +1,74 @@
+{
+  "job_name": "hardened-v1-gpt-5.6-luna-pass4",
+  "n_attempts": 4,
+  "n_concurrent_trials": 8,
+  "environment": {
+    "type": "modal"
+  },
+  "agents": [
+    {
+      "name": "terminus-2",
+      "model_name": "openrouter/openai/gpt-5.6-luna",
+      "kwargs": {
+        "max_turns": 30,
+        "record_terminal_session": false,
+        "model_info": {
+          "max_input_tokens": 200000,
+          "max_output_tokens": 16384
+        }
+      }
+    }
+  ],
+  "tasks": [
+    {"path": "tasks/CIP-003"},
+    {"path": "tasks/CIP-005"},
+    {"path": "tasks/CIP-006"},
+    {"path": "tasks/CIP-010"},
+    {"path": "tasks/CIP-012"},
+    {"path": "tasks/CIP-015"},
+    {"path": "tasks/CIP-016"},
+    {"path": "tasks/CIP-018"},
+    {"path": "tasks/CIP-019"},
+    {"path": "tasks/CIP-021"},
+    {"path": "tasks/CIP-025"},
+    {"path": "tasks/CIP-028"},
+    {"path": "tasks/CIP-030"},
+    {"path": "tasks/CIP-032"},
+    {"path": "tasks/CIP-033"},
+    {"path": "tasks/CIP-034"},
+    {"path": "tasks/CIP-038"},
+    {"path": "tasks/CIP-040"},
+    {"path": "tasks/CIP-041"},
+    {"path": "tasks/CIP-043"},
+    {"path": "tasks/CIP-044"},
+    {"path": "tasks/CIP-050"},
+    {"path": "tasks/CIP-052"},
+    {"path": "tasks/CIP-053"},
+    {"path": "tasks/CIP-054"},
+    {"path": "tasks/CIP-055"},
+    {"path": "tasks/CIP-057"},
+    {"path": "tasks/CIP-059"},
+    {"path": "tasks/CIP-062"},
+    {"path": "tasks/CIP-063"},
+    {"path": "tasks/CIP-064"},
+    {"path": "tasks/CIP-066"},
+    {"path": "tasks/CIP-067"},
+    {"path": "tasks/CIP-070"},
+    {"path": "tasks/CIP-075"},
+    {"path": "tasks/CIP-076"},
+    {"path": "tasks/CIP-077"},
+    {"path": "tasks/CIP-079"},
+    {"path": "tasks/CIP-084"},
+    {"path": "tasks/CIP-085"},
+    {"path": "tasks/CIP-087"},
+    {"path": "tasks/CIP-089"},
+    {"path": "tasks/CIP-090"},
+    {"path": "tasks/CIP-091"},
+    {"path": "tasks/CIP-093"},
+    {"path": "tasks/CIP-096"},
+    {"path": "tasks/CIP-097"},
+    {"path": "tasks/CIP-098"},
+    {"path": "tasks/CIP-099"},
+    {"path": "tasks/CIP-100"}
+  ]
+}
