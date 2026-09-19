@@ -48,8 +48,7 @@ Use the PR template. Task PRs should say what the partner is asking, how the
 verifier checks it, and that the oracle still passes. Do not put the numeric
 answer in `instruction.md` or in matter files.
 
-## Regeneration
+## Development notes
 
-Slice generators rewrite tasks in place. After running them, re-run the
-hardener and the oracle verifier. Details are in
-[docs/development.md](docs/development.md).
+See [docs/development.md](docs/development.md) for the remaining check and
+run helpers.
